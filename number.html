@@ -1,138 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Carlos Alves - Number</title>
-	<meta name="description" content="Carlos Alves - Software Enginner">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
-</head> 
-<body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Carlos Alves - Number</title>
+    <meta name="description" content="Carlos Alves - AI Researcher" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- first row of text -->
     <div class="greeting-wrapper">
-        <h1>Number Guessing Game</h1>
+      <h1>Number Guessing Game</h1>
     </div>
     <!-- 2nd row of text -->
     <div class="nav-wrapper">
-        <div class="dots-wrapper">
-            <div id="dot-1" class="browser-dot">
-            </div>
-            <div id="dot-2" class="browser-dot">
-            </div>
-            <div id="dot-3" class="browser-dot">
-            </div> 
-        </div>
+      <div class="dots-wrapper">
+        <div id="dot-1" class="browser-dot"></div>
+        <div id="dot-2" class="browser-dot"></div>
+        <div id="dot-3" class="browser-dot"></div>
+      </div>
     </div>
     <div id="my-title">
-        <!-- <div>  Software Engineer</div> -->
-        <div>  Software Developer</div>
+      <!-- <div>  Software Engineer</div> -->
+      <div>Software Developer</div>
     </div>
-    
+
     <!-- 3rd row of text -->
     <div class="left-column">
-        <div class="right-column">
-            <img id="profilePic" src="assets/carlos.jpeg" alt="My Picture">
+      <div class="right-column">
+        <img id="profilePic" src="assets/carlos.jpeg" alt="My Picture" />
+      </div>
+      <div id="preview">
+        <h3>How to Play:</h3>
+        <p>
+          Select a number between 1 and 50. See if you can guess it in 5 turns
+          or fewer. After you submit a number we will tell you if your guess was
+          too low or too high. Good Luck!
+        </p>
+        <div class="form">
+          <label for="numberField">Please enter a number: </label>
+          <input type="text" id="numberField" size="2" class="numberField" />
+          <input type="submit" value="Submit" class="numberSubmit" />
         </div>
-        <div id="preview">
-            <h3>How to Play:</h3>
-            <p>Select a number between 1 and 50. See if you can guess it in 5 turns or fewer. After you submit a number we will tell you if your guess was too low or too high. Good Luck!</p>
-            <div class="form">
-                <label for="numberField">Please enter a number: </label>
-                <input type="text" id="numberField" size="2" class="numberField">
-                <input type="submit" value="Submit" class="numberSubmit">
-            </div>
-            <div   class="resultParas">
-                <p class="predict"></p>
-                <p class="lastNumber"></p>
-                <p class="distNumber"></p>
-                <p class="tryAgain"></p>
-            </div>
-            <script> 
-                // create variables
-                var predict      = document.querySelector('.predict');
-                var lastNumber   = document.querySelector('.lastNumber');
-                var distNumber   = document.querySelector('.distNumber');
-                var numberSubmit = document.querySelector('.numberSubmit');
-                var numberField  = document.querySelector('.numberField');
-                var tryAgain     = document.querySelector('.tryAgain');
-                var numRand      = Math.floor(Math.random() * 50) + 1;
-                var countNumber  = 1;
-                // function to check number submited
-                function checkNumber() {
-                    // store number from user
-                    numberSubmit = Number(numberField.value);
-                    // check number counter
-                    if (countNumber === 1) {
-                        predict.textContent = 'Previous number: ';
-                    }
-                    // store all numbers submited
-                    predict.textContent += numberSubmit + ' ';
-                    // check user enter a valid number
-                    if (numberSubmit > 0 && numberSubmit <= 50) {
-                        // check user found the random number and is not game over
-                        if (numberSubmit === numRand) {
-                            lastNumber.textContent = 'Congratulations! You found the number!';
-                            lastNumber.style.backgroundColor = 'green';
-                            lastNumber.style.color = 'white';
-                            distNumber.textContent = '';
-                            // call function game over
-                        }
-                        else if (countNumber === 5) {
-                            lastNumber.textContent = 'Sorry you did not found the number - Refresh page to repeat - The number was: ' + numRand;
-                            lastNumber.style.color = 'white';
-                            distNumber.textContent = '';
-                        }
-                        else {
-                            lastNumber.textContent = 'Sorry this is not the number';
-                            lastNumber.style.backgroundColor = 'OrangeRed';
-                            lastNumber.style.color = 'white';
-                            // check the number was low or high
-                            if (numberSubmit < numRand) {
-                                distNumber.textContent = 'The number was too low, try again...';
-                            }
-                            else {
-                                distNumber.textContent = 'The number was too high, try again...'; 
-                            }
-                        }
-                        // increase counter and clear fields
-                        countNumber++;
-                        numberField.value = '';
-                        numberField.focus();
-                    }
-                    else {
-                        lastNumber.textContent = 'Please only enter numbers between 1 to 50, try again...';
-                        lastNumber.style.backgroundColor = 'OrangeRed';
-                        lastNumber.style.color = 'white';
-                        numberField.value = '';
-                        numberField.focus();                 
-                    }
+        <div class="resultParas">
+          <p class="predict"></p>
+          <p class="lastNumber"></p>
+          <p class="distNumber"></p>
+          <p class="tryAgain"></p>
+        </div>
+        <script>
+          // create variables
+          var predict = document.querySelector('.predict');
+          var lastNumber = document.querySelector('.lastNumber');
+          var distNumber = document.querySelector('.distNumber');
+          var numberSubmit = document.querySelector('.numberSubmit');
+          var numberField = document.querySelector('.numberField');
+          var tryAgain = document.querySelector('.tryAgain');
+          var numRand = Math.floor(Math.random() * 50) + 1;
+          var countNumber = 1;
+          // function to check number submited
+          function checkNumber() {
+            // store number from user
+            numberSubmit = Number(numberField.value);
+            // check number counter
+            if (countNumber === 1) {
+              predict.textContent = 'Previous number: ';
+            }
+            // store all numbers submited
+            predict.textContent += numberSubmit + ' ';
+            // check user enter a valid number
+            if (numberSubmit > 0 && numberSubmit <= 50) {
+              // check user found the random number and is not game over
+              if (numberSubmit === numRand) {
+                lastNumber.textContent =
+                  'Congratulations! You found the number!';
+                lastNumber.style.backgroundColor = 'green';
+                lastNumber.style.color = 'white';
+                distNumber.textContent = '';
+                // call function game over
+              } else if (countNumber === 5) {
+                lastNumber.textContent =
+                  'Sorry you did not found the number - Refresh page to repeat - The number was: ' +
+                  numRand;
+                lastNumber.style.color = 'white';
+                distNumber.textContent = '';
+              } else {
+                lastNumber.textContent = 'Sorry this is not the number';
+                lastNumber.style.backgroundColor = 'OrangeRed';
+                lastNumber.style.color = 'white';
+                // check the number was low or high
+                if (numberSubmit < numRand) {
+                  distNumber.textContent =
+                    'The number was too low, try again...';
+                } else {
+                  distNumber.textContent =
+                    'The number was too high, try again...';
                 }
-                // wait for user input and run function
-                numberSubmit.addEventListener('click',checkNumber);
-            </script>
-        </div>
+              }
+              // increase counter and clear fields
+              countNumber++;
+              numberField.value = '';
+              numberField.focus();
+            } else {
+              lastNumber.textContent =
+                'Please only enter numbers between 1 to 50, try again...';
+              lastNumber.style.backgroundColor = 'OrangeRed';
+              lastNumber.style.color = 'white';
+              numberField.value = '';
+              numberField.focus();
+            }
+          }
+          // wait for user input and run function
+          numberSubmit.addEventListener('click', checkNumber);
+        </script>
+      </div>
     </div>
     <!-- 4th row of text -->
     <div class="last-row">
-        <div class="s2">
-            <div class="main-container">
-                <div id="dot-12" class="browser-dot"> </div>
-                <a href="about.html"> About me</a>
-            </div>
+      <div class="s2">
+        <div class="main-container">
+          <div id="dot-12" class="browser-dot"></div>
+          <a href="about.html"> About me</a>
         </div>
-        <div class="s1">
-            <div class="main-container">
-            <div id="dot-22" class="browser-dot"> </div>
-            <a href="projects.html"> My Projects</a>
-            </div>
+      </div>
+      <div class="s1">
+        <div class="main-container">
+          <div id="dot-22" class="browser-dot"></div>
+          <a href="projects.html"> My Projects</a>
         </div>
-        <div class="s2">
-            <div class="main-container">
-            <div id="dot-32" class="browser-dot"> </div>
-            <a href="contact.html"> Contact & More Info</a>
-            </div>
+      </div>
+      <div class="s2">
+        <div class="main-container">
+          <div id="dot-32" class="browser-dot"></div>
+          <a href="contact.html"> Contact & More Info</a>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
