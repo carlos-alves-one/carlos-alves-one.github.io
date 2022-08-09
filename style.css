@@ -1,0 +1,133 @@
+/* create variables */
+:root{
+    --mainColor:#d2b48c;
+    --secondaryColor:#fff;
+	--borderColor:#c1c1c1;
+	--mainText: black;
+	--secondaryText: #4b5156;
+}
+/* setup background color */
+body{
+    background-color: var(--mainColor);
+}
+/* setup greeting wrapper */
+.greeting-wrapper{
+    background-color: var(--mainColor);
+	display: grid;
+	text-align: center;
+	min-height: 10em;
+}
+/* setup all my tags */
+h1, h2, h3, h4, h5, h6, strong{
+	color: var(--mainText);
+	font-family: 'Russso One', sans-serif;
+	font-weight: 500;
+}
+p, div, li, span, label, input, textarea{
+	color: var(--secondaryText);
+	font-family: 'Roboto Mono', monospace;
+}
+/* remove the underline for the links 
+and give some color*/
+a{
+	text-decoration: none;
+	color:#D2691E;
+}
+/* remove the bullets from the lists */
+ul, li{
+	list-style: none;
+}
+/* setup the size for all headers */
+h1 { font-size: 56px;}
+h2 { font-size: 36px;}
+h3 { font-size: 28px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 16px;}
+/* to draw three dots with colors at left side of the row */
+.dots-wrapper{
+	display: flex;
+	padding: 10px;
+	margin-left:20px;
+    width: 50px;
+}
+#dot-1, #dot-12{
+	background-color:  #FC6058;
+}
+
+#dot-2, #dot-22{
+	background-color:  #FEC02F;
+}
+#dot-3, #dot-32{
+	background-color:  #2ACA3E;
+}
+.browser-dot{
+	background-color: black;
+	height: 15px;
+	width: 15px;
+	margin: 5px;
+	/* shadow code from 
+	https://www.cssmatic.com/box-shadow */
+	-webkit-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	-moz-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+}
+.nav-wrapper{
+    background-color: white;
+    float: left;
+}
+#my-title{
+    background-color: white;
+    height: 45px;
+    line-height: 45px;
+}
+/* 3rd row */
+.left-column{
+	background-color: white;
+    padding: 15px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	/* shadow code from 
+	https://www.cssmatic.com/box-shadow */
+	-webkit-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	-moz-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+}
+/* 4th row */
+.right-column{
+	grid-area: right-column;
+	float: right;
+	align-content: center;
+
+	padding-top: 5px;
+	padding-right: 75px;
+	padding-bottom: 25px;
+}
+#profilePic{
+	height: 120px;
+	width: 120px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 50%;
+	margin-left: 15px;
+	margin-top: 0px;
+	object-fit: cover;
+	border: 2px solid var(--borderColor); 
+	/* shadow code from 
+	https://www.cssmatic.com/box-shadow */
+	-webkit-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	-moz-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+}
+.last-row{
+    background-color: white;
+    display align-self: auto;
+    padding: 15px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+    /* shadow code from 
+	https://www.cssmatic.com/box-shadow */
+	-webkit-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	-moz-box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+	box-shadow: 4px 6px 5px 0px rgba(0,0,0,0.41);
+}
