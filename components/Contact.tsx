@@ -31,25 +31,29 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-900 to-navy-950 relative">
+      {/* Decorative Elements */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-beige-500/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get In Touch
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to transform your back-office operations? Book a free 30-minute Spreadsheet Audit 
             or reach out to discuss your specific needs.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+          <div className="card">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-base font-medium text-gray-300 mb-2"
                 >
                   Your Name
                 </label>
@@ -60,14 +64,16 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg 
+                           focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none 
+                           transition text-white text-base"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-base font-medium text-gray-300 mb-2"
                 >
                   Email Address
                 </label>
@@ -78,14 +84,16 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg 
+                           focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none 
+                           transition text-white text-base"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-base font-medium text-gray-300 mb-2"
                 >
                   Company / Operation
                 </label>
@@ -95,14 +103,16 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg 
+                           focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none 
+                           transition text-white text-base"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-base font-medium text-gray-300 mb-2"
                 >
                   Message
                 </label>
@@ -113,14 +123,16 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent outline-none transition resize-none"
-                  placeholder="Tell me about the weekly report that's taking too much time..."
+                  className="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg 
+                           focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none 
+                           transition resize-none text-white text-base"
+                  placeholder="Tell me about the weekly report that&apos;s taking too much time..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
+                className="btn-primary w-full text-lg glow-orange"
               >
                 {isSubmitted ? 'Message Sent!' : 'Send Message'}
               </button>
@@ -128,39 +140,60 @@ export default function Contact() {
           </div>
 
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
+            <div className="card">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                Contact <span className="gradient-text">Information</span>
               </h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <FaLinkedin className="text-primary-600 text-2xl mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-orange-500/10 p-3 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                    <FaEnvelope className="text-orange-500 text-2xl flex-shrink-0" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">LinkedIn</h4>
+                    <h4 className="font-semibold text-white mb-1 text-lg">Email</h4>
+                    <a
+                      href="mailto:carlos.alves.one@gmail.com"
+                      className="text-orange-400 hover:text-orange-300 transition text-base"
+                    >
+                      carlos.alves.one@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-orange-500/10 p-3 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                    <FaLinkedin className="text-orange-500 text-2xl flex-shrink-0" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1 text-lg">LinkedIn</h4>
                     <a
                       href="https://www.linkedin.com/in/carlos-alves-one"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700 transition"
+                      className="text-orange-400 hover:text-orange-300 transition text-base"
                     >
                       linkedin.com/in/carlos-alves-one
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <FaMapMarkerAlt className="text-primary-600 text-2xl mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-orange-500/10 p-3 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                    <FaMapMarkerAlt className="text-orange-500 text-2xl flex-shrink-0" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-                    <p className="text-gray-600">London, England, United Kingdom</p>
+                    <h4 className="font-semibold text-white mb-1 text-lg">Location</h4>
+                    <p className="text-gray-300 text-base">London, England, United Kingdom</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <FaClock className="text-primary-600 text-2xl mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-orange-500/10 p-3 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                    <FaClock className="text-orange-500 text-2xl flex-shrink-0" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Availability</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-white mb-1 text-lg">Availability</h4>
+                    <p className="text-gray-300 text-base">
                       Taking on a limited number of founding clients
                     </p>
                   </div>
@@ -168,28 +201,37 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-primary-50 p-6 rounded-xl">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
+            <div className="card bg-gradient-to-br from-orange-500/10 to-orange-600/5 border-2 border-orange-500/30">
+              <h4 className="text-xl md:text-2xl font-bold text-white mb-3">
                 Free Spreadsheet Audit
               </h4>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-300 mb-4 text-base leading-relaxed">
                 Show me one weekly report, and I&apos;ll talk you through the 2-3 quick wins 
                 I&apos;d start with, on the call. No obligation.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-400">
                 Currently offering founding clients a free audit plus the first fix at a 
                 reduced rate, in return for an anonymised case study.
               </p>
             </div>
 
-            <div className="bg-gray-100 p-6 rounded-xl">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">
+            <div className="card bg-navy-900/50">
+              <h4 className="text-xl md:text-2xl font-bold text-white mb-3">
                 What to Prepare
               </h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>• One weekly report that takes too long to build</li>
-                <li>• Notes on where the data comes from</li>
-                <li>• Rough estimate of time spent on it each week</li>
+              <ul className="space-y-2 text-gray-300 text-base">
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  One weekly report that takes too long to build
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  Notes on where the data comes from
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  Rough estimate of time spent on it each week
+                </li>
               </ul>
             </div>
           </div>

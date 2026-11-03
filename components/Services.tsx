@@ -35,13 +35,17 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-900 to-navy-800 relative">
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-beige-500/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How I Help
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            How I <span className="gradient-text">Help</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Practical solutions for hospitality and catering operations. Built inside the spreadsheets 
             you already use, not a new platform.
           </p>
@@ -51,22 +55,22 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="card group"
             >
-              <service.icon className="text-primary-600 text-5xl mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <service.icon className="text-orange-500 text-6xl mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-2xl font-bold text-white mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <p className="text-gray-300 leading-relaxed text-base">{service.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-700 mb-6">
-            Every engagement starts with a <strong>free 30-minute Spreadsheet Audit</strong>
+        <div className="mt-16 text-center bg-navy-800/50 backdrop-blur-sm p-8 rounded-2xl border border-orange-500/20">
+          <p className="text-xl text-white mb-4 font-semibold">
+            Every engagement starts with a <span className="text-orange-400">free 30-minute Spreadsheet Audit</span>
           </p>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">
             Show me one weekly report, and I&apos;ll walk you through 2-3 quick wins on the call. 
             No new platform. No monthly subscription. Just practical improvements to the tools you already use.
           </p>
