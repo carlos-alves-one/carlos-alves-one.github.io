@@ -173,8 +173,8 @@ export default function Contact() {
                 Free Spreadsheet Audit
               </h4>
               <p className="text-gray-600 mb-4">
-                Show me one weekly report, and I'll talk you through the 2-3 quick wins 
-                I'd start with, on the call. No obligation.
+                Show me one weekly report, and I&apos;ll talk you through the 2-3 quick wins 
+                I&apos;d start with, on the call. No obligation.
               </p>
               <p className="text-sm text-gray-500">
                 Currently offering founding clients a free audit plus the first fix at a 

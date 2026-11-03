@@ -23,7 +23,7 @@ export default function About() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Former purchasing manager at Aqua Restaurant Group in London, running beverage 
-                  purchasing for a site with two restaurants. I've lived the problem: manual invoice 
+                  purchasing for a site with two restaurants. I&apos;ve lived the problem: manual invoice 
                   entry, monthly stocktakes that never quite matched, and weekly reports that took 
                   hours to compile.
                 </p>
@@ -52,7 +52,7 @@ export default function About() {
                   The Approach
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  I don't sell a platform or a subscription. I work inside the spreadsheets you 
+                  I don&apos;t sell a platform or a subscription. I work inside the spreadsheets you 
                   already use, removing the re-keying from your weekly reports and building simple 
                   forecasts your team can explain. Every project starts with comparing the new tool 
                   alongside your existing process before you trust it.
@@ -91,7 +91,7 @@ export default function About() {
             Most weekly reports in hospitality are built the same way: someone copies figures from 
             the till into one spreadsheet, then another, then another. By Friday, nobody fully trusts 
             the number. With every site you add, the same back-office jobs get harder: stock counts, 
-            site margins, labour against sales, month-end. That's where I help — turning manual, 
+            site margins, labour against sales, month-end. That&apos;s where I help — turning manual, 
             error-prone routines into measured, forecasted, and automated workflows.
           </p>
         </div>

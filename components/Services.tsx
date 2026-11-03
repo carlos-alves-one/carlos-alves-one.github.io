@@ -29,7 +29,7 @@ const services = [
   {
     icon: FaCog,
     title: 'Process Optimization',
-    description: 'Find where your team\'s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
+    description: 'Find where your team&apos;s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
   },
 ]
 
@@ -67,7 +67,7 @@ export default function Services() {
             Every engagement starts with a <strong>free 30-minute Spreadsheet Audit</strong>
           </p>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Show me one weekly report, and I'll walk you through 2-3 quick wins on the call. 
+            Show me one weekly report, and I&apos;ll walk you through 2-3 quick wins on the call. 
             No new platform. No monthly subscription. Just practical improvements to the tools you already use.
           </p>
         </div>
