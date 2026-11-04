@@ -19,7 +19,7 @@ const services = [
   {
     icon: FaFileInvoiceDollar,
     title: 'Invoice Processing',
-    description: 'Turn supplier invoice photos into structured data. AI reads every line item and feeds your stocktake spreadsheet automatically.',
+    description: 'Supplier invoices checked against orders. See the invoice-to-stocktake demonstration on sample data (not a client project).',
   },
   {
     icon: FaRobot,

@@ -22,12 +22,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Turn Your Spreadsheets Into
-            <span className="block mt-2 gradient-text">Strategic Assets</span>
+            <span className="gradient-text">Costs, orders and sales in one weekly report. No retyping.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            MSc Data Science & AI specialist helping hospitality and catering operations 
-            eliminate manual work through analytics, forecasting, and intelligent automation.
+            I help UK catering and hospitality owners, operations leads and finance leads replace retyped weekly reports with spreadsheets that refresh from their own till, ordering and invoice exports. No new platform, no subscription.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button
