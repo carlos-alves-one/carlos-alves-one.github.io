@@ -44,7 +44,7 @@ export default function About() {
                   Academic Credentials
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-base">
-                  After nearly three decades away from academia, I returned to earn a BSc in 
+                  After 26 years away from academia, I returned to earn a BSc in 
                   Computer Science and an MSc in Data Science & AI from Goldsmiths, University 
                   of London. My thesis built solar radiation forecasting models on 1.7 million 
                   rows of weather data.
