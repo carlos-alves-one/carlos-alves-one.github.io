@@ -9,7 +9,7 @@ const services = [
   {
     icon: FaChartBar,
     title: 'Data Reporting',
-    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week's exports.',
+    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week\'s exports.',
   },
   {
     icon: FaClipboardList,
