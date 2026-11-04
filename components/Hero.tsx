@@ -45,8 +45,8 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="card group">
               <FaChartLine className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-4xl font-bold text-white mb-2">15+ Years</h3>
-              <p className="text-gray-400 text-lg">Industry Experience</p>
+              <h3 className="text-4xl font-bold text-white mb-2">5 years</h3>
+              <p className="text-gray-400 text-lg">Beverage purchasing, Aqua Restaurant Group, London (about £100k a month)</p>
             </div>
             <div className="card group">
               <FaBrain className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
@@ -55,8 +55,8 @@ export default function Hero() {
             </div>
             <div className="card group">
               <FaCheckCircle className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-4xl font-bold text-white mb-2">Real Results</h3>
-              <p className="text-gray-400 text-lg">Hours Saved Weekly</p>
+              <h3 className="text-4xl font-bold text-white mb-2">Demos on sample data</h3>
+              <p className="text-gray-400 text-lg">Clearly labelled, not client results</p>
             </div>
           </div>
         </div>
