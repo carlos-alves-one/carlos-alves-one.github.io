@@ -192,10 +192,18 @@ export default function Contact() {
                     <FaClock className="text-orange-500 text-2xl flex-shrink-0" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1 text-lg">Availability</h4>
-                    <p className="text-gray-300 text-base">
-                      Taking on a limited number of founding clients
+                    <h4 className="font-semibold text-white mb-1 text-lg">Booking Slots</h4>
+                    <p className="text-gray-300 text-base mb-2">
+                      Mondays and Fridays, 15:00–18:00 UK
                     </p>
+                    <a
+                      href="https://calendar.app.google/Mkrr1BtdEgPpELHX8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange-400 hover:text-orange-300 transition text-base"
+                    >
+                      Book a free audit
+                    </a>
                   </div>
                 </div>
               </div>
@@ -203,15 +211,13 @@ export default function Contact() {
 
             <div className="card bg-gradient-to-br from-orange-500/10 to-orange-600/5 border-2 border-orange-500/30">
               <h4 className="text-xl md:text-2xl font-bold text-white mb-3">
-                Free Spreadsheet Audit
+                Free 30-minute Spreadsheet Audit
               </h4>
               <p className="text-gray-300 mb-4 text-base leading-relaxed">
-                Show me one weekly report, and I&apos;ll talk you through the 2-3 quick wins 
-                I&apos;d start with, on the call. No obligation.
+                Free 30-minute Spreadsheet Audit (Google Meet video call). Bring one weekly report you rebuild by hand and share it on screen (a redacted copy is fine). If you can, note where the data comes from and roughly how long it takes each week. I&apos;ll show you the 2–3 changes I&apos;d make first, then email a written summary within 2 working days. No files sent, no recording, no obligation. Questions: carlos.alves.one@gmail.com
               </p>
               <p className="text-sm text-gray-400">
-                Currently offering founding clients a free audit plus the first fix at a 
-                reduced rate, in return for an anonymised case study.
+                Founding clients: my first 3 clients get the Reporting Review at a reduced rate in return for an anonymised case study.
               </p>
             </div>
 
