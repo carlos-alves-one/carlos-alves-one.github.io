@@ -9,17 +9,17 @@ const services = [
   {
     icon: FaChartBar,
     title: 'Data Reporting',
-    description: 'Transform scattered data into actionable insights. Weekly sales vs. labour, margin analysis, and KPI dashboards that update automatically.',
+    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week\'s exports.',
   },
   {
     icon: FaClipboardList,
     title: 'Forecasting & Planning',
-    description: 'Build demand forecasts your team can explain and trust. Weather-aware prep planning and ordering automation tailored to your operation.',
+    description: 'Simple ordering forecasts your chef can follow and check.',
   },
   {
     icon: FaFileInvoiceDollar,
     title: 'Invoice Processing',
-    description: 'Turn supplier invoice photos into structured data. AI reads every line item and feeds your stocktake spreadsheet automatically.',
+    description: 'Supplier invoices checked against orders. See the invoice-to-stocktake demonstration on sample data (not a client project).',
   },
   {
     icon: FaRobot,

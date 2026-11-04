@@ -22,12 +22,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Turn Your Spreadsheets Into
-            <span className="block mt-2 gradient-text">Strategic Assets</span>
+            <span className="gradient-text">Costs, orders and sales in one weekly report. No retyping.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            MSc Data Science & AI specialist helping hospitality and catering operations 
-            eliminate manual work through analytics, forecasting, and intelligent automation.
+            I help UK catering and hospitality owners, operations leads and finance leads replace retyped weekly reports with spreadsheets that refresh from their own till, ordering and invoice exports. No new platform, no subscription.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button
@@ -47,8 +45,8 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="card group">
               <FaChartLine className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-4xl font-bold text-white mb-2">15+ Years</h3>
-              <p className="text-gray-400 text-lg">Industry Experience</p>
+              <h3 className="text-4xl font-bold text-white mb-2">5 years</h3>
+              <p className="text-gray-400 text-lg">Beverage purchasing, Aqua Restaurant Group, London (about £100k a month)</p>
             </div>
             <div className="card group">
               <FaBrain className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
@@ -57,8 +55,8 @@ export default function Hero() {
             </div>
             <div className="card group">
               <FaCheckCircle className="text-orange-500 text-5xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-4xl font-bold text-white mb-2">Real Results</h3>
-              <p className="text-gray-400 text-lg">Hours Saved Weekly</p>
+              <h3 className="text-4xl font-bold text-white mb-2">Demos on sample data</h3>
+              <p className="text-gray-400 text-lg">Clearly labelled, not client results</p>
             </div>
           </div>
         </div>

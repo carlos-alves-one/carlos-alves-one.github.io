@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaBriefcase, FaCheckCircle, FaLightbulb } from 'react-icons/fa'
+import { FaGraduationCap, FaBriefcase, FaCheckCircle, FaLightbulb, FaInfoCircle } from 'react-icons/fa'
 
 export default function About() {
   return (
@@ -28,9 +28,9 @@ export default function About() {
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-base">
                   Former purchasing manager at Aqua Restaurant Group in London, running beverage 
-                  purchasing for a site with two restaurants. I&apos;ve lived the problem: manual invoice 
-                  entry, monthly stocktakes that never quite matched, and weekly reports that took 
-                  hours to compile.
+                  purchasing for a site with two restaurants and six bars (about £100k a month). 
+                  I&apos;ve lived the problem: manual invoice entry, monthly stocktakes that never 
+                  quite matched, and weekly reports that took hours to compile.
                 </p>
               </div>
             </div>
@@ -44,10 +44,24 @@ export default function About() {
                   Academic Credentials
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-base">
-                  After nearly three decades away from academia, I returned to earn a BSc in 
+                  After 26 years away from academia, I returned to earn a BSc in 
                   Computer Science and an MSc in Data Science & AI from Goldsmiths, University 
                   of London. My thesis built solar radiation forecasting models on 1.7 million 
                   rows of weather data.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 group">
+              <div className="bg-orange-500/10 p-4 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                <FaInfoCircle className="text-orange-500 text-4xl flex-shrink-0" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  Status
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-base">
+                  Independent Data & AI Consultant since September 2024, after my MSc. My consultancy work is conducted under strict confidentiality, protecting client information.
                 </p>
               </div>
             </div>
@@ -63,8 +77,8 @@ export default function About() {
                 <p className="text-gray-300 leading-relaxed text-base">
                   I don&apos;t sell a platform or a subscription. I work inside the spreadsheets you 
                   already use, removing the re-keying from your weekly reports and building simple 
-                  forecasts your team can explain. Every project starts with comparing the new tool 
-                  alongside your existing process before you trust it.
+                  forecasts your team can explain. Every engagement will start by running the new 
+                  spreadsheet alongside your existing process before you rely on it.
                 </p>
               </div>
             </div>
@@ -76,11 +90,11 @@ export default function About() {
             </h3>
             <ul className="space-y-4">
               {[
-                'Real operations experience in hospitality and catering',
+                'Five years running beverage purchasing for a London restaurant group',
                 'Data science expertise (MSc from Goldsmiths)',
                 'Solutions that work in Excel, not a new platform',
                 'Always run new tools alongside existing processes first',
-                'Focus on hours saved, not technology for its own sake',
+                'Aims to cut the hours your team spends retyping reports, not to sell you technology',
                 'Free 30-minute Spreadsheet Audit to start',
               ].map((item, index) => (
                 <li key={index} className="flex items-start space-x-3 group">
