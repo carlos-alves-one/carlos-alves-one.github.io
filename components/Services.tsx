@@ -27,7 +27,7 @@ const allServices = [
   {
     icon: FaChartBar,
     title: 'Data Reporting',
-    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week&apos;s exports.',
+    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week\'s exports.',
   },
   {
     icon: FaClipboardList,
@@ -47,7 +47,7 @@ const allServices = [
   {
     icon: FaCog,
     title: 'Process Optimization',
-    description: 'Find where your team&apos;s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
+    description: 'Find where your team\'s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
   },
 ]
 
