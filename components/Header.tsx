@@ -60,6 +60,12 @@ export default function Header() {
                 Services
               </button>
               <button
+                onClick={() => scrollToSection('about')}
+                className="text-gray-700 hover:text-navy-900 transition-colors duration-200 text-base font-medium"
+              >
+                About
+              </button>
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-navy-900 transition-colors duration-200 text-base font-medium"
               >
@@ -69,7 +75,7 @@ export default function Header() {
                 href="mailto:carlos.alves.one@gmail.com"
                 className="btn-primary text-base"
               >
-                Get in touch
+                Book Free Audit
               </a>
             </nav>
 
@@ -111,6 +117,12 @@ export default function Header() {
             Services
           </button>
           <button
+            onClick={() => scrollToSection('about')}
+            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
+          >
+            About
+          </button>
+          <button
             onClick={() => scrollToSection('contact')}
             className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
           >
@@ -121,7 +133,7 @@ export default function Header() {
             className="btn-primary text-lg"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Get in touch
+            Book Free Audit
           </a>
         </nav>
       </div>

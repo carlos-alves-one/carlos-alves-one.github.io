@@ -17,8 +17,8 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
           <div className="space-y-8">
             <div className="flex items-start space-x-4 group">
-              <div className="bg-blue-50 p-4 rounded-lg group-hover:bg-blue-100 transition-colors">
-                <FaBriefcase className="text-blue-600 text-4xl flex-shrink-0" />
+              <div className="bg-accent-50 p-4 rounded-lg group-hover:bg-accent-100 transition-colors">
+                <FaBriefcase className="text-accent-500 text-4xl flex-shrink-0" />
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -34,8 +34,8 @@ export default function About() {
             </div>
 
             <div className="flex items-start space-x-4 group">
-              <div className="bg-blue-50 p-4 rounded-lg group-hover:bg-blue-100 transition-colors">
-                <FaGraduationCap className="text-blue-600 text-4xl flex-shrink-0" />
+              <div className="bg-accent-50 p-4 rounded-lg group-hover:bg-accent-100 transition-colors">
+                <FaGraduationCap className="text-accent-500 text-4xl flex-shrink-0" />
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -51,8 +51,8 @@ export default function About() {
             </div>
 
             <div className="flex items-start space-x-4 group">
-              <div className="bg-blue-50 p-4 rounded-lg group-hover:bg-blue-100 transition-colors">
-                <FaInfoCircle className="text-blue-600 text-4xl flex-shrink-0" />
+              <div className="bg-accent-50 p-4 rounded-lg group-hover:bg-accent-100 transition-colors">
+                <FaInfoCircle className="text-accent-500 text-4xl flex-shrink-0" />
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -65,8 +65,8 @@ export default function About() {
             </div>
 
             <div className="flex items-start space-x-4 group">
-              <div className="bg-blue-50 p-4 rounded-lg group-hover:bg-blue-100 transition-colors">
-                <FaLightbulb className="text-blue-600 text-4xl flex-shrink-0" />
+              <div className="bg-accent-50 p-4 rounded-lg group-hover:bg-accent-100 transition-colors">
+                <FaLightbulb className="text-accent-500 text-4xl flex-shrink-0" />
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -82,8 +82,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="card border-2 border-blue-100">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <div className="bg-white p-8 rounded-xl border-2 border-gray-200">
+            <h3 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">
               What Makes This Different
             </h3>
             <ul className="space-y-4">
@@ -96,19 +96,19 @@ export default function About() {
                 'Free 30-minute Spreadsheet Audit to start',
               ].map((item, index) => (
                 <li key={index} className="flex items-start space-x-3 group">
-                  <FaCheckCircle className="text-blue-600 text-xl mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-gray-600 text-base leading-relaxed">{item}</span>
+                  <FaCheckCircle className="text-accent-500 text-xl mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-700 text-base leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="card border-2 border-blue-100">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+        <div className="bg-white p-8 rounded-xl border-2 border-gray-200">
+          <h3 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4 text-center">
             The Problem I Solve
           </h3>
-          <p className="text-gray-600 leading-relaxed text-lg max-w-4xl mx-auto text-center">
+          <p className="text-gray-700 leading-relaxed text-lg max-w-4xl mx-auto text-center">
             Most weekly reports in hospitality are built the same way: someone copies figures from 
             the till into one spreadsheet, then another, then another. By Friday, nobody fully trusts 
             the number. With every site you add, the same back-office jobs get harder: stock counts, 

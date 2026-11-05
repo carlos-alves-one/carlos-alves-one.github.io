@@ -1,6 +1,6 @@
-import { FaChartBar, FaTable, FaBrain } from 'react-icons/fa'
+import { FaChartBar, FaTable, FaBrain, FaRobot, FaClipboardList, FaCog, FaFileInvoiceDollar } from 'react-icons/fa'
 
-const services = [
+const featuredServices = [
   {
     icon: FaTable,
     title: 'Reporting automation',
@@ -18,13 +18,59 @@ const services = [
   },
 ]
 
+const allServices = [
+  {
+    icon: FaTable,
+    title: 'Spreadsheet Automation',
+    description: 'Eliminate manual data entry from your weekly reports. Connect your till exports, invoices, and stock counts into one automated workflow.',
+  },
+  {
+    icon: FaChartBar,
+    title: 'Data Reporting',
+    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week&apos;s exports.',
+  },
+  {
+    icon: FaClipboardList,
+    title: 'Forecasting & Planning',
+    description: 'Simple ordering forecasts your chef can follow and check.',
+  },
+  {
+    icon: FaFileInvoiceDollar,
+    title: 'Invoice Processing',
+    description: 'Supplier invoices checked against orders. See the invoice-to-stocktake demonstration on sample data (not a client project).',
+  },
+  {
+    icon: FaRobot,
+    title: 'AI Integration',
+    description: 'Careful AI implementation for back-office tasks: cash reconciliation, menu pricing, schedule drafting. Run alongside your existing process first.',
+  },
+  {
+    icon: FaCog,
+    title: 'Process Optimization',
+    description: 'Find where your team&apos;s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
+  },
+]
+
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-8 sm:px-12 lg:px-16 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-gray-200">
+    <section id="services" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <p className="text-xs sm:text-sm font-bold text-accent-500 tracking-[0.2em] uppercase mb-4">
+            Services
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+            How I Help
+          </h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Practical solutions for hospitality and catering operations. Built inside the spreadsheets 
+            you already use, not a new platform.
+          </p>
+        </div>
+
+        <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-gray-200 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {featuredServices.map((service, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-xl border border-gray-200"
@@ -37,6 +83,31 @@ export default function Services() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {allServices.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-accent-500 transition-all duration-200"
+            >
+              <service.icon className="text-accent-500 text-5xl mb-4" />
+              <h3 className="text-xl font-bold text-navy-900 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-700 leading-relaxed">{service.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-accent-50 p-8 rounded-2xl border-2 border-accent-200">
+          <p className="text-xl text-navy-900 mb-4 font-semibold text-center">
+            Every engagement starts with a <span className="text-accent-600">free 30-minute Spreadsheet Audit</span>
+          </p>
+          <p className="text-gray-700 max-w-2xl mx-auto text-base leading-relaxed text-center">
+            Show me one weekly report, and I&apos;ll walk you through 2-3 quick wins on the call. 
+            No new platform. No monthly subscription. Just practical improvements to the tools you already use.
+          </p>
         </div>
       </div>
     </section>
