@@ -29,7 +29,7 @@ const services = [
   {
     icon: FaCog,
     title: 'Process Optimization',
-    description: 'Find where your team&apos;s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
+    description: 'Find where your team\'s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
   },
 ]
 

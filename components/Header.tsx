@@ -42,7 +42,7 @@ export default function Header() {
           isScrolled 
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' 
             : 'bg-white'
-        }`}
+        } ${isMobileMenuOpen ? 'md:block hidden' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -80,11 +80,11 @@ export default function Header() {
             </nav>
 
             <button
-              className="md:hidden text-gray-700 hover:text-gray-900 transition-colors z-50 relative"
+              className="md:hidden text-gray-700 hover:text-gray-900 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+              <FaBars size={28} />
             </button>
           </div>
         </div>
@@ -92,15 +92,15 @@ export default function Header() {
 
       {/* Mobile Menu Overlay - Full Screen White */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out ${
+        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
         }`}
       >
         <div className="absolute inset-0 bg-white">
-          <div className="h-full flex flex-col px-6 pt-20">
-            <div className="flex justify-between items-center mb-12">
+          <div className="h-full flex flex-col px-6 pt-4">
+            <div className="flex justify-between items-center py-4 mb-8">
               <h1 className="text-2xl font-bold text-gray-900">
                 Carlos Alves Consulting
               </h1>
