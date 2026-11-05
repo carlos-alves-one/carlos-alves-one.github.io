@@ -171,7 +171,7 @@ export default function Hero() {
             </div>
             <h3 className="text-2xl font-bold text-navy-900 mb-2">Demos on sample data</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
-              Interactive demonstrations below run on clearly labelled dummy data — client confidentiality guaranteed.
+              Interactive demonstrations on this page use clearly labelled dummy data to protect client confidentiality.
             </p>
           </div>
         </div>
