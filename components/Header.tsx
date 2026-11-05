@@ -1,11 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { useState, useEffect, useRef } from 'react'
+import { FaBars, FaTimes, FaChevronRight } from 'react-icons/fa'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const firstMenuItemRef = useRef<HTMLButtonElement>(null)
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,12 +30,38 @@ export default function Header() {
     }
   }, [isMobileMenuOpen])
 
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+    
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape)
+      // Move focus to first menu item when menu opens
+      setTimeout(() => firstMenuItemRef.current?.focus(), 100)
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isMobileMenuOpen])
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
       setIsMobileMenuOpen(false)
+      // Return focus to hamburger button
+      setTimeout(() => menuButtonRef.current?.focus(), 300)
     }
+  }
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
@@ -80,9 +109,12 @@ export default function Header() {
             </nav>
 
             <button
+              ref={menuButtonRef}
               className="md:hidden text-gray-700 hover:text-navy-900 transition-colors z-50"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              onClick={toggleMenu}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -90,51 +122,101 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - Full Screen */}
+      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out ${
+        id="mobile-menu"
+        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+          prefersReducedMotion ? '' : 'ease-in-out'
+        } ${
           isMobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
+        {/* Backdrop with gradient glow and grid */}
         <div 
-          className="absolute inset-0 bg-white/95 backdrop-blur-lg"
+          className="absolute inset-0 bg-white"
           onClick={() => setIsMobileMenuOpen(false)}
-        ></div>
+        >
+          {/* Subtle grid background */}
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `
+              linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px),
+              linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }} />
+          
+          {/* Soft gradient glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-accent-100/40 via-transparent to-accent-200/30" />
+        </div>
 
         {/* Menu Content */}
         <nav 
-          className={`relative h-full flex flex-col justify-center items-center space-y-8 transform transition-transform duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          className={`relative h-full flex flex-col pt-24 px-6 pb-8 transform transition-all duration-300 ${
+            prefersReducedMotion ? '' : 'ease-out'
+          } ${
+            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
           }`}
         >
-          <button
-            onClick={() => scrollToSection('services')}
-            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection('about')}
-            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
-          >
-            Contact
-          </button>
-          <a
-            href="mailto:carlos.alves.one@gmail.com"
-            className="btn-primary text-lg"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Book Free Audit
-          </a>
+          <div className="flex-1 flex flex-col justify-center space-y-3 max-w-md mx-auto w-full">
+            {/* Services */}
+            <button
+              ref={firstMenuItemRef}
+              onClick={() => scrollToSection('services')}
+              className={`group w-full flex items-center justify-between bg-white rounded-xl border border-gray-200 px-6 py-5 shadow-sm hover:shadow-md hover:border-accent-300 hover:bg-accent-50/30 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 ${
+                prefersReducedMotion ? '' : 'hover:-translate-y-0.5'
+              } ${
+                isMobileMenuOpen && !prefersReducedMotion ? 'animate-slideIn' : ''
+              }`}
+              style={!prefersReducedMotion ? { animationDelay: '0ms' } : {}}
+            >
+              <span className="text-navy-900 text-[28px] font-bold">Services</span>
+              <FaChevronRight className="text-accent-500 text-xl group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+
+            {/* About */}
+            <button
+              onClick={() => scrollToSection('about')}
+              className={`group w-full flex items-center justify-between bg-white rounded-xl border border-gray-200 px-6 py-5 shadow-sm hover:shadow-md hover:border-accent-300 hover:bg-accent-50/30 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 ${
+                prefersReducedMotion ? '' : 'hover:-translate-y-0.5'
+              } ${
+                isMobileMenuOpen && !prefersReducedMotion ? 'animate-slideIn' : ''
+              }`}
+              style={!prefersReducedMotion ? { animationDelay: '50ms' } : {}}
+            >
+              <span className="text-navy-900 text-[28px] font-bold">About</span>
+              <FaChevronRight className="text-accent-500 text-xl group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+
+            {/* Contact */}
+            <button
+              onClick={() => scrollToSection('contact')}
+              className={`group w-full flex items-center justify-between bg-white rounded-xl border border-gray-200 px-6 py-5 shadow-sm hover:shadow-md hover:border-accent-300 hover:bg-accent-50/30 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 ${
+                prefersReducedMotion ? '' : 'hover:-translate-y-0.5'
+              } ${
+                isMobileMenuOpen && !prefersReducedMotion ? 'animate-slideIn' : ''
+              }`}
+              style={!prefersReducedMotion ? { animationDelay: '100ms' } : {}}
+            >
+              <span className="text-navy-900 text-[28px] font-bold">Contact</span>
+              <FaChevronRight className="text-accent-500 text-xl group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+
+            {/* Book Free Audit Button */}
+            <a
+              href="mailto:carlos.alves.one@gmail.com"
+              className={`w-full mt-6 bg-accent-500 text-white px-6 py-5 rounded-xl font-bold text-lg shadow-md hover:bg-accent-600 hover:shadow-lg transition-all duration-200 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 ${
+                prefersReducedMotion ? '' : 'hover:-translate-y-0.5'
+              } ${
+                isMobileMenuOpen && !prefersReducedMotion ? 'animate-slideIn' : ''
+              }`}
+              style={!prefersReducedMotion ? { animationDelay: '150ms' } : {}}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Book Free Audit
+            </a>
+          </div>
         </nav>
       </div>
     </>
