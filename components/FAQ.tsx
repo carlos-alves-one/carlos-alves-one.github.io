@@ -1,0 +1,80 @@
+'use client'
+
+import { useState } from 'react'
+import { FaChevronDown } from 'react-icons/fa'
+
+const faqs = [
+  {
+    q: 'Will we need to buy new software or subscriptions?',
+    a: 'No. Everything is built inside the spreadsheets you already own — typically Excel or Google Sheets — plus free built-in tools like Power Query. There are no licences to pay, no monthly subscriptions, and nothing to rent.',
+  },
+  {
+    q: 'How do you handle confidentiality and GDPR?',
+    a: 'My consultancy work is conducted under strict confidentiality. I work under a written data processing agreement, never disclose client data, and remove my access as soon as the project ends. The demonstrations on this website use anonymised dummy data — clearly labelled, and never taken from client projects.',
+  },
+  {
+    q: 'What actually happens in the free 30-minute Spreadsheet Audit?',
+    a: 'You share one weekly report on screen (a redacted copy is fine). I walk you through the 2–3 changes I would make first and email a written summary within two working days. No files are transferred, nothing is recorded, and there is no obligation to continue.',
+  },
+  {
+    q: 'How does your pricing work?',
+    a: 'Every stage is fixed-price and agreed in writing before work starts. The Reporting Review even includes a full refund guarantee: if any of the three agreed deliverables is missing by the agreed date, you get your money back. That review fee is also deducted from any follow-on build signed within 12 months.',
+  },
+  {
+    q: 'Who owns what you build?',
+    a: 'You do. Every formula is unlocked, you receive written handover notes so your team can run and adapt the report yourselves, and I am available afterward only if you want me to be.',
+  },
+  {
+    q: 'Which businesses are you a good fit for?',
+    a: 'UK catering and hospitality operators — restaurants, bars, cafés, caterers and venues — where weekly reporting is still assembled by hand from till, rota, invoice and stock exports. Usually a free audit is enough to tell whether automation is worth doing.',
+  },
+]
+
+export default function FAQ() {
+  const [open, setOpen] = useState<number | null>(0)
+
+  return (
+    <section id="faq" className="py-20 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-200 scroll-mt-20">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-14">
+          <p className="section-eyebrow">Frequently asked questions</p>
+          <h2 className="section-heading">Everything you might wonder before booking</h2>
+          <p className="section-intro mx-auto">
+            Honest answers upfront. If your question is not here, ask it during the free audit.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((f, i) => {
+            const isOpen = open === i
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition-all"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-navy-900 text-base sm:text-lg hover:text-accent-600 transition-colors"
+                  aria-expanded={isOpen}
+                >
+                  <span>{f.q}</span>
+                  <FaChevronDown
+                    className={`text-accent-500 text-sm flex-shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-6 pb-6 text-sm sm:text-base text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                    {f.a}
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}

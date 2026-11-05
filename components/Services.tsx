@@ -1,117 +1,146 @@
-import { FaChartBar, FaTable, FaBrain, FaRobot, FaClipboardList, FaCog, FaFileInvoiceDollar } from 'react-icons/fa'
+import { FaTable, FaChartBar, FaClipboardList, FaFileInvoiceDollar, FaRobot, FaCog, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa'
 
-const featuredServices = [
+const services = [
   {
     icon: FaTable,
+    category: 'Core',
     title: 'Reporting automation',
-    description: 'Eliminate manual data entry from your weekly reports. Connect your till exports, invoices, and stock counts into one automated workflow.',
+    description: 'Eliminate manual data entry from your weekly reports. Connect your till exports, invoices and stock counts into one automated workflow.',
+    includes: [
+      'Weekly sales, labour and cost reports refreshed in seconds',
+      'One view of spend, orders and stock across sites or events',
+      'Zero new software to buy — built in Excel or Google Sheets',
+    ],
   },
   {
     icon: FaChartBar,
+    category: 'Insight',
     title: 'Business dashboards',
-    description: 'Transform scattered data into actionable insights. Weekly sales vs. labour, margin analysis, and KPI dashboards that update automatically.',
-  },
-  {
-    icon: FaBrain,
-    title: 'Data and AI reviews',
-    description: 'Practical AI implementation for back-office tasks: cash reconciliation, menu pricing, schedule drafting. Run alongside your existing process first.',
-  },
-]
-
-const allServices = [
-  {
-    icon: FaTable,
-    title: 'Spreadsheet Automation',
-    description: 'Eliminate manual data entry from your weekly reports. Connect your till exports, invoices, and stock counts into one automated workflow.',
-  },
-  {
-    icon: FaChartBar,
-    title: 'Data Reporting',
-    description: 'Weekly sales, labour and cost reports that refresh when you drop in the week\'s exports.',
+    description: 'Transform scattered data into actionable insights: weekly sales vs labour, margin analysis and KPI dashboards that update automatically.',
+    includes: [
+      'Site-by-site and event-by-event performance',
+      'Beverage and food gross margin tracking',
+      'Shareable summaries for owners, operations and finance leads',
+    ],
   },
   {
     icon: FaClipboardList,
-    title: 'Forecasting & Planning',
-    description: 'Simple ordering forecasts your chef can follow and check.',
+    category: 'Planning',
+    title: 'Forecasting & planning',
+    description: 'Simple ordering forecasts your chef can follow and check — based on bookings, weather and your historical sales mix.',
+    includes: [
+      'Line-level order recommendations',
+      'Fewer emergency supplier runs and less waste',
+      'Transparent logic anyone can audit',
+    ],
   },
   {
     icon: FaFileInvoiceDollar,
-    title: 'Invoice Processing',
-    description: 'Supplier invoices checked against orders. See the invoice-to-stocktake demonstration on sample data (not a client project).',
+    category: 'Control',
+    title: 'Invoice processing',
+    description: 'Supplier invoices checked against purchase orders and deliveries so price changes, short shipments and duplicate charges are caught before payment.',
+    includes: [
+      'Line-item price and quantity variance checks',
+      'Month-end reconciliation in minutes, not hours',
+      'See the sample demonstration below',
+    ],
   },
   {
     icon: FaRobot,
-    title: 'AI Integration',
-    description: 'Careful AI implementation for back-office tasks: cash reconciliation, menu pricing, schedule drafting. Run alongside your existing process first.',
+    category: 'AI',
+    title: 'Data & AI reviews',
+    description: 'Careful, practical AI for back-office tasks: cash reconciliation, menu pricing and schedule drafting — run alongside your existing process first.',
+    includes: [
+      'Plain-language risk assessment for each use-case',
+      'Pilot on low-risk tasks before any rollout',
+      'Human-in-the-loop by design, GDPR-conscious',
+    ],
   },
   {
     icon: FaCog,
-    title: 'Process Optimization',
-    description: 'Find where your team\'s hours actually go each week. Streamline month-end, stock counts, and site reporting across multiple locations.',
+    category: 'Efficiency',
+    title: 'Process optimisation',
+    description: 'Find where your team’s hours actually go each week. Streamline month-end, stock counts and reporting across multiple locations.',
+    includes: [
+      'Time-based audit of weekly reporting work',
+      'Elimination of copy-paste handoffs between systems',
+      'Written standard operating notes you can keep',
+    ],
   },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50 border-t border-gray-200">
+    <section id="services" className="py-20 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="section-eyebrow">
-            Services
-          </p>
-          <h2 className="section-heading">
-            How I Help
-          </h2>
+        <div className="text-center mb-16">
+          <p className="section-eyebrow">Services</p>
+          <h2 className="section-heading">How I help</h2>
           <p className="section-intro mx-auto">
-            Practical solutions for hospitality and catering operations. Built inside the spreadsheets 
-            you already use, not a new platform.
+            Practical solutions for UK catering and hospitality operations. Built inside the spreadsheets you already use — never a new platform, never a subscription.
           </p>
         </div>
 
-        <div className="bg-white p-8 md:p-12 rounded-xl border border-gray-200 shadow-sm mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredServices.map((service, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-lg border border-gray-100 hover:border-accent-300 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="bg-accent-50 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="text-accent-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {allServices.map((service, index) => (
+        {/* 6 unified service cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-14">
+          {services.map((s, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl border border-gray-200 hover:border-accent-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-2xl p-7 border border-gray-200 shadow-sm hover:border-accent-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="bg-accent-50 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <service.icon className="text-accent-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center">
+                    <s.icon className="text-accent-500 text-xl" />
+                  </div>
+                  <span className="text-[11px] font-bold font-mono tracking-wider uppercase px-2.5 py-1 rounded bg-gray-100 text-gray-700">
+                    {s.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-navy-900 mb-2">{s.title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-5">{s.description}</p>
+                <ul className="space-y-2 text-xs text-gray-600 mb-4 border-t border-gray-100 pt-4">
+                  {s.includes.map((inc, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <FaCheckCircle className="text-accent-500 text-xs mt-0.5 flex-shrink-0" />
+                      <span>{inc}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-navy-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-base">{service.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-accent-50 p-8 rounded-xl border border-accent-200 shadow-sm">
-          <p className="text-xl text-navy-900 mb-4 font-semibold text-center">
-            Every engagement starts with a <span className="text-accent-600">free 30-minute Spreadsheet Audit</span>
-          </p>
-          <p className="text-gray-700 max-w-2xl mx-auto text-base leading-relaxed text-center">
-            Show me one weekly report, and I&apos;ll walk you through 2-3 quick wins on the call. 
-            No new platform. No monthly subscription. Just practical improvements to the tools you already use.
-          </p>
+        {/* Free audit callout */}
+        <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="max-w-2xl text-center lg:text-left">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 mb-3">
+              No cost · No obligation
+            </span>
+            <p className="text-2xl sm:text-3xl text-navy-900 font-extrabold mb-3">
+              Every engagement starts with a free 30-minute Spreadsheet Audit
+            </p>
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+              Show me one weekly report, and I’ll walk you through 2–3 quick wins on the call. No new platform. No monthly subscription. Just practical improvements to the tools you already use.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
+            <a
+              href="https://calendar.app.google/C1hnZvX1jpWYd2bv6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm sm:text-base text-center whitespace-nowrap"
+            >
+              Book the free audit →
+            </a>
+            <a
+              href="mailto:carlos.alves.one@gmail.com"
+              className="btn-secondary text-sm sm:text-base text-center whitespace-nowrap"
+            >
+              Or email me first
+            </a>
+          </div>
         </div>
       </div>
     </section>

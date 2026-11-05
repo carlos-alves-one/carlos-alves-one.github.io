@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
+import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaClock, FaCalendarAlt, FaCheckCircle, FaPaperPlane } from 'react-icons/fa'
+
+const BOOKING_URL = 'https://calendar.app.google/C1hnZvX1jpWYd2bv6'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,51 +12,73 @@ export default function Contact() {
     company: '',
     message: '',
   })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const mailtoBody = () =>
+    `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'n/a'}\n\nMessage:\n${formData.message}`
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', company: '', message: '' })
-    }, 3000)
+    // Open pre-filled email client
+    const subject = encodeURIComponent(`Consulting enquiry from ${formData.name || 'website visitor'}`)
+    const body = encodeURIComponent(mailtoBody())
+    window.location.href = `mailto:carlos.alves.one@gmail.com?subject=${subject}&body=${body}`
+    setSubmitted(true)
   }
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  const handleCopy = () => {
+    navigator.clipboard?.writeText(mailtoBody())
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2500)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   return (
-    <section id="contact" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50 border-t border-gray-200">
+    <section id="contact" className="py-20 px-6 sm:px-10 lg:px-16 bg-white border-t border-gray-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="section-eyebrow">
-            Contact
-          </p>
-          <h2 className="section-heading">
-            Get In Touch
-          </h2>
+          <p className="section-eyebrow">Get in touch</p>
+          <h2 className="section-heading">Start with a conversation, not a contract</h2>
           <p className="section-intro mx-auto">
-            Ready to transform your back-office operations? Book a free 30-minute Spreadsheet Audit 
-            or reach out to discuss your specific needs.
+            Book a free 30-minute Spreadsheet Audit on my calendar, or send a quick note below. I reply within one working day.
           </p>
         </div>
 
+        {/* Calendar CTA banner */}
+        <div className="mb-12 bg-gradient-to-r from-navy-950 via-slate-900 to-navy-900 text-white rounded-2xl p-7 sm:p-9 shadow-lg border border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-accent-300">
+              <FaCalendarAlt /> Google Calendar
+            </div>
+            <p className="text-xl sm:text-2xl font-bold">Book a free discovery call</p>
+            <p className="text-xs sm:text-sm text-slate-300">
+              Mondays and Fridays, 3–6pm (UK time). Different time? Send a note below.
+            </p>
+          </div>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-sm sm:text-base text-center whitespace-nowrap self-start sm:self-auto"
+          >
+            Open booking calendar →
+          </a>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Form */}
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+            <h3 className="text-lg font-bold text-navy-900 mb-1">Send a message</h3>
+            <p className="text-xs text-gray-500 mb-6">Submitting opens your email app with the message pre-filled — nothing is stored on a server.</p>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-base font-medium text-navy-900 mb-2"
-                >
-                  Your Name
+                <label htmlFor="name" className="block text-sm font-semibold text-navy-900 mb-1.5">
+                  Your name *
                 </label>
                 <input
                   type="text"
@@ -63,18 +87,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
-                           transition text-gray-900 text-base"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none text-gray-900 text-sm"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-base font-medium text-navy-900 mb-2"
-                >
-                  Email Address
+                <label htmlFor="email" className="block text-sm font-semibold text-navy-900 mb-1.5">
+                  Email address *
                 </label>
                 <input
                   type="email"
@@ -83,18 +102,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
-                           transition text-gray-900 text-base"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none text-gray-900 text-sm"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="company"
-                  className="block text-base font-medium text-navy-900 mb-2"
-                >
-                  Company / Operation
+                <label htmlFor="company" className="block text-sm font-semibold text-navy-900 mb-1.5">
+                  Company / operation
                 </label>
                 <input
                   type="text"
@@ -102,18 +116,14 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
-                           transition text-gray-900 text-base"
+                  placeholder="e.g. restaurant group, caterer, venue"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none text-gray-900 text-sm"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-base font-medium text-navy-900 mb-2"
-                >
-                  Message
+                <label htmlFor="message" className="block text-sm font-semibold text-navy-900 mb-1.5">
+                  What weekly report or problem would you like help with? *
                 </label>
                 <textarea
                   id="message"
@@ -121,88 +131,90 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none 
-                           transition text-gray-900 text-base resize-none"
+                  rows={4}
+                  placeholder="e.g. Our weekly sales vs labour report is typed by hand from till exports every Monday..."
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none text-gray-900 text-sm resize-none"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full btn-primary text-base"
-              >
-                {isSubmitted ? 'Message Sent!' : 'Send Message'}
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button type="submit" className="btn-primary text-sm flex items-center justify-center gap-2 flex-1">
+                  <FaPaperPlane className="text-xs" /> Send via email app
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  className="btn-secondary text-sm flex items-center justify-center gap-2"
+                >
+                  {copied ? <><FaCheckCircle /> Copied</> : 'Copy message text'}
+                </button>
+              </div>
+
+              {submitted && (
+                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-900 space-y-1">
+                  <p className="font-bold">Email app opened with your message.</p>
+                  <p>If it didn’t appear, copy the text above and send to carlos.alves.one@gmail.com.</p>
+                </div>
+              )}
             </form>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaEnvelope className="text-accent-500 text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-2">Email</h3>
-                  <a
-                    href="mailto:carlos.alves.one@gmail.com"
-                    className="text-accent-500 hover:text-accent-600 transition-colors text-base"
-                  >
-                    carlos.alves.one@gmail.com
-                  </a>
-                </div>
+          {/* Info cards */}
+          <div className="space-y-4">
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-4">
+              <div className="bg-accent-50 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                <FaEnvelope className="text-accent-500 text-xl" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-navy-900">Email</h3>
+                <a
+                  href="mailto:carlos.alves.one@gmail.com"
+                  className="text-accent-600 hover:text-accent-700 text-sm font-semibold underline"
+                >
+                  carlos.alves.one@gmail.com
+                </a>
+                <p className="text-xs text-gray-500 mt-1">Replies within one working day</p>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaLinkedin className="text-accent-500 text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-2">LinkedIn</h3>
-                  <a
-                    href="https://www.linkedin.com/in/carlos-alves-one"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent-500 hover:text-accent-600 transition-colors text-base"
-                  >
-                    carlos-alves-one
-                  </a>
-                </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-4">
+              <div className="bg-accent-50 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                <FaLinkedin className="text-accent-500 text-xl" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-navy-900">LinkedIn</h3>
+                <a
+                  href="https://www.linkedin.com/in/carlos-alves-one"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-600 hover:text-accent-700 text-sm font-semibold underline"
+                >
+                  linkedin.com/in/carlos-alves-one
+                </a>
+                <p className="text-xs text-gray-500 mt-1">Connect or message me there</p>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaMapMarkerAlt className="text-accent-500 text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-2">Location</h3>
-                  <p className="text-gray-700 text-base">London, UK</p>
-                </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-4">
+              <div className="bg-accent-50 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                <FaMapMarkerAlt className="text-accent-500 text-xl" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-navy-900">Location</h3>
+                <p className="text-sm text-gray-700 font-semibold">London, UK</p>
+                <p className="text-xs text-gray-500 mt-1">Serving clients across the UK; video-first, on-site when useful</p>
               </div>
             </div>
 
-            <div className="bg-accent-50 p-6 rounded-xl border border-accent-200 shadow-sm">
-              <div className="flex items-start space-x-4">
-                <div className="bg-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaClock className="text-accent-500 text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-2">Availability</h3>
-                  <p className="text-gray-700 text-base">
-                    Appointments are available on Mondays and Fridays, from 3pm to 6pm. For a different day or time, please{' '}
-                    <a 
-                      href="mailto:carlos.alves.one@gmail.com" 
-                      className="text-accent-500 hover:text-accent-600 underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 rounded"
-                    >
-                      email me
-                    </a>.
-                  </p>
-                </div>
+            <div className="bg-accent-50 p-6 rounded-2xl border border-accent-200 shadow-sm flex items-start gap-4">
+              <div className="bg-white w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                <FaClock className="text-accent-500 text-xl" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-navy-900">Availability</h3>
+                <p className="text-xs sm:text-sm text-gray-700 mt-1 leading-relaxed">
+                  Discovery calls on <strong>Mondays and Fridays, 3–6pm</strong>. Need another time? Just email me with a couple of options that work for you.
+                </p>
               </div>
             </div>
           </div>

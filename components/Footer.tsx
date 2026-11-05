@@ -1,67 +1,82 @@
-import { FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedin, FaEnvelope, FaCalendarAlt } from 'react-icons/fa'
+
+const BOOKING_URL = 'https://calendar.app.google/C1hnZvX1jpWYd2bv6'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-white text-gray-900 py-12 px-8 sm:px-12 lg:px-16 border-t border-gray-200">
+    <footer className="bg-slate-950 text-slate-300 py-14 px-6 sm:px-10 lg:px-16 border-t border-slate-800 text-sm">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-navy-900">
-              Carlos Alves Consulting
-            </h3>
-            <p className="text-gray-700 leading-relaxed text-base">
-              Data Science & AI solutions for hospitality and catering operations. 
-              Turning manual processes into automated workflows.
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-8 h-8 rounded-lg bg-white text-navy-950 font-mono font-extrabold text-sm flex items-center justify-center">
+                CA
+              </span>
+              <span className="text-lg font-bold text-white">Carlos Alves Consulting</span>
+            </div>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
+              Reporting automation, KPI dashboards and practical AI for UK catering and hospitality operations. Built inside the spreadsheets you already own — no new platform, no subscription.
+            </p>
+            <p className="text-xs text-slate-500 mt-3 font-mono">
+              Independent consultant since September 2024 · London, UK
             </p>
           </div>
 
+          {/* Services */}
           <div>
-            <h4 className="text-base font-bold mb-4 text-navy-900">Services</h4>
-            <ul className="space-y-2 text-gray-700 text-base">
-              <li className="hover:text-accent-500 transition-colors">Spreadsheet Automation</li>
-              <li className="hover:text-accent-500 transition-colors">Data Reporting</li>
-              <li className="hover:text-accent-500 transition-colors">Forecasting & Planning</li>
-              <li className="hover:text-accent-500 transition-colors">Invoice Processing</li>
-              <li className="hover:text-accent-500 transition-colors">AI Integration</li>
-              <li className="hover:text-accent-500 transition-colors">Process Optimization</li>
+            <h4 className="text-xs font-bold font-mono uppercase tracking-wider text-white mb-3">Services</h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Reporting automation</a></li>
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Business dashboards</a></li>
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Forecasting &amp; planning</a></li>
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Invoice processing</a></li>
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Data &amp; AI reviews</a></li>
+              <li><a href="#services" className="hover:text-accent-300 transition-colors">Process optimisation</a></li>
             </ul>
           </div>
 
+          {/* Connect */}
           <div>
-            <h4 className="text-base font-bold mb-4 text-navy-900">Connect</h4>
-            <div className="flex space-x-3 mb-4">
+            <h4 className="text-xs font-bold font-mono uppercase tracking-wider text-white mb-3">Connect</h4>
+            <div className="flex gap-2 mb-4">
               <a
                 href="https://www.linkedin.com/in/carlos-alves-one"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-accent-500 transition-all bg-gray-50 p-3 rounded-lg hover:bg-accent-50 border border-gray-200 hover:border-accent-300"
+                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin size={18} />
               </a>
               <a
                 href="mailto:carlos.alves.one@gmail.com"
-                className="text-gray-700 hover:text-accent-500 transition-all bg-gray-50 p-3 rounded-lg hover:bg-accent-50 border border-gray-200 hover:border-accent-300"
+                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
                 aria-label="Email"
               >
-                <FaEnvelope size={24} />
+                <FaEnvelope size={18} />
+              </a>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                aria-label="Book a call on Google Calendar"
+                title="Book a call"
+              >
+                <FaCalendarAlt size={16} />
               </a>
             </div>
-            <p className="text-gray-700 text-sm">
-              Based in London, UK
-            </p>
+            <p className="text-xs text-slate-400">London, UK · video-first, on-site when useful</p>
+            <p className="text-xs text-slate-500 mt-1">Replies within one working day</p>
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-gray-600">
-            &copy; {currentYear} Carlos Alves Consulting. All rights reserved.
-          </div>
-          <div className="text-sm text-gray-600">
-            MSc in Data Science & AI (Goldsmiths, University of London)
-          </div>
+        <div className="border-t border-slate-800/80 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-xs text-slate-500">
+          <div>© {currentYear} Carlos Alves Consulting. All rights reserved.</div>
+          <div>MSc in Data Science &amp; AI (Distinction), Goldsmiths, University of London</div>
         </div>
       </div>
     </footer>
