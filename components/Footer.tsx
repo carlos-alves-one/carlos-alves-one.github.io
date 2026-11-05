@@ -57,7 +57,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-gray-600">
-            &copy; {currentYear} Carlos Alves. All rights reserved.
+            &copy; {currentYear} Carlos Alves Consulting. All rights reserved.
           </div>
           <div className="text-sm text-gray-600">
             MSc in Data Science & AI (Goldsmiths, University of London)

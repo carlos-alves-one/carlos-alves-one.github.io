@@ -5,7 +5,7 @@ export default function About() {
         <div className="text-center mb-16">
           <p className="section-eyebrow">About</p>
           <h2 className="section-heading">
-            Carlos Alves
+            Carlos Alves Consulting
           </h2>
         </div>
 
