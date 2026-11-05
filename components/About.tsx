@@ -1,4 +1,6 @@
-import { FaGraduationCap, FaBriefcase, FaCheckCircle, FaLightbulb, FaInfoCircle } from 'react-icons/fa'
+'use client'
+
+import { FaWrench, FaBriefcase, FaMapMarkerAlt, FaCoffee, FaChartLine, FaLock, FaCalendar } from 'react-icons/fa'
 
 export default function About() {
   return (
@@ -9,114 +11,106 @@ export default function About() {
           <h2 className="section-heading">
             Carlos Alves
           </h2>
-          <p className="section-intro mx-auto">
-            Bridging operations experience with data science expertise
+          <p className="section-intro mx-auto max-w-4xl">
+            Many catering and hospitality teams close the week the same way.
+            Exports from the till, the ordering system and supplier invoices get copied by hand into spreadsheets that don&apos;t link up.
+            The report is late, and nobody is sure it&apos;s right.
+            I fix that inside the spreadsheets you already use.
+            No new platform to buy, no subscription.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-          <div className="space-y-8">
-            <div className="flex items-start space-x-4 group">
-              <div className="bg-accent-50 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent-100 transition-colors">
-                <FaBriefcase className="text-accent-500 text-2xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  Industry Background
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  Former purchasing manager at Aqua Restaurant Group in London, running beverage 
-                  purchasing for a site with two restaurants and six bars (about £100k a month). 
-                  I&apos;ve lived the problem: manual invoice entry, monthly stocktakes that never 
-                  quite matched, and weekly reports that took hours to compile.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 group">
-              <div className="bg-accent-50 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent-100 transition-colors">
-                <FaGraduationCap className="text-accent-500 text-2xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  Academic Credentials
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  After 26 years away from academia, I returned to earn a BSc in 
-                  Computer Science and an MSc in Data Science & AI from Goldsmiths, University 
-                  of London. My thesis built solar radiation forecasting models on 1.7 million 
-                  rows of weather data.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 group">
-              <div className="bg-accent-50 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent-100 transition-colors">
-                <FaInfoCircle className="text-accent-500 text-2xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  Status
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  Independent Data & AI Consultant since September 2024, after my MSc. My consultancy work is conducted under strict confidentiality, protecting client information.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 group">
-              <div className="bg-accent-50 w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent-100 transition-colors">
-                <FaLightbulb className="text-accent-500 text-2xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  The Approach
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  I don&apos;t sell a platform or a subscription. I work inside the spreadsheets you 
-                  already use, removing the re-keying from your weekly reports and building simple 
-                  forecasts your team can explain. Every engagement will start by running the new 
-                  spreadsheet alongside your existing process before you rely on it.
-                </p>
-              </div>
-            </div>
-          </div>
-
+        <div className="space-y-6 max-w-5xl mx-auto">
+          {/* What I work on */}
           <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <h3 className="text-xl font-bold text-navy-900 mb-6">
-              What Makes This Different
+            <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-3">
+              <span aria-hidden="true">🔧</span>
+              What I work on
             </h3>
-            <ul className="space-y-4">
-              {[
-                'Five years running beverage purchasing for a London restaurant group',
-                'Data science expertise (MSc from Goldsmiths)',
-                'Solutions that work in Excel, not a new platform',
-                'Always run new tools alongside existing processes first',
-                'Aims to cut the hours your team spends retyping reports, not to sell you technology',
-                'Free 30-minute Spreadsheet Audit to start',
-              ].map((item, index) => (
-                <li key={index} className="flex items-start space-x-3 group">
-                  <div className="bg-accent-50 w-6 h-6 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <FaCheckCircle className="text-accent-500 text-sm group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="text-gray-700 text-base leading-relaxed">{item}</span>
-                </li>
-              ))}
+            <ul className="space-y-3 text-gray-700 text-base leading-relaxed list-disc list-inside">
+              <li>Weekly sales, labour and cost reports that refresh when you drop in the week&apos;s exports, instead of being retyped</li>
+              <li>One view of spend, orders and stock across your sites or events</li>
+              <li>Supplier invoices checked against orders</li>
+              <li>Waste and spend by event or menu, so you can see which work makes money</li>
+              <li>Simple ordering forecasts your chef can follow and check</li>
             </ul>
           </div>
-        </div>
 
-        <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
-          <h3 className="text-xl font-bold text-navy-900 mb-4 text-center">
-            The Problem I Solve
-          </h3>
-          <p className="text-gray-700 leading-relaxed text-base max-w-4xl mx-auto text-center">
-            Most weekly reports in hospitality are built the same way: someone copies figures from 
-            the till into one spreadsheet, then another, then another. By Friday, nobody fully trusts 
-            the number. With every site you add, the same back-office jobs get harder: stock counts, 
-            site margins, labour against sales, month-end. That&apos;s where I help — turning manual, 
-            error-prone routines into measured, forecasted, and automated workflows.
-          </p>
+          {/* Why I know this work */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-3">
+              <span aria-hidden="true">💼</span>
+              Why I know this work
+            </h3>
+            <ul className="space-y-3 text-gray-700 text-base leading-relaxed list-disc list-inside">
+              <li>2001–2008: ran a small software company in Portugal.</li>
+              <li>2008–2013: Purchasing Manager, Aqua Restaurant Group, London (two restaurants and six bars on one site). I bought about £100k of beverages a month, keyed in every invoice and ran the monthly stocktake by hand.</li>
+              <li>2013–2017: ran daily operations, cash reconciliation and compliance at a London money exchange and coffee shop.</li>
+              <li>2019–2024: BSc Computer Science (First) and MSc Data Science and AI (Distinction), Goldsmiths, University of London.</li>
+            </ul>
+          </div>
+
+          {/* Where I am now */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-3">
+              <span aria-hidden="true">📍</span>
+              Where I am now
+            </h3>
+            <div className="text-gray-700 text-base leading-relaxed space-y-3">
+              <p>Independent Data & AI Consultant since September 2024, after my MSc.</p>
+              <p>My consultancy work is conducted under strict confidentiality, protecting client information.</p>
+              <p>The examples in my Featured section are demonstrations on sample data, labelled as such.</p>
+              <p>They are not client results.</p>
+            </div>
+          </div>
+
+          {/* How to start */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-3">
+              <span aria-hidden="true">☕</span>
+              How to start
+            </h3>
+            <div className="text-gray-700 text-base leading-relaxed space-y-3">
+              <p>A free 30-minute Spreadsheet Audit, for owners, operations leads or finance leads.</p>
+              <p>Share one weekly report on screen (a redacted copy is fine).</p>
+              <p>I&apos;ll show you the 2–3 changes I&apos;d make first, then email a written summary within 2 working days.</p>
+              <p>No files sent, no recording, no obligation.</p>
+            </div>
+          </div>
+
+          {/* Next step, if it's worth it */}
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-3">
+              <span aria-hidden="true">📈</span>
+              Next step, if it&apos;s worth it
+            </h3>
+            <div className="text-gray-700 text-base leading-relaxed space-y-3">
+              <p>A Reporting Review.</p>
+              <p>Fixed fee, agreed in writing before work starts.</p>
+              <p>You get three written items:</p>
+              <ol className="list-decimal list-inside space-y-2 pl-4">
+                <li>How many hours your current process takes, timed with the person who does it</li>
+                <li>Where errors can creep in</li>
+                <li>A prioritised plan of 5–10 actions</li>
+              </ol>
+              <p>If any of the three is missing by the agreed date, the fee is refunded.</p>
+              <p>The fee comes off any follow-on build (fixed price, in writing) signed within 12 months.</p>
+            </div>
+          </div>
+
+          {/* Ownership and booking */}
+          <div className="bg-accent-50 p-8 rounded-xl border border-accent-200 shadow-sm">
+            <div className="text-gray-700 text-base leading-relaxed space-y-4">
+              <p className="flex items-start gap-3">
+                <span aria-hidden="true" className="flex-shrink-0">🔒</span>
+                <span>You own everything I build, with written handover notes. I work under a written data processing agreement and remove my access when the work ends.</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span aria-hidden="true" className="flex-shrink-0">📅</span>
+                <span>Click my website to book an appointment (<a href="https://carlos-alves-one.github.io/" className="text-accent-500 hover:text-accent-600 underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 rounded">https://carlos-alves-one.github.io/</a>), or email <a href="mailto:carlos.alves.one@gmail.com" className="text-accent-500 hover:text-accent-600 underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 rounded">carlos.alves.one@gmail.com</a>. I reply within one working day.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
