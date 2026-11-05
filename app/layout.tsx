@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Carlos Alves Consulting | Weekly reporting for UK catering and hospitality',
-  description: 'I help UK catering and hospitality owners, operations leads and finance leads replace retyped weekly reports with spreadsheets that refresh from their own till, ordering and invoice exports. No new platform, no subscription.',
-  keywords: 'data science, AI, hospitality consulting, catering analytics, spreadsheet automation, forecasting, restaurant operations',
+  title: 'Carlos Alves | Data Science & Business Intelligence',
+  description: 'I build practical reporting, dashboards and automation for UK SMEs, so owners and operations teams can understand costs, orders and performance.',
+  keywords: 'data science, business intelligence, reporting automation, dashboards, UK SME consulting',
 }
 
 export default function RootLayout({

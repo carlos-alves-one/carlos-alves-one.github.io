@@ -40,110 +40,90 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' 
-            : 'bg-white'
-        } ${isMobileMenuOpen ? 'md:block hidden' : ''}`}
+            ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200' 
+            : 'bg-white/80 backdrop-blur-sm'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">
-                Carlos Alves Consulting
+              <h1 className="text-xl font-bold text-navy-900">
+                Carlos Alves
               </h1>
             </div>
 
             <nav className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-base font-medium"
+                className="text-gray-700 hover:text-navy-900 transition-colors duration-200 text-base font-medium"
               >
                 Services
               </button>
               <button
-                onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-base font-medium"
-              >
-                About
-              </button>
-              <button
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-base font-medium"
+                className="text-gray-700 hover:text-navy-900 transition-colors duration-200 text-base font-medium"
               >
                 Contact
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href="mailto:carlos.alves.one@gmail.com"
                 className="btn-primary text-base"
               >
-                Get Started
-              </button>
+                Get in touch
+              </a>
             </nav>
 
             <button
-              className="md:hidden text-gray-700 hover:text-gray-900 transition-colors"
+              className="md:hidden text-gray-700 hover:text-navy-900 transition-colors z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              <FaBars size={28} />
+              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - Full Screen White */}
+      {/* Mobile Menu Overlay - Full Screen */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-white">
-          <div className="h-full flex flex-col px-6 pt-4">
-            <div className="flex justify-between items-center py-4 mb-8">
-              <h1 className="text-2xl font-bold text-gray-900">
-                Carlos Alves Consulting
-              </h1>
-              <button
-                className="text-gray-700 hover:text-gray-900 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                <FaTimes size={28} />
-              </button>
-            </div>
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-white/95 backdrop-blur-lg"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
 
-            <nav className="flex flex-col space-y-1">
-              <button
-                onClick={() => scrollToSection('services')}
-                className="text-left text-gray-900 hover:text-blue-600 transition-colors text-2xl font-semibold py-4"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-left text-gray-900 hover:text-blue-600 transition-colors text-2xl font-semibold py-4"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-gray-900 hover:text-blue-600 transition-colors text-2xl font-semibold py-4"
-              >
-                Contact
-              </button>
-
-              <div className="border-t border-gray-300 my-4"></div>
-
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-gray-900 hover:text-blue-600 transition-colors text-2xl font-semibold py-4"
-              >
-                Get Started
-              </button>
-            </nav>
-          </div>
-        </div>
+        {/* Menu Content */}
+        <nav 
+          className={`relative h-full flex flex-col justify-center items-center space-y-8 transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}
+        >
+          <button
+            onClick={() => scrollToSection('services')}
+            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="text-navy-900 hover:text-accent-600 transition-colors text-2xl font-semibold py-3"
+          >
+            Contact
+          </button>
+          <a
+            href="mailto:carlos.alves.one@gmail.com"
+            className="btn-primary text-lg"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Get in touch
+          </a>
+        </nav>
       </div>
     </>
   )
