@@ -194,8 +194,13 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">Availability</h3>
                   <p className="text-gray-700 text-base">
-                    Currently accepting new consultancy engagements. All projects start with a 
-                    free 30-minute Spreadsheet Audit.
+                    Appointments are available on Mondays and Fridays, from 3pm to 6pm. For a different day or time, please{' '}
+                    <a 
+                      href="mailto:carlos.alves.one@gmail.com" 
+                      className="text-accent-500 hover:text-accent-600 underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 rounded"
+                    >
+                      email me
+                    </a>.
                   </p>
                 </div>
               </div>

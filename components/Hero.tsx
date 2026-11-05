@@ -2,6 +2,10 @@
 
 import { FaChartLine, FaCheckCircle, FaBrain } from 'react-icons/fa'
 
+// Booking URL - update this single constant when the Google Calendar link is available
+const BOOKING_URL = 'mailto:carlos.alves.one@gmail.com'
+const IS_EXTERNAL_BOOKING = false // Set to true when using external booking URL
+
 export default function Hero() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -49,19 +53,31 @@ export default function Hero() {
             I help UK catering and hospitality owners, operations leads and finance leads replace retyped weekly reports with spreadsheets that refresh from their own till, ordering and invoice exports. No new platform, no subscription.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 pt-4">
-            <a
-              href="mailto:carlos.alves.one@gmail.com"
-              className="btn-primary text-sm sm:text-base whitespace-nowrap"
-            >
-              Book a discovery call
-            </a>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="btn-secondary text-sm sm:text-base whitespace-nowrap"
-            >
-              Explore services
-            </button>
+          <div className="space-y-3 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={BOOKING_URL}
+                {...(IS_EXTERNAL_BOOKING ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="btn-primary text-sm sm:text-base whitespace-nowrap"
+              >
+                Book a discovery call
+              </a>
+              <button
+                onClick={() => scrollToSection('services')}
+                className="btn-secondary text-sm sm:text-base whitespace-nowrap"
+              >
+                Explore services
+              </button>
+            </div>
+            <p className="text-sm text-gray-600 max-w-2xl">
+              Appointments are available on Mondays and Fridays, from 3pm to 6pm. For a different day or time, please{' '}
+              <a 
+                href="mailto:carlos.alves.one@gmail.com" 
+                className="text-accent-500 hover:text-accent-600 underline focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 rounded"
+              >
+                email me
+              </a>.
+            </p>
           </div>
         </div>
 
