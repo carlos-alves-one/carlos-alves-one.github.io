@@ -3,8 +3,8 @@
 import { FaChartLine, FaCheckCircle, FaBrain } from 'react-icons/fa'
 
 // Booking URL - update this single constant when the Google Calendar link is available
-const BOOKING_URL = 'mailto:carlos.alves.one@gmail.com'
-const IS_EXTERNAL_BOOKING = false // Set to true when using external booking URL
+const BOOKING_URL = 'https://calendar.app.google/C1hnZvX1jpWYd2bv6'
+const IS_EXTERNAL_BOOKING = true // Set to true when using external booking URL
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
