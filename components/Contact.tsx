@@ -31,23 +31,23 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="contact" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-xs sm:text-sm font-bold text-accent-500 tracking-[0.2em] uppercase mb-4">
+          <p className="section-eyebrow">
             Contact
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+          <h2 className="section-heading">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="section-intro mx-auto">
             Ready to transform your back-office operations? Book a free 30-minute Spreadsheet Audit 
             or reach out to discuss your specific needs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white p-8 rounded-xl border-2 border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
@@ -63,8 +63,8 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none 
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
                            transition text-gray-900 text-base"
                 />
               </div>
@@ -83,8 +83,8 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none 
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
                            transition text-gray-900 text-base"
                 />
               </div>
@@ -102,8 +102,8 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg 
-                           focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none 
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                           focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none 
                            transition text-gray-900 text-base"
                 />
               </div>
@@ -138,10 +138,10 @@ export default function Contact() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 p-3 rounded-lg">
-                  <FaEnvelope className="text-accent-500 text-2xl" />
+                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaEnvelope className="text-accent-500 text-xl" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">Email</h3>
@@ -155,10 +155,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 p-3 rounded-lg">
-                  <FaLinkedin className="text-accent-500 text-2xl" />
+                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaLinkedin className="text-accent-500 text-xl" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">LinkedIn</h3>
@@ -174,10 +174,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-start space-x-4">
-                <div className="bg-accent-50 p-3 rounded-lg">
-                  <FaMapMarkerAlt className="text-accent-500 text-2xl" />
+                <div className="bg-accent-50 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaMapMarkerAlt className="text-accent-500 text-xl" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">Location</h3>
@@ -186,10 +186,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-accent-50 p-6 rounded-xl border-2 border-accent-200">
+            <div className="bg-accent-50 p-6 rounded-xl border border-accent-200 shadow-sm">
               <div className="flex items-start space-x-4">
-                <div className="bg-white p-3 rounded-lg">
-                  <FaClock className="text-accent-500 text-2xl" />
+                <div className="bg-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FaClock className="text-accent-500 text-xl" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">Availability</h3>

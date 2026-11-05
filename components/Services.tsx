@@ -53,54 +53,58 @@ const allServices = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50">
+    <section id="services" className="py-20 px-8 sm:px-12 lg:px-16 bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-xs sm:text-sm font-bold text-accent-500 tracking-[0.2em] uppercase mb-4">
+          <p className="section-eyebrow">
             Services
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+          <h2 className="section-heading">
             How I Help
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="section-intro mx-auto">
             Practical solutions for hospitality and catering operations. Built inside the spreadsheets 
             you already use, not a new platform.
           </p>
         </div>
 
-        <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-gray-200 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-white p-8 md:p-12 rounded-xl border border-gray-200 shadow-sm mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl border border-gray-200"
+                className="p-6 rounded-lg border border-gray-100 hover:border-accent-300 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
               >
-                <service.icon className="text-accent-500 text-4xl mb-4" />
+                <div className="bg-accent-50 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                  <service.icon className="text-accent-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
+                </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">{service.description}</p>
+                <p className="text-gray-700 leading-relaxed text-base">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {allServices.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-accent-500 transition-all duration-200"
+              className="bg-white p-6 rounded-xl border border-gray-200 hover:border-accent-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
-              <service.icon className="text-accent-500 text-5xl mb-4" />
+              <div className="bg-accent-50 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <service.icon className="text-accent-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
+              </div>
               <h3 className="text-xl font-bold text-navy-900 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed">{service.description}</p>
+              <p className="text-gray-700 leading-relaxed text-base">{service.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-accent-50 p-8 rounded-2xl border-2 border-accent-200">
+        <div className="bg-accent-50 p-8 rounded-xl border border-accent-200 shadow-sm">
           <p className="text-xl text-navy-900 mb-4 font-semibold text-center">
             Every engagement starts with a <span className="text-accent-600">free 30-minute Spreadsheet Audit</span>
           </p>
