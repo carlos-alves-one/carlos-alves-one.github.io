@@ -77,6 +77,7 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
+      window.location.hash = '#' + id
       element.scrollIntoView({ behavior: 'smooth' })
       setIsMobileMenuOpen(false)
       setTimeout(() => menuButtonRef.current?.focus(), 300)

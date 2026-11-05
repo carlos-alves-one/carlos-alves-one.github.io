@@ -69,6 +69,15 @@
     min-height: 44px;
   }
 
+  .btn-accent {
+    @apply bg-accent-400 text-navy-900 px-6 py-3.5 font-semibold inline-block text-center
+           hover:bg-accent-300 hover:shadow-md active:scale-95
+           transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2;
+    border-radius: 8px;
+    min-height: 44px;
+  }
+
   .btn-secondary {
     @apply bg-white text-accent-600 px-6 py-3.5 font-semibold inline-block text-center
            border border-accent-300

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
 const faqs = [
@@ -32,47 +32,70 @@ const faqs = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
+  const [showAll, setShowAll] = useState(false)
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === '#faq') setShowAll(true)
+    }
+    checkHash()
+    window.addEventListener('hashchange', checkHash)
+    return () => window.removeEventListener('hashchange', checkHash)
+  }, [])
+
+  const visible = showAll ? faqs : faqs.slice(0, 3)
 
   return (
-    <section id="faq" className="py-20 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-200 scroll-mt-20">
+    <section id="faq" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <p className="section-eyebrow">Frequently asked questions</p>
           <h2 className="section-heading">Everything you might wonder before booking</h2>
-          <p className="section-intro mx-auto">
+          <p className="section-intro mx-auto text-sm">
             Honest answers upfront. If your question is not here, ask it during the free audit.
           </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((f, i) => {
+        <div className="space-y-3">
+          {visible.map((f, i) => {
             const isOpen = open === i
             return (
               <div
                 key={i}
-                className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition-all"
+                className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
               >
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-navy-900 text-base sm:text-lg hover:text-accent-600 transition-colors"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-navy-900 text-sm sm:text-base hover:text-accent-600 transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span>{f.q}</span>
                   <FaChevronDown
-                    className={`text-accent-500 text-sm flex-shrink-0 transition-transform duration-200 ${
+                    className={`text-accent-500 text-xs flex-shrink-0 transition-transform duration-200 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm sm:text-base text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
                     {f.a}
                   </div>
                 )}
               </div>
             )
           })}
+        </div>
+
+        <div className="text-center mt-6">
+          <button
+            onClick={() => setShowAll((v) => !v)}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-accent-600 hover:text-accent-700 hover:underline px-3 py-1"
+            aria-expanded={showAll}
+          >
+            <span>{showAll ? 'Show fewer questions' : 'Show 3 more questions (pricing, ownership, fit)'}</span>
+            <FaChevronDown className={`text-xs transition-transform duration-200 ${showAll ? 'rotate-180' : ''}`} />
+          </button>
         </div>
       </div>
     </section>
