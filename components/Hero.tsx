@@ -14,17 +14,13 @@ export default function Hero() {
     <section className="pt-32 pb-20 px-8 sm:px-12 lg:px-16 bg-white">
       <div className="max-w-7xl">
         <div className="space-y-8 mb-16">
-          <p className="text-xs sm:text-sm font-bold text-accent-500 tracking-[0.2em] uppercase">
-            REPORTING · DASHBOARDS · AUTOMATION
-          </p>
-          
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold max-w-4xl">
-            <span className="block text-navy-900">Less manual reporting.</span>
-            <span className="block text-accent-500">A clearer view of your business.</span>
+            <span className="text-navy-900">Costs, orders and sales in one weekly report. </span>
+            <span className="text-accent-500">No retyping.</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-gray-700 max-w-2xl leading-relaxed">
-            I build practical reporting, dashboards and automation for UK SMEs, so owners and operations teams can understand costs, orders and performance.
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl leading-relaxed">
+            I help UK catering and hospitality owners, operations leads and finance leads replace retyped weekly reports with spreadsheets that refresh from their own till, ordering and invoice exports. No new platform, no subscription.
           </p>
 
           <div className="flex flex-row gap-3 pt-4">
