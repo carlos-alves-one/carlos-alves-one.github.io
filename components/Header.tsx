@@ -128,7 +128,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="btn-primary text-sm"
               >
-                Book free audit
+                Book free walkthrough
               </a>
             </nav>
 
@@ -178,7 +178,7 @@ export default function Header() {
               className="w-full mt-4 block text-center btn-primary text-base font-bold"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Book free audit
+              Book free walkthrough
             </a>
           </div>
         </nav>

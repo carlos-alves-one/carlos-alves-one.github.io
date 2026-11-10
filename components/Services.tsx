@@ -147,7 +147,7 @@ export default function Services() {
         <div className="mt-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-8 sm:p-10 text-white text-center shadow-xl">
           <p className="text-accent-400 font-mono text-xs tracking-wider uppercase mb-2">No cost · No obligation</p>
           <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 text-white">
-            Every engagement starts with a free 30-minute Spreadsheet Audit
+            Every engagement starts with a free 30-minute Weekly-Report Walkthrough
           </h3>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-6">
             Show me one weekly report, and I’ll walk you through 2–3 quick wins on the call. No new platform. No monthly subscription. Just practical improvements to the tools you already use.
@@ -159,7 +159,7 @@ export default function Services() {
               rel="noopener noreferrer"
               className="btn-accent text-sm"
             >
-              Book the free audit →
+              Book the free walkthrough →
             </a>
             <a
               href="mailto:carlos.alves.one@gmail.com?subject=Question%20about%20a%20weekly%20report"

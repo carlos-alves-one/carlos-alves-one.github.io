@@ -13,7 +13,7 @@ const faqs = [
     a: 'My consultancy work is conducted under strict confidentiality. I work under a written data processing agreement, never disclose client data, and remove my access as soon as the project ends. The demonstrations on this website use anonymised dummy data — clearly labelled, and never taken from client projects.',
   },
   {
-    q: 'What actually happens in the free 30-minute Spreadsheet Audit?',
+    q: 'What actually happens in the free 30-minute Weekly-Report Walkthrough?',
     a: 'You share one weekly report on screen (a redacted copy is fine). I walk you through the 2–3 changes I would make first and email a written summary within two working days. No files are transferred, nothing is recorded, and there is no obligation to continue.',
   },
   {
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Which businesses are you a good fit for?',
-    a: 'UK catering and hospitality operators — restaurants, bars, cafés, caterers and venues — where weekly reporting is still assembled by hand from till, rota, invoice and stock exports. Usually a free audit is enough to tell whether automation is worth doing.',
+    a: 'UK catering and hospitality operators — restaurants, bars, cafés, caterers and venues — where weekly reporting is still assembled by hand from till, rota, invoice and stock exports. Usually a free walkthrough is enough to tell whether automation is worth doing.',
   },
 ]
 
@@ -52,7 +52,7 @@ export default function FAQ() {
           <p className="section-eyebrow">Frequently asked questions</p>
           <h2 className="section-heading">Everything you might wonder before booking</h2>
           <p className="section-intro mx-auto text-sm">
-            Honest answers upfront. If your question is not here, ask it during the free audit.
+            Honest answers upfront. If your question is not here, ask it during the free walkthrough.
           </p>
         </div>
 

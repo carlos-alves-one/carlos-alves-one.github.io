@@ -37,7 +37,7 @@ export default function Contact() {
           <p className="section-eyebrow">Get in touch</p>
           <h2 className="section-heading">Start with a conversation, not a contract</h2>
           <p className="section-intro mx-auto text-sm">
-            Book a free 30-minute Spreadsheet Audit on my calendar, or send a quick note below. I reply within one working day.
+            Book a free 30-minute Weekly-Report Walkthrough on my calendar, or send a quick note below. I reply within one working day.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function Contact() {
             <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-accent-300">
               <FaCalendarAlt /> Google Calendar
             </div>
-            <p className="text-xl sm:text-2xl font-bold">Book a free discovery call</p>
+            <p className="text-xl sm:text-2xl font-bold">Book a free walkthrough</p>
             <p className="text-xs text-slate-300">
               Mondays and Fridays, 3–6pm (UK time). Different time? Send a note below.
             </p>
