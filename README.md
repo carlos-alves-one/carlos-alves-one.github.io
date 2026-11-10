@@ -83,7 +83,7 @@ The website is built with Carlos's actual professional information extracted fro
 - **Education**: MSc Data Science & AI, BSc Computer Science from Goldsmiths
 - **Specialization**: Hospitality and catering analytics, automation
 - **Approach**: Working within existing tools (Excel), not selling new platforms
-- **Offer**: Free 30-minute Spreadsheet Audit
+- **Offer**: Free 30-minute Weekly-Report Walkthrough
 
 ## Deployment
 

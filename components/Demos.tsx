@@ -279,7 +279,7 @@ export default function Demos() {
               rel="noopener noreferrer"
               className="text-accent-300 hover:text-white font-semibold underline"
             >
-              Book the free audit to see this on your numbers →
+              Book the free walkthrough to see this on your numbers →
             </a>
           </div>
         </div>

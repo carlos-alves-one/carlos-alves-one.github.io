@@ -8,7 +8,7 @@ const steps = [
     n: '01',
     icon: FaCoffee,
     tag: 'Free · no obligation',
-    title: '30-minute Spreadsheet Audit',
+    title: '30-minute Weekly-Report Walkthrough',
     who: 'For owners, operations leads and finance leads',
     points: [
       'Share one weekly report on screen — a redacted copy is fine',
@@ -16,7 +16,7 @@ const steps = [
       'Written summary emailed within 2 working days',
       'No files sent, no recording, no hard sell',
     ],
-    cta: { href: 'https://calendar.app.google/C1hnZvX1jpWYd2bv6', label: 'Book the free audit' },
+    cta: { href: 'https://calendar.app.google/C1hnZvX1jpWYd2bv6', label: 'Book the free walkthrough' },
   },
   {
     n: '02',
@@ -77,7 +77,7 @@ export default function Process() {
           <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm flex items-start gap-4">
             <span className="font-mono text-2xl font-extrabold text-accent-500 flex-shrink-0">01</span>
             <div>
-              <p className="font-bold text-navy-900 text-sm">Free Spreadsheet Audit</p>
+              <p className="font-bold text-navy-900 text-sm">Free Weekly-Report Walkthrough</p>
               <p className="text-gray-600 text-xs mt-1">30 minutes · share one report · get 2–3 quick wins, free.</p>
             </div>
           </div>
