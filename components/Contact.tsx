@@ -190,7 +190,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-sm font-bold text-navy-900">Availability</h3>
                 <p className="text-xs text-gray-700 mt-0.5 leading-relaxed">
-                  Discovery calls on <strong>Mondays and Fridays, 3–6pm</strong>. Need another time? Just email me with a couple of options.
+                  Walkthroughs on <strong>Mondays and Fridays, 3–6pm</strong>. Need another time? Just email me with a couple of options.
                 </p>
               </div>
             </div>
