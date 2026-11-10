@@ -57,7 +57,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="btn-primary text-sm sm:text-base whitespace-nowrap text-center"
                 >
-                  Book a discovery call →
+                  Book a free walkthrough →
                 </a>
                 <button
                   onClick={() => scrollToSection('services')}
