@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-11T10:01:34.185Z",
+  "baselineUniqueChunks": 257,
+  "hospitalityUniqueChunks": 261,
+  "foundCount": 257,
+  "missingCount": 0,
+  "missing": [],
+  "pass": true,
+  "note": "All baseline visible text chunks appear unchanged on /hospitality-catering/.",
+  "phrasesChecked": 190
+}
