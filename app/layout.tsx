@@ -8,28 +8,28 @@ const siteUrl = 'https://carlos-alves-one.github.io'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Carlos Alves Consulting | Hospitality Data & AI Specialist',
+  title: 'Carlos Alves Consulting | Data & AI Specialist',
   description:
-    'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
+    'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
   keywords:
-    'hospitality reporting automation, UK catering dashboards, spreadsheet automation, restaurant KPI dashboard, invoice reconciliation, data science consulting London',
+    'hospitality reporting automation, health wellness reporting, UK catering dashboards, clinic reporting spreadsheets, spreadsheet automation, data science consulting London',
   authors: [{ name: 'Carlos Alves' }],
   creator: 'Carlos Alves',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Carlos Alves Consulting | Hospitality Data & AI Specialist',
+    title: 'Carlos Alves Consulting | Data & AI Specialist',
     description:
-      'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
+      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
     siteName: 'Carlos Alves Consulting',
     locale: 'en_GB',
   },
   twitter: {
     card: 'summary',
-    title: 'Carlos Alves Consulting | Hospitality Data & AI Specialist',
+    title: 'Carlos Alves Consulting | Data & AI Specialist',
     description:
-      'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
+      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
   },
   icons: { icon: '/favicon.svg' },
 }
@@ -42,7 +42,7 @@ const jsonLd = {
       name: 'Carlos Alves Consulting',
       url: siteUrl,
       description:
-        'Independent Data & AI consultancy for UK catering and hospitality businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting.',
+        'Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting.',
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
       address: {
         '@type': 'PostalAddress',
