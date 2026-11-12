@@ -114,29 +114,33 @@ function hospitalityIllustration() {
       <path d="M-6 8v40 M-10 12c0 10 4 14 4 24 M-2 12c0 10-4 14-4 24"/>
       <path d="M78 10v40 M74 14v12c0 6 8 6 8 0V14 M82 26v24"/>
     </g>
-    <!-- document pile (labels peeking from fan) -->
-    <g transform="translate(118,28)">
-      <g transform="rotate(-18 70 130)">
-        <rect x="10" y="50" width="140" height="190" rx="4" fill="${WHITE}"/>
-        <text x="80" y="78" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="13" font-weight="700" letter-spacing="0.08em">RECEIPT</text>
-        <path d="M28 98h104 M28 118h82 M28 138h96 M28 158h64" stroke-width="1.5"/>
+    <!-- document fan: each label band sits fully above the sheet in front -->
+    <g transform="translate(125,18)">
+      <!-- Receipt (back, topmost label band fully clear) -->
+      <g transform="rotate(-14 80 140)">
+        <rect x="0" y="0" width="138" height="200" rx="4" fill="${WHITE}"/>
+        <text x="69" y="26" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.08em">RECEIPT</text>
+        <path d="M18 48h102 M18 68h80 M18 88h94 M18 108h62" stroke-width="1.5"/>
       </g>
-      <g transform="rotate(-8 95 125)">
-        <rect x="40" y="35" width="145" height="195" rx="4" fill="${WHITE}"/>
-        <text x="112" y="62" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">INVOICE</text>
-        <path d="M58 84h110 M58 104h96 M58 124h104 M58 144h72" stroke-width="1.5"/>
+      <!-- Invoice -->
+      <g transform="rotate(-5 110 145)">
+        <rect x="48" y="28" width="142" height="200" rx="4" fill="${WHITE}"/>
+        <text x="119" y="54" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">INVOICE</text>
+        <path d="M66 76h106 M66 96h92 M66 116h100 M66 136h70" stroke-width="1.5"/>
       </g>
-      <g transform="rotate(4 120 120)">
-        <rect x="70" y="22" width="150" height="200" rx="4" fill="${WHITE}"/>
-        <text x="145" y="48" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.04em">SUPPLIER INVOICE</text>
-        <path d="M88 70h114 M88 90h96 M88 110h110 M88 130h76" stroke-width="1.5"/>
-        <rect x="88" y="148" width="48" height="34" rx="2" stroke-width="1.4"/>
+      <!-- Supplier Invoice -->
+      <g transform="rotate(4 140 150)">
+        <rect x="78" y="52" width="148" height="200" rx="4" fill="${WHITE}"/>
+        <text x="152" y="78" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.03em">SUPPLIER INVOICE</text>
+        <path d="M96 100h112 M96 120h94 M96 140h106 M96 160h72" stroke-width="1.5"/>
+        <rect x="96" y="178" width="46" height="32" rx="2" stroke-width="1.4"/>
       </g>
+      <!-- Spreadsheet (front) -->
       <g>
-        <rect x="105" y="8" width="165" height="215" rx="4" fill="${WHITE}"/>
-        <text x="187" y="36" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">SPREADSHEET</text>
-        <path d="M123 56h130 M123 76h130 M123 96h130 M123 116h130 M123 136h130 M123 156h130" stroke-width="1.2"/>
-        <path d="M158 56v120 M198 56v120 M238 56v120" stroke-width="1.2"/>
+        <rect x="108" y="78" width="160" height="210" rx="4" fill="${WHITE}"/>
+        <text x="188" y="104" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">SPREADSHEET</text>
+        <path d="M126 124h124 M126 144h124 M126 164h124 M126 184h124 M126 204h124 M126 224h124" stroke-width="1.2"/>
+        <path d="M160 124v120 M200 124v120 M240 124v120" stroke-width="1.2"/>
       </g>
     </g>
     <!-- arrows -->
@@ -153,32 +157,32 @@ function hospitalityIllustration() {
       <rect x="0" y="0" width="280" height="268" rx="10" fill="${WHITE}" stroke-width="2.2"/>
       <text x="140" y="36" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em">WEEKLY REPORT</text>
       <path d="M100 48h80" stroke="${AMBER}" stroke-width="3"/>
-      <!-- Costs -->
-      <circle cx="42" cy="95" r="20"/>
-      <text x="42" y="102" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="18" font-weight="700">£</text>
-      <circle cx="88" cy="95" r="4" fill="${AMBER}" stroke="none"/>
-      <text x="100" y="101" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Costs</text>
+      <!-- Costs (bars end at y=120; divider at 130) -->
+      <circle cx="42" cy="90" r="18"/>
+      <text x="42" y="96" text-anchor="middle" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="16" font-weight="700">£</text>
+      <circle cx="88" cy="90" r="4" fill="${AMBER}" stroke="none"/>
+      <text x="100" y="96" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Costs</text>
       <g fill="${AMBER}" stroke="none">
-        <rect x="190" y="105" width="10" height="16" rx="1"/><rect x="204" y="98" width="10" height="23" rx="1"/><rect x="218" y="90" width="10" height="31" rx="1"/><rect x="232" y="82" width="10" height="39" rx="1"/><rect x="246" y="74" width="10" height="47" rx="1"/>
+        <rect x="190" y="108" width="10" height="12" rx="1"/><rect x="204" y="102" width="10" height="18" rx="1"/><rect x="218" y="96" width="10" height="24" rx="1"/><rect x="232" y="90" width="10" height="30" rx="1"/><rect x="246" y="84" width="10" height="36" rx="1"/>
       </g>
       <path d="M24 130h232" stroke-width="1.2"/>
-      <!-- Orders -->
-      <circle cx="42" cy="175" r="20"/>
-      <path d="M30 172 h24 l-3 10 h-18z M33 172 l3-6 h12 l3 6" stroke-width="1.8"/>
-      <circle cx="88" cy="175" r="4" fill="${AMBER}" stroke="none"/>
-      <text x="100" y="181" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Orders</text>
+      <!-- Orders (bars end at y=200; divider at 210) -->
+      <circle cx="42" cy="170" r="18"/>
+      <path d="M31 168 h22 l-2 9 h-18z M34 168 l2-5 h10 l2 5" stroke-width="1.8"/>
+      <circle cx="88" cy="170" r="4" fill="${AMBER}" stroke="none"/>
+      <text x="100" y="176" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Orders</text>
       <g fill="${AMBER}" stroke="none">
-        <rect x="190" y="185" width="10" height="16" rx="1"/><rect x="204" y="178" width="10" height="23" rx="1"/><rect x="218" y="170" width="10" height="31" rx="1"/><rect x="232" y="162" width="10" height="39" rx="1"/><rect x="246" y="154" width="10" height="47" rx="1"/>
+        <rect x="190" y="188" width="10" height="12" rx="1"/><rect x="204" y="182" width="10" height="18" rx="1"/><rect x="218" y="176" width="10" height="24" rx="1"/><rect x="232" y="170" width="10" height="30" rx="1"/><rect x="246" y="164" width="10" height="36" rx="1"/>
       </g>
       <path d="M24 210h232" stroke-width="1.2"/>
-      <!-- Sales (shopping bag) -->
-      <circle cx="42" cy="245" r="20"/>
-      <path d="M31 238 h22 l-2 18 h-18z" stroke-width="1.8"/>
-      <path d="M36 238 v-5 c0-4 3-7 6-7s6 3 6 7 v5" stroke-width="1.8"/>
-      <circle cx="88" cy="245" r="4" fill="${AMBER}" stroke="none"/>
-      <text x="100" y="251" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Sales</text>
+      <!-- Sales (bars end at y=256; card bottom 268, ~12px padding) -->
+      <circle cx="42" cy="240" r="18"/>
+      <path d="M32 234 h20 l-2 16 h-16z" stroke-width="1.8"/>
+      <path d="M36 234 v-4 c0-3.5 2.5-6 5-6s5 2.5 5 6 v4" stroke-width="1.8"/>
+      <circle cx="88" cy="240" r="4" fill="${AMBER}" stroke="none"/>
+      <text x="100" y="246" fill="${NAVY}" stroke="none" font-family="SiteInter,Inter,sans-serif" font-size="15" font-weight="700">Sales</text>
       <g fill="${AMBER}" stroke="none">
-        <rect x="190" y="255" width="10" height="16" rx="1"/><rect x="204" y="248" width="10" height="23" rx="1"/><rect x="218" y="240" width="10" height="31" rx="1"/><rect x="232" y="232" width="10" height="39" rx="1"/><rect x="246" y="224" width="10" height="47" rx="1"/>
+        <rect x="190" y="244" width="10" height="12" rx="1"/><rect x="204" y="238" width="10" height="18" rx="1"/><rect x="218" y="232" width="10" height="24" rx="1"/><rect x="232" y="226" width="10" height="30" rx="1"/><rect x="246" y="220" width="10" height="36" rx="1"/>
       </g>
     </g>
   </g>
@@ -257,12 +261,32 @@ function healthIllustration() {
           <rect x="100" y="55" width="28" height="125" rx="3"/>
           <rect x="144" y="95" width="28" height="85" rx="3"/>
         </g>
-        <!-- leaf sprigs on bars -->
-        <g stroke="${NAVY}" stroke-width="1.6" fill="none">
-          <path d="M26 110 V92"/><path d="M26 100 C18 92, 14 88, 12 82"/><path d="M26 96 C34 90, 36 86, 38 80"/>
-          <path d="M70 80 V60"/><path d="M70 70 C60 62, 56 56, 54 50"/><path d="M70 66 C80 58, 84 54, 86 48"/>
-          <path d="M114 55 V32"/><path d="M114 44 C104 36, 100 30, 98 24"/><path d="M114 40 C124 32, 128 28, 130 22"/>
-          <path d="M158 95 V74"/><path d="M158 86 C148 78, 144 74, 142 68"/><path d="M158 82 C168 74, 172 70, 174 64"/>
+        <!-- leaf sprigs: stem + two/three filled sage leaves (not antenna strokes) -->
+        <g stroke="${NAVY}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <g transform="translate(26,110)">
+            <path d="M0 0 V-22" fill="none"/>
+            <path d="M0 -8 C-10 -14 -12 -22 -8 -26 C-2 -22 0 -14 0 -10z" fill="${SAGE}"/>
+            <path d="M0 -12 C10 -18 12 -26 8 -30 C2 -26 0 -18 0 -14z" fill="${SAGE}"/>
+            <path d="M0 -22 C-4 -28 0 -34 4 -30 C6 -26 2 -22 0 -22z" fill="${SAGE}"/>
+          </g>
+          <g transform="translate(70,80)">
+            <path d="M0 0 V-24" fill="none"/>
+            <path d="M0 -8 C-11 -15 -13 -24 -8 -28 C-2 -24 0 -15 0 -10z" fill="${SAGE}"/>
+            <path d="M0 -12 C11 -19 13 -28 8 -32 C2 -28 0 -19 0 -14z" fill="${SAGE}"/>
+            <path d="M0 -24 C-4 -30 0 -36 4 -32 C6 -28 2 -24 0 -24z" fill="${SAGE}"/>
+          </g>
+          <g transform="translate(114,55)">
+            <path d="M0 0 V-26" fill="none"/>
+            <path d="M0 -9 C-12 -16 -14 -26 -8 -30 C-2 -26 0 -16 0 -11z" fill="${SAGE}"/>
+            <path d="M0 -13 C12 -20 14 -30 8 -34 C2 -30 0 -20 0 -15z" fill="${SAGE}"/>
+            <path d="M0 -26 C-4 -32 0 -38 4 -34 C6 -30 2 -26 0 -26z" fill="${SAGE}"/>
+          </g>
+          <g transform="translate(158,95)">
+            <path d="M0 0 V-22" fill="none"/>
+            <path d="M0 -8 C-10 -14 -12 -22 -8 -26 C-2 -22 0 -14 0 -10z" fill="${SAGE}"/>
+            <path d="M0 -12 C10 -18 12 -26 8 -30 C2 -26 0 -18 0 -14z" fill="${SAGE}"/>
+            <path d="M0 -22 C-4 -28 0 -34 4 -30 C6 -26 2 -22 0 -22z" fill="${SAGE}"/>
+          </g>
         </g>
       </g>
     </g>
