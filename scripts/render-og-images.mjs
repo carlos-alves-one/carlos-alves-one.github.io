@@ -277,23 +277,6 @@ function unionTextBounds(boxes) {
   }
 }
 
-function maybePreferJpeg(pngPath) {
-  const py = `
-from PIL import Image
-import os
-png = ${JSON.stringify(pngPath)}
-jpg = png[:-4] + ".jpg"
-im = Image.open(png).convert("RGB")
-im.save(jpg, "JPEG", quality=90, optimize=True)
-ps, js = os.path.getsize(png), os.path.getsize(jpg)
-print(f"{ps},{js},{jpg if js * 2 < ps else ''}")
-`
-  const r = spawnSync('python3', ['-c', py], { encoding: 'utf8' })
-  if (r.status !== 0) throw new Error(r.stderr)
-  const [ps, js, chosen] = r.stdout.trim().split(',')
-  return { pngBytes: Number(ps), jpgBytes: Number(js), useJpg: Boolean(chosen), jpgPath: pngPath.replace(/\.png$/, '.jpg') }
-}
-
 async function main() {
   const fonts = findInterFonts()
   const latinB64 = fs.readFileSync(fonts.latin).toString('base64')
@@ -368,19 +351,8 @@ async function main() {
       downsampleWithLanczos(shot2x, pngOut)
       const ink = measureInkBounds(pngOut)
       const textBounds = unionTextBounds(boxes)
-      const fmt = maybePreferJpeg(pngOut)
 
-      let finalPath = pngOut
-      let format = 'png'
-      if (fmt.useJpg) {
-        fs.unlinkSync(pngOut)
-        finalPath = fmt.jpgPath
-        format = 'jpg'
-      } else if (fs.existsSync(fmt.jpgPath)) {
-        fs.unlinkSync(fmt.jpgPath)
-      }
-
-      const size = fs.statSync(finalPath).size
+      const size = fs.statSync(pngOut).size
       const safeOk =
         ink.left >= SAFE_X &&
         ink.right >= SAFE_X &&
@@ -393,11 +365,9 @@ async function main() {
 
       const row = {
         slug: variant.slug,
-        path: path.relative(root, finalPath),
-        format,
+        path: path.relative(root, pngOut),
+        format: 'png',
         bytes: size,
-        pngBytes: fmt.pngBytes,
-        jpgBytes: fmt.jpgBytes,
         fontFamily: fontInfo.fontFamily,
         fontWeight: fontInfo.fontWeight,
         siteInterLoaded: fontInfo.siteInterLoaded,
