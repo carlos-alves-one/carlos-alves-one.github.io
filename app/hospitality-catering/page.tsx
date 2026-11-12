@@ -18,11 +18,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://carlos-alves-one.github.io/hospitality-catering/',
-    title: 'Carlos Alves Consulting | Data & AI Specialist',
+    title: 'Hospitality & Catering | Carlos Alves Consulting',
     description:
-      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
+      'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
     siteName: 'Carlos Alves Consulting',
     locale: 'en_GB',
+    images: [
+      {
+        url: 'https://carlos-alves-one.github.io/og/hospitality-catering.png',
+        width: 1200,
+        height: 627,
+        alt: 'Carlos Alves Consulting: Weekly reports without the retyping, for hospitality and catering businesses. Free 30-min Weekly-Report Walkthrough.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hospitality & Catering | Carlos Alves Consulting',
+    description:
+      'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
+    images: ['https://carlos-alves-one.github.io/og/hospitality-catering.png'],
   },
 }
 
