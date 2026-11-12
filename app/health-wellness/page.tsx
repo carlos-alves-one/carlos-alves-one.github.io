@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Health & Wellness | Carlos Alves Consulting',
     description:
       'Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.',
