@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   description:
     'Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.',
   alternates: { canonical: '/hospitality-catering/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://carlos-alves-one.github.io/hospitality-catering/',
+    siteName: 'Carlos Alves Consulting',
+    locale: 'en_GB',
+  },
 }
 
 export default function HospitalityCateringPage() {

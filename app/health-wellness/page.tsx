@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   description:
     'Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.',
   alternates: { canonical: '/health-wellness/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://carlos-alves-one.github.io/health-wellness/',
+    siteName: 'Carlos Alves Consulting',
+    locale: 'en_GB',
+  },
 }
 
 export default function HealthWellnessPage() {
