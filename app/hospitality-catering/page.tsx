@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://carlos-alves-one.github.io/hospitality-catering/',
+    title: 'Carlos Alves Consulting | Data & AI Specialist',
+    description:
+      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
     siteName: 'Carlos Alves Consulting',
     locale: 'en_GB',
   },
