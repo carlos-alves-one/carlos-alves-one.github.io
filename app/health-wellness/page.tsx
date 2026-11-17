@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/health-wellness/' },
   openGraph: {
     type: 'website',
-    url: 'https://carlos-alves-one.github.io/health-wellness/',
+    url: 'https://carlosalves.uk/health-wellness/',
     title: 'Health & Wellness | Carlos Alves Consulting',
     description:
       'Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: 'https://carlos-alves-one.github.io/og/health-wellness-v2.png',
+        url: 'https://carlosalves.uk/og/health-wellness-v2.png',
         width: 1200,
         height: 627,
         alt: 'Carlos Alves Consulting: Weekly reports without the retyping, for health & wellness businesses. Free 30-min Weekly-Report Walkthrough.',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Health & Wellness | Carlos Alves Consulting',
     description:
       'Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.',
-    images: ['https://carlos-alves-one.github.io/og/health-wellness-v2.png'],
+    images: ['https://carlosalves.uk/og/health-wellness-v2.png'],
   },
 }
 
