@@ -33,7 +33,7 @@ const WHITE = '#FFFFFF'
 const EYEBROW = 'Carlos Alves Consulting'
 const HEADLINE = 'Weekly reports without the retyping'
 const OFFER = 'Free 30-min Weekly-Report Walkthrough'
-const URL_TEXT = 'carlos-alves-one.github.io'
+const URL_TEXT = 'carlosalves.uk'
 
 const VARIANTS = [
   {
