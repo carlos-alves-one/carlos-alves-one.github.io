@@ -32,11 +32,8 @@ const style = `
     --brand:#0f3d3a; --brand-ink:#ffffff; --accent:#b96a1f; --accent-soft:#fdf0e2; --good:#1a7a4a; --good-bg:#e6f4ec; --warn:#9a5b00; --warn-bg:#fdf0e2;
     --radius:14px; --radius-s:10px;
   }
-@media (prefers-color-scheme: dark){.home-moved{
-      --bg:#101614; --surface:#18201d; --surface-2:#1f2a26; --ink:#eef3f0; --muted:#a9bab3; --line:#2e3d37;
-      --brand:#7fd1c0; --brand-ink:#0b1a17; --accent:#e8a15c; --accent-soft:#2e2417; --good:#6fd598; --good-bg:#163526; --warn:#e8b06a; --warn-bg:#2e2417;
-    }}
 .home-moved .dash{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 32px rgba(15,40,35,.10)}
+.home-moved .dash p{margin:0}
 .home-moved .dash-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2)}
 .home-moved .file{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:600}
 .home-moved .pill{font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:999px;background:var(--good-bg);color:var(--good)}
