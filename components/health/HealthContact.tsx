@@ -31,7 +31,7 @@ export default function HealthContact() {
   }
 
   return (
-    <section id="contact" className="py-16 px-6 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
+    <section id="contact" className="py-16 px-7 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <p className="section-eyebrow">Get in touch</p>
@@ -192,6 +192,37 @@ export default function HealthContact() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Finding this business on Google — profile not yet claimed.
+            A Google Business Profile can only be claimed inside Google;
+            this is the checklist, not a live profile. */}
+        <div
+          id="google-profile"
+          className="mt-10 bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-sm"
+        >
+          <h3 className="text-base font-bold text-navy-900 mb-1">Finding this business on Google</h3>
+          <p className="text-xs text-gray-600 leading-relaxed mb-4">
+            A Google Business Profile is not live yet — it can only be claimed inside your Google account.
+            The checklist to set it up:
+          </p>
+          <ol className="list-decimal pl-5 space-y-1.5 text-xs text-gray-700 leading-relaxed">
+            <li>
+              Go to{' '}
+              <a
+                href="https://business.google.com/add"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-600 hover:text-accent-700 font-semibold underline"
+              >
+                business.google.com/add
+              </a>{' '}
+              and sign in with your Google account.
+            </li>
+            <li>Use the exact name <strong>Carlos Alves Consulting</strong>, category Business consultant, website carlosalves.uk, service area London and UK-wide.</li>
+            <li>Add services: reporting automation, KPI dashboards, invoice reconciliation, forecasting.</li>
+            <li>Verify by postcard, phone or email, as Google offers — then add the free walkthrough as a service and a link to this site.</li>
+          </ol>
         </div>
       </div>
     </section>

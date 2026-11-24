@@ -13,7 +13,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative pt-32 pb-20 px-6 sm:px-10 lg:px-16 bg-white overflow-hidden">
+    <section className="relative pt-32 pb-20 px-7 sm:px-10 lg:px-16 bg-white overflow-hidden">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-25"

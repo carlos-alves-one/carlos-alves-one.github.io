@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-950 text-slate-300 py-14 px-6 sm:px-10 lg:px-16 border-t border-slate-800 text-sm">
+    <footer className="bg-navy-950 text-slate-300 py-14 px-7 sm:px-10 lg:px-16 border-t border-navy-800 text-sm">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
@@ -46,14 +46,32 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/carlos-alves-one"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                className="w-10 h-10 rounded-lg bg-navy-800 border border-navy-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={18} />
               </a>
               <a
+                href="https://x.com/Mr_CarlosAlves"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-navy-800 border border-navy-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                aria-label="X"
+              >
+                <span className="font-black text-base leading-none">X</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@mrcarlosalves"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-navy-800 border border-navy-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                aria-label="TikTok"
+              >
+                <span className="font-black text-base leading-none">♪</span>
+              </a>
+              <a
                 href="mailto:carlos.alves.one@gmail.com"
-                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                className="w-10 h-10 rounded-lg bg-navy-800 border border-navy-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
                 aria-label="Email"
               >
                 <FaEnvelope size={18} />
@@ -62,7 +80,7 @@ export default function Footer() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
+                className="w-10 h-10 rounded-lg bg-navy-800 border border-navy-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-slate-600 transition-colors"
                 aria-label="Book a call on Google Calendar"
                 title="Book a call"
               >
@@ -78,6 +96,9 @@ export default function Footer() {
           <div>© {currentYear} Carlos Alves Consulting. All rights reserved.</div>
           <div>MSc in Data Science &amp; AI (Distinction), Goldsmiths, University of London</div>
         </div>
+        <p className="mt-8 text-[11px] leading-relaxed text-slate-500 max-w-4xl">
+          All figures, statistics, and data shown on this page are entirely fictitious sample data created for illustrative purposes only. No real customer information, personal data, or confidential records are used, displayed, or processed. This ensures full protection of customer confidentiality and compliance with applicable data privacy regulations and standards.
+        </p>
       </div>
     </footer>
   )

@@ -14,7 +14,9 @@ const audiences = [
 const defaultNavItems = [
   { id: 'services', label: 'Services' },
   { id: 'demos', label: 'Sample work' },
+  { id: 'cases', label: 'Case studies' },
   { id: 'process', label: 'How it works' },
+  { id: 'pricing', label: 'Pricing' },
   { id: 'about', label: 'About' },
   { id: 'faq', label: 'FAQ' },
   { id: 'contact', label: 'Contact' },
@@ -110,7 +112,7 @@ export default function SiteHeader({
             : 'bg-white/85 backdrop-blur-sm'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-7 sm:px-8 lg:px-10">
           <div className="flex justify-between items-center py-3 gap-3">
             <a
               href="/"

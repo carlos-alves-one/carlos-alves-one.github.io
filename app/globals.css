@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-[#eef6f2] text-gray-900;
     font-feature-settings: 'kern' 1, 'liga' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -61,10 +61,10 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent-500 text-white px-6 py-3.5 font-semibold inline-block text-center
-           hover:bg-accent-600 hover:shadow-md active:scale-95
-           transition-all duration-200 
-           focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+    @apply bg-navy-700 text-white px-6 py-3.5 font-semibold inline-block text-center
+           hover:bg-navy-800 hover:shadow-md active:scale-95
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-navy-700 focus:ring-offset-2;
     border-radius: 8px;
     min-height: 44px;
   }
@@ -89,7 +89,7 @@
   }
 
   .section-eyebrow {
-    @apply text-xs sm:text-sm font-bold text-accent-500 tracking-[0.2em] uppercase mb-4;
+    @apply text-xs sm:text-sm font-bold text-accent-600 tracking-[0.2em] uppercase mb-4;
   }
 
   .section-heading {

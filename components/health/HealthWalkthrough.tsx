@@ -29,7 +29,7 @@ const covers = [
 
 export default function HealthWalkthrough() {
   return (
-    <section id="demos" className="py-14 px-6 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
+    <section id="demos" className="py-14 px-7 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <p className="section-eyebrow">Sample work</p>
