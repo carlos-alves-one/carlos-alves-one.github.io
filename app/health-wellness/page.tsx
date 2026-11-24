@@ -13,12 +13,8 @@ import HealthFooter from '@/components/health/HealthFooter'
 import BackToTop from '@/components/BackToTop'
 import {
   HomeMovedStyle,
-  MovedAbout,
-  MovedBottom,
   MovedExamples,
-  MovedFaq,
   MovedHow,
-  MovedProblem,
   MovedSocial,
   MovedTop,
 } from '@/components/from-home/MovedHome'
@@ -61,20 +57,16 @@ export default function HealthWellnessPage() {
       <SiteHeader />
       <MovedTop />
       <HealthHero />
-      <MovedProblem sector="health" />
       <HealthServices />
-      <MovedHow />
+      <MovedHow sector="health" />
       <HealthWalkthrough />
       <HealthProcess />
       <PricingGuide />
       <MovedExamples sector="health" />
       <Guides sector="health" />
       <HealthFAQ />
-      <MovedFaq />
       <HealthAbout />
-      <MovedAbout />
       <MovedSocial />
-      <MovedBottom sector="health" />
       <HealthContact />
       <HealthFooter />
       <BackToTop />

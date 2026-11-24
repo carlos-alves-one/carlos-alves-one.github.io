@@ -13,12 +13,8 @@ import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import {
   HomeMovedStyle,
-  MovedAbout,
-  MovedBottom,
   MovedExamples,
-  MovedFaq,
   MovedHow,
-  MovedProblem,
   MovedSocial,
   MovedTop,
 } from '@/components/from-home/MovedHome'
@@ -61,20 +57,16 @@ export default function HospitalityCateringPage() {
       <SiteHeader />
       <MovedTop />
       <Hero />
-      <MovedProblem sector="hosp" />
       <Services />
-      <MovedHow />
+      <MovedHow sector="hosp" />
       <Process />
       <PricingGuide />
       <Demos />
       <MovedExamples sector="hosp" />
       <Guides sector="hosp" />
       <FAQ />
-      <MovedFaq />
       <About />
-      <MovedAbout />
       <MovedSocial />
-      <MovedBottom sector="hosp" />
       <Contact />
       <Footer />
       <BackToTop />
