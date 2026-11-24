@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
+import { homeFaqs } from '@/components/from-home/homeFaqs'
 
 const faqs = [
   {
@@ -43,10 +44,22 @@ export default function FAQ() {
     return () => window.removeEventListener('hashchange', checkHash)
   }, [])
 
-  const visible = showAll ? faqs : faqs.slice(0, 3)
-
   return (
     <section id="faq" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [...faqs, ...homeFaqs].map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <p className="section-eyebrow">Frequently asked questions</p>
@@ -57,11 +70,12 @@ export default function FAQ() {
         </div>
 
         <div className="space-y-3">
-          {visible.map((f, i) => {
+          {faqs.map((f, i) => {
             const isOpen = open === i
             return (
               <div
                 key={i}
+                hidden={!showAll && i >= 3}
                 className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
               >
                 <button
@@ -77,11 +91,12 @@ export default function FAQ() {
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
-                    {f.a}
-                  </div>
-                )}
+                <div
+                  hidden={!isOpen}
+                  className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3"
+                >
+                  {f.a}
+                </div>
               </div>
             )
           })}

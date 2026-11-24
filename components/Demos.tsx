@@ -65,11 +65,11 @@ export default function Demos() {
         {/* Demo container */}
         <div className="bg-gradient-to-br from-slate-900 via-navy-950 to-slate-950 rounded-2xl p-4 sm:p-7 shadow-xl text-white border border-slate-800">
           <div className="flex items-center justify-between pb-4 border-b border-slate-800 text-xs text-slate-400">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-400/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-green-400/80 inline-block" />
-              <span className="ml-2 font-mono text-[11px] text-slate-300 truncate">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-400/80 inline-block shrink-0" />
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80 inline-block shrink-0" />
+              <span className="w-2.5 h-2.5 rounded-full bg-green-400/80 inline-block shrink-0" />
+              <span className="ml-2 min-w-0 font-mono text-[11px] text-slate-300 truncate">
                 {activeTab === 'dashboard' && 'weekly-kpi-dashboard-2026-w44.xlsx'}
                 {activeTab === 'invoices' && 'supplier-reconciliation-stocktake.xlsx'}
                 {activeTab === 'forecast' && 'kitchen-ordering-forecast.xlsx'}
