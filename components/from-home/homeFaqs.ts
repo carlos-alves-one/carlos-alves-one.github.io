@@ -22,7 +22,7 @@ export const homeFaqs = [
 ]
 
 export function homeFaqMarkup() {
-  const esc = (s: string) => s.replace(/&/g, '&amp;')
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   return homeFaqs
     .map((f) => `        <div class="qa"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p></div>`)
     .join('\n')
