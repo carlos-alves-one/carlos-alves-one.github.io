@@ -62,7 +62,7 @@ export default function HealthProcess() {
   }, [])
 
   return (
-    <section id="process" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
+    <section id="process" className="py-16 px-7 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <p className="section-eyebrow">How we work together</p>

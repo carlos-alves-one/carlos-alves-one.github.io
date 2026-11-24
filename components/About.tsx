@@ -54,7 +54,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="py-16 px-6 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
+    <section id="about" className="py-16 px-7 sm:px-10 lg:px-16 bg-white border-t border-gray-100 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <p className="section-eyebrow">About me</p>

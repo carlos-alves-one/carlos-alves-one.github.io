@@ -93,7 +93,7 @@ export default function Services() {
   const visible = showAll ? allServices : allServices.filter((s) => s.featured)
 
   return (
-    <section id="services" className="py-20 px-6 sm:px-10 lg:px-16 border-t border-gray-100 scroll-mt-20">
+    <section id="services" className="py-20 px-7 sm:px-10 lg:px-16 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <p className="section-eyebrow">Services</p>

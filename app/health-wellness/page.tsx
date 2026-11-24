@@ -4,6 +4,8 @@ import HealthHero from '@/components/health/HealthHero'
 import HealthServices from '@/components/health/HealthServices'
 import HealthWalkthrough from '@/components/health/HealthWalkthrough'
 import HealthProcess from '@/components/health/HealthProcess'
+import PricingGuide from '@/components/PricingGuide'
+import Guides from '@/components/Guides'
 import HealthAbout from '@/components/health/HealthAbout'
 import HealthFAQ from '@/components/health/HealthFAQ'
 import HealthContact from '@/components/health/HealthContact'
@@ -64,7 +66,9 @@ export default function HealthWellnessPage() {
       <MovedHow />
       <HealthWalkthrough />
       <HealthProcess />
+      <PricingGuide />
       <MovedExamples sector="health" />
+      <Guides sector="health" />
       <HealthFAQ />
       <MovedFaq />
       <HealthAbout />

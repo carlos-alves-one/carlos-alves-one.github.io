@@ -8,28 +8,28 @@ const siteUrl = 'https://carlosalves.uk'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Carlos Alves Consulting | Data & AI Specialist',
+  title: 'Carlos Alves Consulting — Data & AI for UK operators',
   description:
-    'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
+    'Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.',
   keywords:
-    'hospitality reporting automation, health wellness reporting, UK catering dashboards, clinic reporting spreadsheets, spreadsheet automation, data science consulting London',
+    'hospitality reporting automation, health wellness reporting, UK catering dashboards, clinic reporting spreadsheets, spreadsheet automation, invoice reconciliation, forecasting, data science consulting London',
   authors: [{ name: 'Carlos Alves' }],
   creator: 'Carlos Alves',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Carlos Alves Consulting | Data & AI Specialist',
+    title: 'Carlos Alves Consulting — Data & AI for UK operators',
     description:
-      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
+      'Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.',
     siteName: 'Carlos Alves Consulting',
     locale: 'en_GB',
   },
   twitter: {
     card: 'summary',
-    title: 'Carlos Alves Consulting | Data & AI Specialist',
+    title: 'Carlos Alves Consulting — Data & AI for UK operators',
     description:
-      'Automating weekly reports, dashboards and forecasts for UK hospitality and health & wellness operators — built in your spreadsheets, no subscriptions.',
+      'Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.',
   },
   icons: { icon: '/favicon.svg' },
 }
@@ -50,12 +50,42 @@ const jsonLd = {
         addressCountry: 'GB',
       },
       email: 'carlos.alves.one@gmail.com',
+      // Reddit is listed as in the approved draft. NOTE: a public check on
+      // 24 Nov 2026 showed u/carlosalvesuk as banned, and the decision on
+      // that link is still open — see the PR description before merging.
       sameAs: [
         'https://www.linkedin.com/in/carlos-alves-one',
         'https://x.com/Mr_CarlosAlves',
         'https://www.tiktok.com/@mrcarlosalves',
         'https://www.reddit.com/user/carlosalvesuk',
       ],
+      priceRange: 'Free walkthrough, then fixed fee quoted upfront',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'How pricing works',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            name: 'Weekly-Report Walkthrough',
+            description:
+              'Free 30-minute walkthrough. £0, no cost, no obligation. Mondays & Fridays, 3–6pm UK time.',
+            price: '0',
+            priceCurrency: 'GBP',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Reporting Review',
+            description:
+              'Fixed fee, quoted after the free walkthrough once the scope is clear, agreed upfront, with a refund guarantee. No amount is published — no figure has been set.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Build & handover',
+            description:
+              'Fixed price, quoted before we start. No hourly meter, no monthly subscription, you own everything outright.',
+          },
+        ],
+      },
       founder: {
         '@type': 'Person',
         name: 'Carlos Alves',

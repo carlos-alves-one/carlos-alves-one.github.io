@@ -4,6 +4,8 @@ import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Demos from '@/components/Demos'
 import Process from '@/components/Process'
+import PricingGuide from '@/components/PricingGuide'
+import Guides from '@/components/Guides'
 import About from '@/components/About'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
@@ -63,8 +65,10 @@ export default function HospitalityCateringPage() {
       <Services />
       <MovedHow />
       <Process />
+      <PricingGuide />
       <Demos />
       <MovedExamples sector="hosp" />
+      <Guides sector="hosp" />
       <FAQ />
       <MovedFaq />
       <About />

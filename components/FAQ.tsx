@@ -45,7 +45,7 @@ export default function FAQ() {
   }, [])
 
   return (
-    <section id="faq" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
+    <section id="faq" className="py-16 px-7 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
