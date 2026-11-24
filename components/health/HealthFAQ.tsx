@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
-export const faqs = [
+const faqs = [
   {
     q: 'Will we need to buy new software or subscriptions?',
     a: 'No. Everything is built inside the spreadsheets you already own — typically Excel or Google Sheets — plus free built-in tools like Power Query. There are no licences to pay, no monthly subscriptions, and nothing to rent.',
@@ -30,9 +30,32 @@ export const faqs = [
   },
 ]
 
+const homeFaqs = [
+  {
+    q: 'Do I need to buy new software?',
+    a: 'No. Everything is built in Excel or Google Sheets — the tools you already use. There is no new platform and no monthly subscription, and you own the finished spreadsheet outright, formulas unlocked.',
+  },
+  {
+    q: 'What happens in the free walkthrough?',
+    a: 'You share one weekly report on screen for 30 minutes — a redacted copy is fine. I show you 2–3 quick wins on the call, and for health & wellness clients you also get a short written summary by email within two working days. Nothing is recorded.',
+  },
+  {
+    q: 'How much does it cost after the free call?',
+    a: "Each next stage is a small, fixed fee agreed before you commit — the Reporting Review is a fixed-fee diagnostic with a refund guarantee, and any build is quoted at a fixed price upfront. There's no hourly meter running and no lock-in.",
+  },
+  {
+    q: 'Is my data kept confidential?',
+    a: 'Yes. Demonstrations on this site use clearly labelled dummy data to protect client confidentiality, and you can share a redacted report for the walkthrough.',
+  },
+  {
+    q: 'When can I book, and what if those times don\'t suit?',
+    a: "Walkthroughs run on Mondays and Fridays, 3–6pm UK time. If you need another time, send me a message with a couple of options and I'll do my best to fit you in. I reply within one working day.",
+  },
+]
+
 export default function HealthFAQ() {
   const [open, setOpen] = useState<number | null>(0)
-  const [showAll, setShowAll] = useState(true)
+  const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
     const checkHash = () => {
@@ -43,8 +66,6 @@ export default function HealthFAQ() {
     return () => window.removeEventListener('hashchange', checkHash)
   }, [])
 
-  const visible = faqs
-
   return (
     <section id="faq" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <script
@@ -53,7 +74,7 @@ export default function HealthFAQ() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
+            mainEntity: [...faqs, ...homeFaqs].map((f) => ({
               '@type': 'Question',
               name: f.q,
               acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -71,11 +92,12 @@ export default function HealthFAQ() {
         </div>
 
         <div className="space-y-3">
-          {visible.map((f, i) => {
+          {faqs.map((f, i) => {
             const isOpen = open === i
             return (
               <div
                 key={i}
+                hidden={!showAll && i >= 3}
                 className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
               >
                 <button
@@ -91,7 +113,10 @@ export default function HealthFAQ() {
                     }`}
                   />
                 </button>
-                <div className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
+                <div
+                  hidden={!isOpen}
+                  className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3"
+                >
                   {f.a}
                 </div>
               </div>
