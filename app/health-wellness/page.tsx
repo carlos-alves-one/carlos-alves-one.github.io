@@ -70,7 +70,7 @@ export default function HealthWellnessPage() {
       <HealthAbout />
       <MovedAbout />
       <MovedSocial />
-      <MovedBottom />
+      <MovedBottom sector="health" />
       <HealthContact />
       <HealthFooter />
       <BackToTop />

@@ -70,7 +70,7 @@ export default function HospitalityCateringPage() {
       <About />
       <MovedAbout />
       <MovedSocial />
-      <MovedBottom />
+      <MovedBottom sector="hosp" />
       <Contact />
       <Footer />
       <BackToTop />
