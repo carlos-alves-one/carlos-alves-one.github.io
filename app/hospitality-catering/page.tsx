@@ -9,6 +9,17 @@ import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
+import {
+  HomeMovedStyle,
+  MovedAbout,
+  MovedBottom,
+  MovedExamples,
+  MovedFaq,
+  MovedHow,
+  MovedProblem,
+  MovedSocial,
+  MovedTop,
+} from '@/components/from-home/MovedHome'
 
 export const metadata: Metadata = {
   title: 'Hospitality & Catering | Carlos Alves Consulting',
@@ -44,13 +55,22 @@ export const metadata: Metadata = {
 export default function HospitalityCateringPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <HomeMovedStyle />
       <SiteHeader />
+      <MovedTop />
       <Hero />
+      <MovedProblem sector="hosp" />
       <Services />
-      <Demos />
+      <MovedHow />
       <Process />
-      <About />
+      <Demos />
+      <MovedExamples sector="hosp" />
       <FAQ />
+      <MovedFaq />
+      <About />
+      <MovedAbout />
+      <MovedSocial />
+      <MovedBottom />
       <Contact />
       <Footer />
       <BackToTop />

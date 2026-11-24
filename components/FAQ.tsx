@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
-const faqs = [
+export const faqs = [
   {
     q: 'Will we need to buy new software or subscriptions?',
     a: 'No. Everything is built inside the spreadsheets you already own — typically Excel or Google Sheets — plus free built-in tools like Power Query. There are no licences to pay, no monthly subscriptions, and nothing to rent.',
@@ -32,7 +32,7 @@ const faqs = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
-  const [showAll, setShowAll] = useState(false)
+  const [showAll, setShowAll] = useState(true)
 
   useEffect(() => {
     const checkHash = () => {
@@ -43,10 +43,24 @@ export default function FAQ() {
     return () => window.removeEventListener('hashchange', checkHash)
   }, [])
 
-  const visible = showAll ? faqs : faqs.slice(0, 3)
+  const visible = faqs
 
   return (
     <section id="faq" className="py-16 px-6 sm:px-10 lg:px-16 bg-gray-50 border-t border-gray-100 scroll-mt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <p className="section-eyebrow">Frequently asked questions</p>
@@ -77,11 +91,9 @@ export default function FAQ() {
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
-                    {f.a}
-                  </div>
-                )}
+                <div className="px-5 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
+                  {f.a}
+                </div>
               </div>
             )
           })}

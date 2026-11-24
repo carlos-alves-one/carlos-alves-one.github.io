@@ -9,6 +9,17 @@ import HealthFAQ from '@/components/health/HealthFAQ'
 import HealthContact from '@/components/health/HealthContact'
 import HealthFooter from '@/components/health/HealthFooter'
 import BackToTop from '@/components/BackToTop'
+import {
+  HomeMovedStyle,
+  MovedAbout,
+  MovedBottom,
+  MovedExamples,
+  MovedFaq,
+  MovedHow,
+  MovedProblem,
+  MovedSocial,
+  MovedTop,
+} from '@/components/from-home/MovedHome'
 
 export const metadata: Metadata = {
   title: 'Health & Wellness | Carlos Alves Consulting',
@@ -44,13 +55,22 @@ export const metadata: Metadata = {
 export default function HealthWellnessPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <HomeMovedStyle />
       <SiteHeader />
+      <MovedTop />
       <HealthHero />
+      <MovedProblem sector="health" />
       <HealthServices />
+      <MovedHow />
       <HealthWalkthrough />
       <HealthProcess />
-      <HealthAbout />
+      <MovedExamples sector="health" />
       <HealthFAQ />
+      <MovedFaq />
+      <HealthAbout />
+      <MovedAbout />
+      <MovedSocial />
+      <MovedBottom />
       <HealthContact />
       <HealthFooter />
       <BackToTop />
