@@ -1,8 +1,22 @@
-import { homeFaqMarkup } from './homeFaqs'
-import { SampleSwitcher } from './SampleSwitcher'
 
 const style = `
-.home-moved{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.55;font-size:16px}
+.home-moved{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#22332e;line-height:1.55;font-size:16px}
+.home-moved .panel,.home-moved .card,.home-moved .dash,.home-moved .cta,.home-moved .walkthrough-strip,.home-moved .social-card{color:var(--ink)}
+.home-moved .sec-head p{color:#374151}
+.home-moved .panel h2,.home-moved .panel h3,.home-moved .card h2,.home-moved .card h3,.home-moved .dash h2,.home-moved .dash h3{color:var(--ink)}
+.home-moved section h2,.home-moved section h3{color:#071e1b}
+.home-moved .panel section h2,.home-moved .panel section h3{color:var(--ink)}
+.home-moved .case-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0}
+.home-moved .case-meta span{white-space:nowrap}
+.home-moved .results{display:grid;gap:14px;margin-top:14px}
+.home-moved .result{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline}
+.home-moved .result label{flex-basis:100%;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.home-moved .result .ba-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.home-moved .result .before{opacity:.8;text-decoration:line-through}
+.home-moved .result .after-val{font-weight:700;color:var(--good)}
+.home-moved .result small{flex-basis:100%;color:var(--muted)}
+.home-moved .case-card{margin-bottom:8px}
+
 .home-moved h2,.home-moved h3{font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;line-height:1.15;margin:0 0 .4rem}
 .home-moved h2{font-size:clamp(26px,3vw,36px)}
 .home-moved p{margin:0 0 .6rem}
@@ -85,10 +99,6 @@ const style = `
 .home-moved .dash-foot{padding:14px 20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .home-moved .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .home-moved .chip{font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px}
-.home-moved footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);font-size:13.5px}
-.home-moved footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
-.home-moved footer a{font-weight:600}
-.home-moved footer .disclaimer{flex-basis:100%;line-height:1.6;max-width:72em}
 @media (max-width:900px){.home-moved .hero-grid, .home-moved .compare, .home-moved .two, .home-moved .grid3, .home-moved .steps{grid-template-columns:1fr}
 .home-moved .kpis{grid-template-columns:1fr 1fr 1fr}
 .home-moved .about{grid-template-columns:1fr}
@@ -111,7 +121,7 @@ export function HomeMovedStyle() {
 }
 
 export function MovedTop() {
-  return <div className="home-moved"><Block html={`<nav class="navlinks" aria-label="Main"><a href="#who">Pick your door</a><a href="#cases">Case studies</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#social">Social</a><a href="#faq">FAQ</a></nav>      <div class="walkthrough-strip">
+  return <div className="home-moved"><Block html={`<nav class="navlinks" aria-label="Main"><a href="#cases">Case studies</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#social">Social</a><a href="#faq">FAQ</a></nav>      <div class="walkthrough-strip">
         <div>
           <h2>Start with a free 30-minute walkthrough</h2>
           <p>Show me one weekly report — a redacted copy is fine — and I'll show you 2–3 quick wins on the call. No cost, no obligation, nothing recorded.</p>
@@ -120,154 +130,67 @@ export function MovedTop() {
         <a class="btn btn-primary" href="https://calendar.app.google/C1hnZvX1jpWYd2bv6" target="_blank" rel="noopener">Book the free walkthrough →</a>
       </div>`} /></div>
 }
-export function MovedHow() {
-  return <div className="home-moved"><Block html={`<!-- BEFORE / AFTER -->
-  <section aria-labelledby="pain-h">
+export function MovedHow({ sector }: { sector: "hosp" | "health" }) {
+  const copy =
+    sector === "hosp"
+      ? {
+          intro:
+            "If your weekly numbers live in a till export, a rota file, an inbox of invoices and someone's memory, the report takes hours \u2014 and nobody fully trusts it. Here's the change I make:",
+          old: [
+            "Sales, labour and costs copied by hand from three or four different exports",
+            "Invoice errors spotted weeks later \u2014 or not at all",
+            "Every site or room reported in a slightly different format",
+            "The report is out of date by the time it reaches the owner",
+          ],
+          after: [
+            "One spreadsheet refreshed from your own exports \u2014 zero copying",
+            "Invoice exceptions flagged the same week, while you can still query them",
+            "Site-by-site and team-by-team views in one consistent format",
+            "Formulas unlocked and logic anyone can audit \u2014 you own it outright",
+          ],
+        }
+      : {
+          intro:
+            "If your weekly numbers live in a diary export, a rota file, an inbox of invoices and someone's memory, the report takes hours \u2014 and nobody fully trusts it. Here's the change I make:",
+          old: [
+            "Appointments, attendance and costs copied by hand from three or four different exports",
+            "Utilisation and no-shows only visible weeks later \u2014 or not at all",
+            "Every site or practitioner reported in a slightly different format",
+            "The report is out of date by the time it reaches the owner",
+          ],
+          after: [
+            "One spreadsheet refreshed from your diary, rota and finance exports \u2014 zero copying",
+            "Utilisation and no-shows flagged the same week, while you can still act on them",
+            "Site-by-site and practitioner-by-practitioner views in one consistent format",
+            "Formulas unlocked and logic anyone can audit \u2014 you own it outright",
+          ],
+        }
+  return (
+    <div className="home-moved">
+      <Block
+        html={`<section aria-labelledby="pain-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="pain-h">Monday morning doesn't have to start with copying and pasting</h2>
-        <p>If your weekly numbers live in a till export, a rota file, an inbox of invoices and someone's memory, the report takes hours — and nobody fully trusts it. Here's the change I make:</p>
+        <p>${copy.intro}</p>
       </div>
       <div class="compare">
         <div class="panel">
           <p class="tag">The old way</p>
           <h3>Retyped, late, and hard to check</h3>
-          <ul>
-            <li>Sales, labour and costs copied by hand from three or four different exports</li>
-            <li>Invoice errors spotted weeks later — or not at all</li>
-            <li>Every site or room reported in a slightly different format</li>
-            <li>The report is out of date by the time it reaches the owner</li>
-          </ul>
+          <ul>${copy.old.map((li) => `<li>${li}</li>`).join("")}</ul>
         </div>
         <div class="panel after">
           <p class="tag">With an automated report</p>
           <h3>Refreshed in under a minute</h3>
-          <ul>
-            <li>One spreadsheet refreshed from your own exports — zero copying</li>
-            <li>Invoice exceptions flagged the same week, while you can still query them</li>
-            <li>Site-by-site and team-by-team views in one consistent format</li>
-            <li>Formulas unlocked and logic anyone can audit — you own it outright</li>
-          </ul>
+          <ul>${copy.after.map((li) => `<li>${li}</li>`).join("")}</ul>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section aria-labelledby="svc-h" style="padding-top:8px">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="svc-h">How I help</h2>
-        <p>Practical solutions built inside the spreadsheets you already use — never a new platform, never a subscription.</p>
-      </div>
-      <div class="grid3">
-        <article class="card">
-          <p class="kicker">Core</p>
-          <h3>Reporting automation</h3>
-          <p>Eliminate manual data entry from your weekly reports by connecting the exports you already produce into one automated workflow.</p>
-          <ul>
-            <li>Weekly sales, activity, labour and cost reports refreshed in seconds</li>
-            <li>One view of spend, orders and activity across sites, events or rooms</li>
-            <li>Zero new software to buy</li>
-          </ul>
-        </article>
-        <article class="card">
-          <p class="kicker">Insight</p>
-          <h3>KPI dashboards &amp; invoice reconciliation</h3>
-          <p>Scattered data turned into a clear weekly view — and supplier invoices checked against what was actually ordered and delivered.</p>
-          <ul>
-            <li>Sales vs labour, margin and utilisation at a glance</li>
-            <li>Invoice exceptions flagged for review each week</li>
-            <li>Shareable summaries for owners, ops and finance</li>
-          </ul>
-        </article>
-        <article class="card">
-          <p class="kicker">Planning</p>
-          <h3>Forecasting &amp; planning</h3>
-          <p>Simple forecasts your team can follow and check — based on bookings, seasonality, weather where it matters, and your historical mix.</p>
-          <ul>
-            <li>Line-level order and staffing recommendations</li>
-            <li>Fewer emergency supplier runs and less waste</li>
-            <li>Transparent logic anyone can audit</li>
-          </ul>
-        </article>
-      </div>
+  </section>`}
+      />
     </div>
-  </section>
-
-  <!-- HOW IT WORKS + PRICE SIGNAL -->
-  <section id="how" aria-labelledby="how-h" style="padding-top:8px">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="how-h">Small, fixed-fee stages. Zero lock-in.</h2>
-        <p>Every engagement starts free, and you'll always know the fixed fee before you commit to the next stage. No subscription, no platform to buy, and full ownership of anything I build.</p>
-      </div>
-      <div class="steps">
-        <article class="card step">
-          <div class="num">01</div>
-          <h3>Free Weekly-Report Walkthrough</h3>
-          <p>Show me one weekly report on a 30-minute call and I'll walk you through 2–3 quick wins there and then. A redacted copy is fine, and nothing is recorded.</p>
-          <p class="price"><b>£0</b> · No cost, no obligation</p>
-        </article>
-        <article class="card step">
-          <div class="num">02</div>
-          <h3>Reporting Review</h3>
-          <p>A fixed-fee diagnostic of how your numbers are gathered today, with a short written summary and practical next steps you can act on — with or without me.</p>
-          <p class="price"><b>Fixed fee</b> · Agreed upfront, with a refund guarantee</p>
-        </article>
-        <article class="card step">
-          <div class="num">03</div>
-          <h3>Build &amp; handover</h3>
-          <p>I build the automated report in your Excel or Google Sheets, hand it over with formulas unlocked, and make sure your team can run it without me.</p>
-          <p class="price"><b>Fixed price</b> · Quoted before we start — you keep everything</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  `} /></div>
-}
-export function MovedFaq() {
-  return <div className="home-moved"><Block html={`<!-- FAQ -->
-  <section id="faq-home" aria-labelledby="faq-h" style="padding-top:8px">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="faq-h">Everything you might wonder before booking</h2>
-        <p>Honest answers upfront. If your question isn't here, ask it during the free walkthrough.</p>
-      </div>
-      <div class="faq">
-${homeFaqMarkup()}
-      </div>
-    </div>
-  </section>
-`} /></div>
-}
-export function MovedAbout() {
-  return <div className="home-moved"><Block html={`<p class="hello">Hello, I'm <b>Carlos</b> — I spent years doing the Monday-morning spreadsheet scramble myself, buying stock, chasing invoices and retyping last week's numbers. So now I build the weekly report I always wished I'd had. No jargon, no new system to learn — just your numbers, sorted.</p>      <div class="proof-strip" aria-label="Credentials">
-        <div><b>5 years on the operator side</b><span>Beverage purchasing at Aqua Restaurant Group, London — two restaurants and six bars, £100k of stock a month.</span></div>
-        <div><b>MSc Data Science &amp; AI</b><span>Distinction, Goldsmiths. Plus BSc Computer Science (First). Independent in London since 2024.</span></div>
-      </div><!-- ABOUT -->
-  <section id="about-from-home" aria-labelledby="about-h" style="padding-top:8px">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="about-h">Operator experience, backed by AI training</h2></div>
-      <div class="panel about">
-        <div class="avatar" aria-hidden="true">CA</div>
-        <div>
-          <h3 style="font-size:22px">Carlos Alves</h3>
-          <p style="color:var(--muted);font-weight:600;font-size:14px;margin-bottom:10px">Independent Data &amp; AI Consultant, London</p>
-          <p style="max-width:46em">Hospitality purchasing manager turned data scientist. I used to buy £100k of stock a month, reconcile tills, chase invoices and run stocktakes. Today I replace hand-typed weekly reports with automated spreadsheets that UK hospitality and health &amp; wellness teams can trust.</p>
-          <div class="chips">
-            <span class="chip">5 years · £100k/mo purchasing at Aqua Restaurant Group</span>
-            <span class="chip">MSc Data Science &amp; AI (Distinction) · Goldsmiths</span>
-            <span class="chip">BSc Computer Science (First)</span>
-            <span class="chip">London · independent since 2024 · serving clients across the UK</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  `} /></div>
+  )
 }
 export function MovedSocial() {
   return <div className="home-moved"><Block html={`<!-- SOCIAL MEDIA -->
@@ -292,139 +215,52 @@ export function MovedSocial() {
         </div>
         <div class="latest-body" id="socialBody" role="group" aria-label="Choose social platform"><p class="post-label">TikTok</p><div class="latest-body"><p class="latest-handle">TikTok · @mrcarlosalves</p><h3>Latest on TikTok — short videos on stopping the retyping</h3><p>Carlos's TikTok profile is live with 2 videos, built around the same idea as this site: helping UK operators stop retyping weekly reports and get costs, orders and sales into one view. Watch the newest video at the top of the profile.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener">Watch the latest TikTok →</a><span class="latest-note">Snapshot checked 24 Nov 2026 · 2 videos on the profile</span></div></div><p class="post-label">LinkedIn</p><div class="latest-body"><p class="latest-handle">LinkedIn · carlos-alves-one</p><h3>Latest on LinkedIn</h3><p>On LinkedIn Carlos writes for owners, operations leads and finance leads in hospitality and health & wellness — reporting automation, KPI dashboards and invoice reconciliation, in plain language and in the spreadsheets teams already use.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener">See the latest LinkedIn post →</a><span class="latest-note">Opens Carlos's LinkedIn profile — newest post first</span></div></div><p class="post-label">X</p><div class="latest-body"><p class="latest-handle">X · @Mr_CarlosAlves · 24 Nov 2026, 11:25</p><h3>Latest post on X</h3><p>Supplier prices creeping up a penny at a time hide in the weekly total until the margin's gone. Compare unit prices (line total ÷ quantity) by product code and pack size with last week and 4 weeks ago. Free 30-min Weekly-Report Walkthrough: carlosalves.uk/hospitality-ca… #Hospitality</p><div class="latest-actions"><a class="btn btn-primary" href="https://x.com/Mr_CarlosAlves/status/2125189104786649184" target="_blank" rel="noopener">View this post on X →</a><span class="latest-note">Verified post · 24 Nov 2026, 11:25 · @Mr_CarlosAlves</span></div></div><p class="post-label">Reddit</p><div class="latest-body"><p class="latest-handle">Reddit · u/carlosalvesuk</p><h3>Latest on Reddit</h3><p>On Reddit, u/carlosalvesuk joins the conversation with other operators and spreadsheet users — practical answers on weekly reporting, automation and getting one trusted view of the numbers.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.reddit.com/user/carlosalvesuk" target="_blank" rel="noopener">See the latest Reddit post →</a><span class="latest-note">Opens u/carlosalvesuk on Reddit — newest activity first</span></div></div></div>
       </div>
-      <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">This page is a fixed snapshot, so it can't pull a live feed — each button above opens that platform directly, where the newest post is always at the top. Snapshots checked 24 Nov 2026 — the X post shown is the verified post from @Mr_CarlosAlves at 11:25 that day.</p>
+      <p style="margin-top:12px;font-size:13.5px;color:#374151">This page is a fixed snapshot, so it can't pull a live feed — each button above opens that platform directly, where the newest post is always at the top. Snapshots checked 24 Nov 2026 — the X post shown is the verified post from @Mr_CarlosAlves at 11:25 that day.</p>
     </div>
   </section>
 
   `} /></div>
 }
-export function MovedBottom({ sector }: { sector: "hosp" | "health" }) {
-  const hospLink = sector === "hosp"
-    ? '<a class="btn btn-ghost" href="#services">Hospitality page</a>'
-    : '<a class="btn btn-ghost" href="https://carlosalves.uk/hospitality-catering/" target="_blank" rel="noopener">Hospitality page</a>'
-  const healthLink = sector === "health"
-    ? '<a class="btn btn-ghost" href="#services">Health &amp; Wellness page</a>'
-    : '<a class="btn btn-ghost" href="https://carlosalves.uk/health-wellness/" target="_blank" rel="noopener">Health &amp; Wellness page</a>'
-  return <div className="home-moved"><Block html={`      <div class="walkthrough-strip">
-        <div>
-          <h2>Start with a free 30-minute walkthrough</h2>
-          <p>Show me one weekly report — a redacted copy is fine — and I'll show you 2–3 quick wins on the call. No cost, no obligation, nothing recorded.</p>
-          <p style="margin-top:6px;font-size:13.5px">Mondays &amp; Fridays, 3–6pm UK time — another time? Just ask. I reply within one working day.</p>
-        </div>
-        <a class="btn btn-primary" href="https://calendar.app.google/C1hnZvX1jpWYd2bv6" target="_blank" rel="noopener">Book the free walkthrough →</a>
-      </div><!-- CTA -->
-  <section style="padding-top:8px">
-    <div class="wrap">
-      <div class="cta">
-        <h2>Start with a conversation, not a contract</h2>
-        <p>Book a free 30-minute Weekly-Report Walkthrough and bring one weekly report — you'll leave with 2–3 practical quick wins whether or not we work together afterwards.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://calendar.app.google/C1hnZvX1jpWYd2bv6" target="_blank" rel="noopener">Open booking calendar →</a>
-          ${hospLink}
-          ${healthLink}
-        </div>
-        <p style="margin-top:14px"><small>Mondays &amp; Fridays, 3–6pm (UK time) · London, UK · Serving clients across the UK</small></p>
-      </div>
-    </div>
-  </section>
-<footer>
-  <div class="wrap">
-    <span>© Carlos Alves Consulting — Independent Data &amp; AI consultancy, London, UK.</span>
-    <span><a href="https://carlosalves.uk/" target="_blank" rel="noopener">carlosalves.uk</a></span>
-    <span style="flex-basis:100%"><strong>Follow Carlos:</strong> <a href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://x.com/Mr_CarlosAlves" target="_blank" rel="noopener">X</a> · <a href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.reddit.com/user/carlosalvesuk" target="_blank" rel="noopener">Reddit</a></span>
-    <p class="disclaimer">All figures, statistics, and data shown on this page are entirely fictitious sample data created for illustrative purposes only. No real customer information, personal data, or confidential records are used, displayed, or processed. This ensures full protection of customer confidentiality and compliance with applicable data privacy regulations and standards.</p>
-  </div>
-</footer>`} /></div>
-}
-export function MovedProblem({ sector }: { sector: "hosp" | "health" }) {
-  const html = sector === "hosp" ? `<div class="sec-head">
-        <h2 id="who-h">Pick your door</h2>
-        <p>This homepage is the shared promise — one weekly report, no retyping, in the tools you already use. Through each door is a page that speaks only to your world: your daily problems, your words for them, and examples that look like your week.</p>
-      </div><article class="panel sector door">
-          <p class="door-label">Door 1 · Hospitality &amp; Catering</p>
-          <h3>For restaurants, bars, cafés, caterers and venues</h3>
-          <p>Inside: tills, rotas, stock, margins and supplier invoices — the hospitality week, in hospitality language. Costs, orders and sales in one weekly report, for owners, operations leads and finance leads.</p>
-          <ul>
-            <li>Weekly sales vs budget, labour % against target</li>
-            <li>Food and beverage gross margin tracking</li>
-            <li>Invoice reconciliation and ordering forecasts</li>
-          </ul>
-          <a class="more" href="#services">Step into the hospitality page →</a>
-        </article>` : `<div class="sec-head">
-        <h2 id="who-h">Pick your door</h2>
-        <p>This homepage is the shared promise — one weekly report, no retyping, in the tools you already use. Through each door is a page that speaks only to your world: your daily problems, your words for them, and examples that look like your week.</p>
-      </div><article class="panel sector door">
-          <p class="door-label">Door 2 · Health &amp; Wellness</p>
-          <h3>For clinics, dental practices, gyms, care providers and therapists</h3>
-          <p>Inside: diaries, rotas, rooms and practitioners — the health &amp; wellness week, in your language. Costs, appointments and staffing in one weekly report, refreshed from your booking, rota and finance exports.</p>
-          <ul>
-            <li>Appointments and attendance vs staffing hours</li>
-            <li>Site-by-site or practitioner-by-practitioner views</li>
-            <li>Demand and staffing forecasts you can audit</li>
-          </ul>
-          <a class="more" href="#services">Step into the health &amp; wellness page →</a>
-        </article><p style="margin-top:12px;font-size:13.5px;color:var(--muted)">Note on scope: for health &amp; wellness clients the work is about how numbers are gathered and shown — not clinical advice, treatment decisions or regulatory certification.</p>`
-  return <div className="home-moved" id="who"><Block html={html} /></div>
-}
 export function MovedExamples({ sector }: { sector: "hosp" | "health" }) {
-  const html = sector === "hosp" ? `<div id="cases"><div class="sec-head">
-        <h2 id="cases-h">Case studies — before &amp; after</h2>
-        <p>Two worked examples in the format I build for clients. Both are fictitious sample case studies for illustration — the businesses, figures and timelines are invented, so no real client data is shown.</p>
-      </div><article class="panel case-card">
-          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Hospitality · London · 8 weeks</p>
-          <h3>Harbour &amp; Vine — 3 restaurants</h3>
-          <p style="color:var(--muted);font-size:15px">The owner was spending Monday mornings retyping till exports, rota files and PDF invoices. Food cost was only known weeks later, invoice errors were missed, and one site lost money for three weeks before anyone spotted it.</p>
-          <div class="case-meta"><span>~£210k / month turnover</span><span>~120 invoices / month</span><span>Same tills &amp; suppliers</span></div>
+  const isHosp = sector === "hosp"
+  const heading = "Case study \u2014 before & after"
+  const intro =
+    "One worked example in the format I build for clients. It is a fictitious sample case study for illustration \u2014 the business, figures and timeline are invented, so no real client data is shown."
+  const caseHtml = isHosp
+    ? `<article class="panel case-card">
+          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Hospitality \u00b7 London \u00b7 8 weeks</p>
+          <h3>Harbour &amp; Vine \u2014 3 restaurants</h3>
+          <p style="font-size:15px">The owner was spending Monday mornings retyping till exports, rota files and PDF invoices. Food cost was only known weeks later, invoice errors were missed, and one site lost money for three weeks before anyone spotted it.</p>
+          <div class="case-meta"><span>~\u00a3210k / month turnover</span><span>~120 invoices / month</span><span>Same tills &amp; suppliers</span></div>
           <div class="results">
-            <div class="result"><label>Weekly reporting</label><span class="before">7 hours</span><div class="after-val">45 mins</div><small>One report by 8am Monday</small></div>
-            <div class="result"><label>Food cost</label><span class="before">31.5%</span><div class="after-val">28.9%</div><small>Seen live, by site &amp; dish</small></div>
-            <div class="result"><label>Waste</label><span class="before">8.0% of purchases</span><div class="after-val">4.6%</div><small>Forecast-led ordering</small></div>
-            <div class="result"><label>Invoices to check</label><span class="before">~120 by hand</span><div class="after-val">~5 flagged</div><small>96% matched automatically</small></div>
+            <div class="result"><label>Weekly reporting</label><span class="ba-label">Before</span><span class="before">7 hours</span><span class="ba-label">After</span><span class="after-val">45 mins</span><small>One report by 8am Monday</small></div>
+            <div class="result"><label>Food cost</label><span class="ba-label">Before</span><span class="before">31.5%</span><span class="ba-label">After</span><span class="after-val">28.9%</span><small>Seen live, by site &amp; dish</small></div>
+            <div class="result"><label>Waste</label><span class="ba-label">Before</span><span class="before">8.0% of purchases</span><span class="ba-label">After</span><span class="after-val">4.6%</span><small>Forecast-led ordering</small></div>
+            <div class="result"><label>Invoices to check</label><span class="ba-label">Before</span><span class="before">~120 by hand</span><span class="ba-label">After</span><span class="after-val">~5 flagged</span><small>96% matched automatically</small></div>
           </div>
-          <p style="color:var(--muted);font-size:14.5px">After: invoices matched to orders and deliveries, a £412 duplicate charge caught in week 2, and ordering suggested from bookings, last year and the weather — all in a spreadsheet the owner owns.</p>
-          <a class="more" href="#services">See the hospitality work behind this →</a>
-        </article><article class="panel case-card">
-          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Health &amp; Wellness · North · 10 weeks</p>
-          <h3>Fernwell Wellness — 4 locations</h3>
-          <p style="color:var(--muted);font-size:15px">A physiotherapy, massage and reformer Pilates group across Manchester, Leeds and Sheffield. Diaries, rotas and finance lived in separate exports, so utilisation and no-shows were hard to see until long after the week had passed.</p>
-          <div class="case-meta"><span>4 locations</span><span>Physio · Massage · Pilates</span><span>~165 invoices / month</span></div>
+          <p style="font-size:14.5px">After: invoices matched to orders and deliveries, a \u00a3412 duplicate charge caught in week 2, and ordering suggested from bookings, last year and the weather \u2014 all in a spreadsheet the owner owns.</p>
+        </article>`
+    : `<article class="panel case-card">
+          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Health &amp; Wellness \u00b7 North \u00b7 10 weeks</p>
+          <h3>Fernwell Wellness \u2014 4 locations</h3>
+          <p style="font-size:15px">A physiotherapy, massage and reformer Pilates group across Manchester, Leeds and Sheffield. Diaries, rotas and finance lived in separate exports, so utilisation and no-shows were hard to see until long after the week had passed.</p>
+          <div class="case-meta"><span>4 locations</span><span>Physio \u00b7 Massage \u00b7 Pilates</span><span>~165 invoices / month</span></div>
           <div class="results">
-            <div class="result"><label>Weekly reporting</label><span class="before">9 hours</span><div class="after-val">50 mins</div><small>One view, every Monday</small></div>
-            <div class="result"><label>Utilisation</label><span class="before">61%</span><div class="after-val">73%</div><small>By site &amp; practitioner</small></div>
-            <div class="result"><label>No-shows</label><span class="before">13.8%</span><div class="after-val">8.4%</div><small>Spotted &amp; acted on weekly</small></div>
-            <div class="result"><label>Invoices to check</label><span class="before">~165 by hand</span><div class="after-val">~8 flagged</div><small>Exceptions list only</small></div>
+            <div class="result"><label>Weekly reporting</label><span class="ba-label">Before</span><span class="before">9 hours</span><span class="ba-label">After</span><span class="after-val">50 mins</span><small>One view, every Monday</small></div>
+            <div class="result"><label>Utilisation</label><span class="ba-label">Before</span><span class="before">61%</span><span class="ba-label">After</span><span class="after-val">73%</span><small>By site &amp; practitioner</small></div>
+            <div class="result"><label>No-shows</label><span class="ba-label">Before</span><span class="before">13.8%</span><span class="ba-label">After</span><span class="after-val">8.4%</span><small>Spotted &amp; acted on weekly</small></div>
+            <div class="result"><label>Invoices to check</label><span class="ba-label">Before</span><span class="before">~165 by hand</span><span class="ba-label">After</span><span class="after-val">~8 flagged</span><small>Exceptions list only</small></div>
           </div>
-          <p style="color:var(--muted);font-size:14.5px">After: appointments, staffing and costs in one weekly report — diary, rota and finance exports refreshed together, with demand and staffing forecasts the team can audit.</p>
-          <a class="more" href="https://carlosalves.uk/health-wellness/" target="_blank" rel="noopener">See the health &amp; wellness work behind this →</a>
-        </article><article class="panel"><h3><a href="/wedding-venue-crm-payments-forecasting/">What CRM should a wedding and events venue use to track leads, quotes, payments and revenue forecasts?</a></h3><p>A venue whose list includes pipelines, quotes, e-signed contracts, payment chasing, a shared events calendar and a couple portal is usually describing…</p></article></div>` : `<div id="cases"><div class="sec-head">
-        <h2 id="cases-h">Case studies — before &amp; after</h2>
-        <p>Two worked examples in the format I build for clients. Both are fictitious sample case studies for illustration — the businesses, figures and timelines are invented, so no real client data is shown.</p>
-      </div><article class="panel case-card">
-          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Hospitality · London · 8 weeks</p>
-          <h3>Harbour &amp; Vine — 3 restaurants</h3>
-          <p style="color:var(--muted);font-size:15px">The owner was spending Monday mornings retyping till exports, rota files and PDF invoices. Food cost was only known weeks later, invoice errors were missed, and one site lost money for three weeks before anyone spotted it.</p>
-          <div class="case-meta"><span>~£210k / month turnover</span><span>~120 invoices / month</span><span>Same tills &amp; suppliers</span></div>
-          <div class="results">
-            <div class="result"><label>Weekly reporting</label><span class="before">7 hours</span><div class="after-val">45 mins</div><small>One report by 8am Monday</small></div>
-            <div class="result"><label>Food cost</label><span class="before">31.5%</span><div class="after-val">28.9%</div><small>Seen live, by site &amp; dish</small></div>
-            <div class="result"><label>Waste</label><span class="before">8.0% of purchases</span><div class="after-val">4.6%</div><small>Forecast-led ordering</small></div>
-            <div class="result"><label>Invoices to check</label><span class="before">~120 by hand</span><div class="after-val">~5 flagged</div><small>96% matched automatically</small></div>
-          </div>
-          <p style="color:var(--muted);font-size:14.5px">After: invoices matched to orders and deliveries, a £412 duplicate charge caught in week 2, and ordering suggested from bookings, last year and the weather — all in a spreadsheet the owner owns.</p>
-          <a class="more" href="https://carlosalves.uk/hospitality-catering/" target="_blank" rel="noopener">See the hospitality work behind this →</a>
-        </article><article class="panel case-card">
-          <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Health &amp; Wellness · North · 10 weeks</p>
-          <h3>Fernwell Wellness — 4 locations</h3>
-          <p style="color:var(--muted);font-size:15px">A physiotherapy, massage and reformer Pilates group across Manchester, Leeds and Sheffield. Diaries, rotas and finance lived in separate exports, so utilisation and no-shows were hard to see until long after the week had passed.</p>
-          <div class="case-meta"><span>4 locations</span><span>Physio · Massage · Pilates</span><span>~165 invoices / month</span></div>
-          <div class="results">
-            <div class="result"><label>Weekly reporting</label><span class="before">9 hours</span><div class="after-val">50 mins</div><small>One view, every Monday</small></div>
-            <div class="result"><label>Utilisation</label><span class="before">61%</span><div class="after-val">73%</div><small>By site &amp; practitioner</small></div>
-            <div class="result"><label>No-shows</label><span class="before">13.8%</span><div class="after-val">8.4%</div><small>Spotted &amp; acted on weekly</small></div>
-            <div class="result"><label>Invoices to check</label><span class="before">~165 by hand</span><div class="after-val">~8 flagged</div><small>Exceptions list only</small></div>
-          </div>
-          <p style="color:var(--muted);font-size:14.5px">After: appointments, staffing and costs in one weekly report — diary, rota and finance exports refreshed together, with demand and staffing forecasts the team can audit.</p>
-          <a class="more" href="#services">See the health &amp; wellness work behind this →</a>
-        </article><article class="panel"><h3><a href="/gym-non-card-payments-reconcile/">How can a gym reconcile cash and bank-transfer payments with its gym software without marking each one by hand?</a></h3><p>Most gym software can already hold non-card payments: you record the payment as an offline method (cash or bank transfer) against the member, then confirm…</p></article></div>`
-  return <div className="home-moved"><Block html={html} /><SampleSwitcher sector={sector} /></div>
+          <p style="font-size:14.5px">After: appointments, staffing and costs in one weekly report \u2014 diary, rota and finance exports refreshed together, with demand and staffing forecasts the team can audit.</p>
+        </article>`
+  return (
+    <div className="home-moved">
+      <Block
+        html={`<div id="cases"><div class="wrap"><div class="sec-head">
+        <h2 id="cases-h">${heading}</h2>
+        <p>${intro}</p>
+      </div>${caseHtml}</div></div>`}
+      />
+    </div>
+  )
 }

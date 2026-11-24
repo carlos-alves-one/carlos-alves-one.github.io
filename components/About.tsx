@@ -71,7 +71,7 @@ export default function About() {
               <h3 className="text-2xl font-bold text-navy-900">Carlos Alves</h3>
               <p className="text-sm font-semibold text-accent-600 mb-3">Independent Data &amp; AI Consultant, London</p>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-5">
-                Hospitality purchasing manager turned data scientist. I buy £100k of stock a month, reconcile tills, chase invoices and run stocktakes — or at least I used to. Today I replace hand-typed weekly reports with automated spreadsheets UK catering and hospitality teams can trust.
+                Hospitality purchasing manager turned data scientist. I used to buy £100k of stock a month, reconcile tills, chase invoices and run stocktakes. Today I replace hand-typed weekly reports with automated spreadsheets UK catering and hospitality teams can trust.
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-2 text-xs">
                 <span className="px-3 py-1.5 rounded-full bg-white border border-gray-200 font-semibold text-gray-700">5 years · £100k/mo purchasing at Aqua Restaurant Group</span>
