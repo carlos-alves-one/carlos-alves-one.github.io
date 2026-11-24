@@ -52,7 +52,6 @@ const jsonLd = {
       email: 'carlos.alves.one@gmail.com',
       sameAs: [
         'https://www.linkedin.com/in/carlos-alves-one',
-        'https://calendar.app.google/C1hnZvX1jpWYd2bv6',
         'https://x.com/Mr_CarlosAlves',
         'https://www.tiktok.com/@mrcarlosalves',
         'https://www.reddit.com/user/carlosalvesuk',
