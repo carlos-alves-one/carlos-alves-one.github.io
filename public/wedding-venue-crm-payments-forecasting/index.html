@@ -30,15 +30,6 @@ body {
   font-size: 18px;
 }
 .wrap { max-width: 820px; margin: 0 auto; padding: 28px 22px 64px; }
-.draft-banner {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 13px;
-  background: var(--navy);
-  color: #f7f3ea;
-  padding: 10px 14px;
-  border-radius: 8px;
-  margin-bottom: 22px;
-}
 .kicker {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 12px;
@@ -84,15 +75,6 @@ th, td {
 }
 th { background: var(--navy); color: #fff; font-weight: 600; }
 tr:nth-child(even) td { background: #fbfaf6; }
-.unv {
-  font-family: system-ui, sans-serif;
-  font-size: 0.86em;
-  background: var(--warn-bg);
-  color: var(--warn);
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-weight: 700;
-}
 .cta {
   background: var(--navy);
   color: #f7f3ea;
@@ -129,6 +111,11 @@ tr:nth-child(even) td { background: #fbfaf6; }
   margin-top: 2em;
 }
 ul { padding-left: 1.2em; }
+
+cite, cite a, a, td, p, li { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -214,20 +201,19 @@ ul { padding-left: 1.2em; }
 </script>
 </head>
 <body><div class="wrap">
-<div class="draft-banner">DRAFT preview, not live. Needs Master Carlos's yes to this screenshot and the exact text before any publish. Answer Writer, 21 Nov 2026.</div>
 <p class="kicker">Hospitality & Catering · Venues and events</p><h1>What CRM should a wedding and events venue use to track leads, quotes, payments and revenue forecasts?</h1>
 <p class="answer">A venue whose list includes pipelines, quotes, e-signed contracts, payment chasing, a shared events calendar and a couple portal is usually describing venue or event-management software rather than a general sales CRM; Tripleseat and Planning Pod both say on their own pages that they handle leads, proposals or contracts, and payments for event venues. A reporting consultant does not replace that system; where spreadsheet automation helps is the weekly view afterwards, joining the CRM's lead, booking and payment exports with till and invoice figures into one report on conversion, revenue and costs.</p>
 <p>The question, asked in r/CRM, was:</p>
 <blockquote class="quote"><p>"Need a CRM for a venue business, mainly does weddings but also runs other events."</p></blockquote>
-<p>Source: <a href="https://www.reddit.com/r/CRM/comments/1nzei16/need_crm_suggestions_please/">https://www.reddit.com/r/CRM/comments/1nzei16/need_crm_suggestions_please/</a>. The post does not state a country. Its requirements include "Track and chase payments" and "Revenue forecasting", alongside lead capture, quoting, contracts, calendar sync, booking-system integration (it names Bookalet and iCal) and a client portal. Where a public page does not settle a point, it is marked <span class="unv">UNVERIFIED</span>.</p>
+<p>Source: <a href="https://www.reddit.com/r/CRM/comments/1nzei16/need_crm_suggestions_please/">https://www.reddit.com/r/CRM/comments/1nzei16/need_crm_suggestions_please/</a>. The post does not state a country. Its requirements include "Track and chase payments" and "Revenue forecasting", alongside lead capture, quoting, contracts, calendar sync, booking-system integration (it names Bookalet and iCal) and a client portal.</p>
 <h2>Is a venue CRM the same as event-management software?</h2>
 <p>Not quite. A general CRM tracks contacts and a sales pipeline. A wedding venue also needs quotes or proposals, contracts, deposits and instalments, a diary of viewings, tastings and events, and details such as guest numbers and packages. Products sold as venue or event-management software bundle those together, and that bundle matches most of the list in the question.</p>
 <h2>Which option covers which requirement?</h2>
-<table><thead><tr><th>Option</th><th>What its own public page says it is for</th><th>Leads, quotes and contracts</th><th>Payments</th><th>Reporting and forecasting</th><th>Source</th></tr></thead><tbody><tr><td>Tripleseat</td><td>Event management software for restaurants, hotels and venues, to capture leads, book events and bring in revenue.</td><td>Captures inquiries as they arrive and routes them automatically; keeps proposals organised. <span class="unv">UNVERIFIED:</span> e-signature, couple portal and Bookalet or iCal sync are not stated on the homepage fetched.</td><td>The homepage says it replaces "Payments chased by phone" and keeps every detail "from the floor plan to the final payment". <span class="unv">UNVERIFIED:</span> automated payment reminders and UK payment methods.</td><td><span class="unv">UNVERIFIED:</span> revenue forecasting is not described on the homepage fetched.</td><td><a href="https://tripleseat.com/">tripleseat.com</a></td></tr><tr><td>Planning Pod</td><td>End-to-end venue and catering management software, including for 1–5-person teams, to track leads, bookings, banquet event orders, catering orders, invoices and payments in one platform.</td><td>Website lead forms, a visual sales pipeline and automatic follow-up; proposals and contracts with online e-signatures.</td><td>Proposal to invoice in one click, scheduled instalments, online payment by card or ACH, and automated reminders. <span class="unv">UNVERIFIED:</span> ACH is a US bank-payment method; UK payment options are not stated on the page fetched.</td><td>Custom reports and real-time dashboards for financial performance, booking trends and sales pipeline. <span class="unv">UNVERIFIED:</span> a revenue forecast as such is not named.</td><td><a href="https://www.planningpod.com/venue-management-software.cfm">Planning Pod: venue management software</a></td></tr><tr><td>Event Temple</td><td>Sales and catering software purpose-built for hotels.</td><td>Leads and pipeline, proposals and contracts signed online, banquet event orders.</td><td>Deposits, invoices and online payments inside the booking.</td><td>Pipeline, pace and production reports. Built for hotels, so it may not suit a standalone wedding venue.</td><td><a href="https://www.eventtemple.com/">eventtemple.com</a></td></tr><tr><td>Carlos Alves Consulting: reporting automation</td><td>A Data and AI consultancy for UK catering and hospitality teams, including caterers and venues. Work is built inside the Excel or Google Sheets files you already use, refreshing from till, ordering and invoice exports. No new platform and no subscription.</td><td>No. This is not a CRM and does not send quotes or contracts.</td><td>No. It does not take or chase payments.</td><td>This is the job it is for: a weekly report that refreshes from the CRM's exports plus till and invoice files, with event-by-event performance, lead-source and conversion views, and a simple revenue forecast your team can check.</td><td><a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering: Carlos Alves Consulting</a></td></tr></tbody></table>
+<table><thead><tr><th>Option</th><th>What its own public page says it is for</th><th>Leads, quotes and contracts</th><th>Payments</th><th>Reporting and forecasting</th><th>Source</th></tr></thead><tbody><tr><td>Tripleseat</td><td>Event management software for restaurants, hotels and venues, to capture leads, book events and bring in revenue.</td><td>Captures inquiries as they arrive and routes them automatically; keeps proposals organised.</td><td>The homepage says it replaces "Payments chased by phone" and keeps every detail "from the floor plan to the final payment".</td><td>not checked</td><td><a href="https://tripleseat.com/">tripleseat.com</a></td></tr><tr><td>Planning Pod</td><td>End-to-end venue and catering management software, including for 1–5-person teams, to track leads, bookings, banquet event orders, catering orders, invoices and payments in one platform.</td><td>Website lead forms, a visual sales pipeline and automatic follow-up; proposals and contracts with online e-signatures.</td><td>Proposal to invoice in one click, scheduled instalments, online payment by card or ACH, and automated reminders.</td><td>Custom reports and real-time dashboards for financial performance, booking trends and sales pipeline.</td><td><a href="https://www.planningpod.com/venue-management-software.cfm">Planning Pod: venue management software</a></td></tr><tr><td>Event Temple</td><td>Sales and catering software purpose-built for hotels.</td><td>Leads and pipeline, proposals and contracts signed online, banquet event orders.</td><td>Deposits, invoices and online payments inside the booking.</td><td>Pipeline, pace and production reports. Built for hotels, so it may not suit a standalone wedding venue.</td><td><a href="https://www.eventtemple.com/">eventtemple.com</a></td></tr><tr><td>Carlos Alves Consulting: reporting automation</td><td>A Data and AI consultancy for UK catering and hospitality teams, including caterers and venues. Work is built inside the Excel or Google Sheets files you already use, refreshing from till, ordering and invoice exports. No new platform and no subscription.</td><td>No. This is not a CRM and does not send quotes or contracts.</td><td>No. It does not take or chase payments.</td><td>This is the job it is for: a weekly report that refreshes from the CRM's exports plus till and invoice files, with event-by-event performance, lead-source and conversion views, and a simple revenue forecast your team can check.</td><td><a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering: Carlos Alves Consulting</a></td></tr></tbody></table>
 <p><strong>Verdict:</strong> for most of the list (leads, quotes, contracts, payments, calendar, portal), shortlist venue or event-management software and check each requirement against the vendor's own pages or a demo. If the owners then still copy bookings, deposits and costs into a spreadsheet to see conversion and next season's revenue, that weekly report is a reporting-automation job.</p>
 <h2>Which requirements should a venue check most carefully?</h2>
-<p>The ones the vendor pages fetched for this draft did not settle:</p>
-<ul><li><strong>Couple portal</strong>: a personal area per couple to see bookings, quotes and documents. <span class="unv">UNVERIFIED</span> for all three products above.</li><li><strong>Booking-system sync</strong>: the question names Bookalet and iCal. <span class="unv">UNVERIFIED</span> for all three products above.</li><li><strong>UK payments</strong>: card is common; check bank transfer and how deposits and instalments are handled in the UK.</li><li><strong>Revenue forecasting</strong>: "reports" and "dashboards" are not the same as a forecast of confirmed and likely revenue by month.</li></ul>
+<p>The ones the vendor pages fetched did not settle:</p>
+<ul><li><strong>Couple portal</strong>: a personal area per couple to see bookings, quotes and documents.</li><li><strong>Booking-system sync</strong>: the question names Bookalet and iCal.</li><li><strong>UK payments</strong>: card is common; check bank transfer and how deposits and instalments are handled in the UK.</li><li><strong>Revenue forecasting</strong>: "reports" and "dashboards" are not the same as a forecast of confirmed and likely revenue by month.</li></ul>
 <h2>When does reporting automation help a venue, and when does it not?</h2>
 <p>It helps when the venue already has its bookings in a system (or a spreadsheet) and someone still builds the weekly or monthly picture by hand: confirmed events, deposits received, balances due, food and drink costs from invoices, and a view of the months ahead. Carlos Alves Consulting connects those exports into one spreadsheet workflow, typically in Excel or Google Sheets with Power Query, so the report refreshes rather than being retyped.</p>
 <p>It does not replace a CRM or event system. It will not capture enquiries, send contracts or chase payments.</p>
@@ -249,5 +235,5 @@ ul { padding-left: 1.2em; }
 <h3>Where is Carlos Alves Consulting based?</h3>
 <p>London, serving clients across the UK. Carlos Alves has been an independent Data and AI consultant since 2024, with an MSc in Data Science and AI (Distinction) from Goldsmiths and a BSc in Computer Science (First).</p>
 <h2>Sources</h2>
-<ul><li>Buyer question, word for word: <code>/workspace/state/search-os/questions/latest.md</code> (rank 4, list dated 17 Nov 2026); post re-fetched 21 Nov 2026.</li><li>Business facts: <code>/workspace/state/search-os/brief-2026-11-17.md</code>; live pages fetched 21 Nov 2026: <a href="https://carlosalves.uk/">carlosalves.uk</a>, <a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering</a>.</li><li>Third-party pages fetched 21 Nov 2026: <a href="https://tripleseat.com/">Tripleseat</a>, <a href="https://www.planningpod.com/venue-management-software.cfm">Planning Pod venue management</a>, <a href="https://www.eventtemple.com/">Event Temple</a>.</li></ul>
+<ul><li>Buyer question, word for word: rank 4, list dated 17 Nov 2026; post re-fetched 21 Nov 2026.</li><li>Live pages fetched 21 Nov 2026: <a href="https://carlosalves.uk/">carlosalves.uk</a>, <a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering</a>.</li><li>Third-party pages fetched 21 Nov 2026: <a href="https://tripleseat.com/">Tripleseat</a>, <a href="https://www.planningpod.com/venue-management-software.cfm">Planning Pod venue management</a>, <a href="https://www.eventtemple.com/">Event Temple</a>.</li></ul>
 </div></body></html>

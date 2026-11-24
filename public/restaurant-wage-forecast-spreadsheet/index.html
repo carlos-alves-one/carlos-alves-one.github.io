@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What should a restaurant wage forecast spreadsheet include, and how do you stop retyping it every week?</title>
+<meta name="description" content="A useful weekly wage forecast spreadsheet has four columns per day: forecast sales, forecast wages from the rota, actual sales and actual wages, so it…">
+<link rel="canonical" href="https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/">
+<meta property="og:url" content="https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/">
+<style>
+:root {
+  --navy: #10243a;
+  --navy-2: #1a3a55;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --paper: #f7f3ea;
+  --card: #fffdf8;
+  --line: #e7e0d2;
+  --accent: #c45c26;
+  --teal: #0f6e6a;
+  --warn: #8a5a00;
+  --warn-bg: #fff6e0;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  font-size: 18px;
+}
+.wrap { max-width: 820px; margin: 0 auto; padding: 28px 22px 64px; }
+.kicker {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+h1 { font-size: 2rem; line-height: 1.2; color: var(--navy); margin: 0 0 16px; }
+h2 { font-size: 1.4rem; color: var(--navy); margin: 2.1em 0 0.7em; }
+h3 { font-size: 1.12rem; color: var(--navy-2); margin: 1.5em 0 0.5em; }
+p, li { margin: 0 0 0.9em; }
+a { color: var(--teal); }
+.answer {
+  font-size: 1.12rem;
+  background: var(--card);
+  border-left: 5px solid var(--accent);
+  padding: 14px 16px;
+  margin: 0 0 1.2em;
+}
+.quote {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 14px 16px;
+  margin: 0 0 1.3em;
+}
+.quote p { margin: 0 0 0.5em; }
+.quote cite { font-family: system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); font-style: normal; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.92rem;
+  background: #fff;
+  margin: 0 0 1.3em;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 11px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: var(--navy); color: #fff; font-weight: 600; }
+tr:nth-child(even) td { background: #fbfaf6; }
+.cta {
+  background: var(--navy);
+  color: #f7f3ea;
+  padding: 22px 22px 18px;
+  border-radius: 12px;
+  margin: 1.8em 0;
+}
+.cta h2, .cta h3 { color: #fff; margin-top: 0; }
+.cta p { color: #e8e0d4; }
+.cta a.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin: 6px 10px 8px 0;
+}
+.cta a.btn-secondary {
+  background: transparent;
+  border: 1px solid #d6cbb8;
+  color: #fff;
+}
+.faq dt { font-weight: 700; color: var(--navy); margin: 1em 0 0.3em; font-family: system-ui, sans-serif; }
+.faq dd { margin: 0 0 0.8em; }
+.footer-note {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 2em;
+}
+ul { padding-left: 1.2em; }
+@media (max-width: 640px) {
+  .wrap { overflow-wrap: anywhere; }
+  code { word-break: break-all; }
+  table, thead, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tr { border: 1px solid var(--line); margin: 0 0 12px; background: #fff; }
+  td { border: none; border-bottom: 1px solid var(--line); }
+  td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--navy); font-size: 0.8rem; margin-bottom: 2px; }
+  tr:nth-child(even) td { background: #fff; }
+  tr td:first-child { background: var(--navy) !important; color: #fff; font-weight: 700; }
+  tr td:first-child::before { color: #e8e0d4; }
+  tr td:first-child a { color: #fff; }
+}
+
+cite, cite a, a, td, p, li { overflow-wrap: anywhere; }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://carlosalves.uk/#org",
+   "name": "Carlos Alves Consulting",
+   "url": "https://carlosalves.uk/",
+   "founder": {
+    "@type": "Person",
+    "name": "Carlos Alves"
+   },
+   "email": "carlos.alves.one@gmail.com",
+   "areaServed": "GB",
+   "sameAs": [
+    "https://www.linkedin.com/in/carlos-alves-one"
+   ]
+  },
+  {
+   "@type": "Article",
+   "headline": "What should a restaurant wage forecast spreadsheet include, and how do you stop retyping it every week?",
+   "description": "A useful weekly wage forecast spreadsheet has four columns per day: forecast sales, forecast wages from the rota, actual sales and actual wages, so it shows wage cost as a percentage of sales for the week and the year to date against your target. The forecast can stay a spreadsheet you own; what sto",
+   "url": "https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/",
+   "mainEntityOfPage": "https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/",
+   "inLanguage": "en-GB",
+   "datePublished": "2026-11-24",
+   "author": {
+    "@type": "Person",
+    "name": "Carlos Alves"
+   },
+   "publisher": {
+    "@id": "https://carlosalves.uk/#org"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/#faq",
+   "url": "https://carlosalves.uk/restaurant-wage-forecast-spreadsheet/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a good wage cost percentage for a restaurant?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the concept, location and service style, so this page does not quote a figure. Set your own target from your own history and track the gap weekly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I forecast wages in Excel or Google Sheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Multiply the rota's hours by role by the hourly cost for each day, set it against forecast sales, and compare with actuals refreshed from your till and rota exports."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need scheduling software to forecast wages?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not necessarily. Scheduling tools such as Rotaready and Planday say they include forecasting; a spreadsheet can do the forecast-versus-actual view if your existing tools export."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will we need to buy new software?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not for the spreadsheet described here. It is built inside the spreadsheets you already own, typically Excel or Google Sheets with free built-in tools such as Power Query."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who is Carlos Alves?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An independent Data and AI consultant based in London, independent since 2024, serving clients across the UK. He holds an MSc in Data Science and AI (Distinction) from Goldsmiths and a BSc in Computer Science (First)."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap">
+<p class="kicker">Hospitality &amp; Catering · Labour and forecasting</p><h1>What should a restaurant wage forecast spreadsheet include, and how do you stop retyping it every week?</h1>
+<p class="answer">A useful weekly wage forecast spreadsheet has four columns per day: forecast sales, forecast wages from the rota, actual sales and actual wages, so it shows wage cost as a percentage of sales for the week and the year to date against your target. The forecast can stay a spreadsheet you own; what stops the weekly retyping is having the actual sales and hours refresh from your till and rota exports rather than being typed in.</p>
+<p>The question, asked in r/excel by a restaurant operator, was:</p>
+<blockquote class="quote"><p>"I’m looking for a wage forecast spread sheet."</p></blockquote>
+<p>Source: <a href="https://www.reddit.com/r/excel/comments/k8eugq/restaurant_forecast_weekly_spreadsheet_wage/">https://www.reddit.com/r/excel/comments/k8eugq/restaurant_forecast_weekly_spreadsheet_wage/</a>. The thread asks for a weekly sheet comparing forecast with actual and year to date; it does not state a country.</p>
+<h2>What goes into a weekly wage forecast sheet?</h2>
+<table><thead><tr><th>Part</th><th>What it holds</th><th>Where it should come from</th></tr></thead><tbody><tr><td data-label="Part">Sales forecast</td><td data-label="What it holds">Expected sales by day for the coming week.</td><td data-label="Where it should come from">Your own history (same week last year, recent weeks) plus known bookings and events.</td></tr><tr><td data-label="Part">Wage forecast</td><td data-label="What it holds">Hours by role by day multiplied by hourly cost.</td><td data-label="Where it should come from">The published rota.</td></tr><tr><td data-label="Part">Actuals</td><td data-label="What it holds">Sales and hours that really happened.</td><td data-label="Where it should come from">Till export and timesheet or rota export, refreshed rather than typed.</td></tr><tr><td data-label="Part">Wage % of sales</td><td data-label="What it holds">Wages divided by sales, by day, week and year to date.</td><td data-label="Where it should come from">Calculated in the sheet.</td></tr><tr><td data-label="Part">Target and variance</td><td data-label="What it holds">Your target wage %, and the gap.</td><td data-label="Where it should come from">A target you set once.</td></tr></tbody></table>
+<p>Keep the logic visible: one tab of inputs, one of calculations, one summary. Anyone checking it should be able to see why a number is what it is.</p>
+<h2>Spreadsheet or scheduling software: which fits?</h2>
+<table><thead><tr><th>Option</th><th>What its own public page says</th><th>Forecast vs actual wages</th><th>Source</th></tr></thead><tbody><tr><td data-label="Option">Rotaready Evo</td><td data-label="What its own public page says">Hospitality scheduling software for multi-site managers, with sales forecasting and workforce planning built in, and visibility of wage costs and revenue.</td><td data-label="Forecast vs actual wages">Yes, inside the product.</td><td data-label="Source"><a href="https://www.rotaready.com/">rotaready.com</a></td></tr><tr><td data-label="Option">Planday</td><td data-label="What its own public page says">Employee scheduling and time tracking, with reports and forecasts to predict staffing needs each shift.</td><td data-label="Forecast vs actual wages">Reports and forecasts are named.</td><td data-label="Source"><a href="https://www.planday.com/">planday.com</a></td></tr><tr><td data-label="Option">Carlos Alves Consulting: wage forecast spreadsheet</td><td data-label="What its own public page says">Weekly sales, labour and cost reports built in the Excel or Google Sheets files you already use, refreshing from till and rota exports, with labour % against target and simple forecasts your team can follow and check. No new platform and no subscription.</td><td data-label="Forecast vs actual wages">Yes: forecast against actual by day, week and year to date, refreshed from your exports.</td><td data-label="Source"><a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering: Carlos Alves Consulting</a></td></tr></tbody></table>
+<p><strong>Verdict:</strong> if you are choosing a rota system anyway, look at the forecasting built into scheduling products such as Rotaready or Planday. If you already have a rota tool and just need the weekly forecast-versus-actual picture without typing it in, a refreshable spreadsheet is the smaller change.</p>
+<h2>How do you stop retyping the actuals every week?</h2>
+<p>Use Power Query (built into Excel) or an equivalent import in Google Sheets to read the till and rota exports from a folder. Microsoft describes Power Query as a way to connect to data, reshape it and save the steps as a repeatable query you can refresh. Source: <a href="https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query">Microsoft Learn: What is Power Query?</a>. Each Monday, save the new exports into the folder and refresh: the actual columns fill themselves and the forecast tab stays as you set it.</p>
+<h2>When does this help, and when does it not?</h2>
+<p>It helps when your till and rota can export to CSV or Excel and someone currently copies sales and hours into a forecast sheet each week. It does not build or publish rotas, track clock-ins or run payroll, which stay with your scheduling and payroll tools.</p>
+<h2>What happens in a Free 30-min Weekly-Report Walkthrough?</h2>
+<p>Every engagement with Carlos Alves Consulting starts with a <strong>Free 30-min Weekly-Report Walkthrough</strong>. You share one weekly report on the call (a redacted copy is fine), and Carlos walks through two or three practical improvements in the tools you already use. For a wage forecast, bring last week's sheet (redacted) and a sample till and rota export. There is no new platform and no monthly subscription.</p>
+<p>Walkthroughs are offered on Mondays and Fridays, 3–6pm UK time, with other times by email at carlos.alves.one@gmail.com. Replies come within one working day.</p>
+<p class="cta"><a class="btn" href="https://calendar.app.google/C1hnZvX1jpWYd2bv6">Book a Free 30-min Weekly-Report Walkthrough</a></p>
+<p>If it is a fit, the next steps are a fixed-fee Reporting Review with a refund guarantee, then a fixed-price build and handover in your own spreadsheets, which you keep. No public prices are listed here.</p>
+<h2>Frequently asked questions</h2>
+<h3>What is a good wage cost percentage for a restaurant?</h3>
+<p>It depends on the concept, location and service style, so this page does not quote a figure. Set your own target from your own history and track the gap weekly.</p>
+<h3>Can I forecast wages in Excel or Google Sheets?</h3>
+<p>Yes. Multiply the rota's hours by role by the hourly cost for each day, set it against forecast sales, and compare with actuals refreshed from your till and rota exports.</p>
+<h3>Do I need scheduling software to forecast wages?</h3>
+<p>Not necessarily. Scheduling tools such as Rotaready and Planday say they include forecasting; a spreadsheet can do the forecast-versus-actual view if your existing tools export.</p>
+<h3>Will we need to buy new software?</h3>
+<p>Not for the spreadsheet described here. It is built inside the spreadsheets you already own, typically Excel or Google Sheets with free built-in tools such as Power Query.</p>
+<h3>Who is Carlos Alves?</h3>
+<p>An independent Data and AI consultant based in London, independent since 2024, serving clients across the UK. He holds an MSc in Data Science and AI (Distinction) from Goldsmiths and a BSc in Computer Science (First).</p>
+<h2>Sources</h2><ul><li>Buyer question: <a href="https://www.reddit.com/r/excel/comments/k8eugq/restaurant_forecast_weekly_spreadsheet_wage/">r/excel, restaurant forecast weekly spreadsheet (wage)</a>.</li><li>Live pages fetched 24 Nov 2026: <a href="https://carlosalves.uk/">carlosalves.uk</a>, <a href="https://carlosalves.uk/hospitality-catering/">Hospitality &amp; Catering</a>.</li><li>Vendor and reference pages fetched 24 Nov 2026: <a href="https://www.rotaready.com/">Rotaready</a>, <a href="https://www.planday.com/">Planday</a>, <a href="https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query">Microsoft Learn: What is Power Query?</a>.</li></ul>
+</div></body></html>
