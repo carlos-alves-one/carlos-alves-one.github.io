@@ -119,11 +119,12 @@ export default function SiteHeader({
               className="flex items-center gap-2 group flex-shrink-0"
               aria-label="Carlos Alves Consulting — home"
             >
-              <span className="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-extrabold text-sm flex items-center justify-center group-hover:bg-accent-500 transition-colors">
-                CA
-              </span>
-              <span className="text-base sm:text-lg font-bold text-white hidden xs:inline sm:inline">
-                Carlos Alves <span className="font-normal text-[#d7e8df]">Consulting</span>
+              <span className="bg-white rounded-lg px-1.5 py-1 flex items-center justify-center">
+                <img
+                  src="/assets/logo-carlos-alves.jpg"
+                  alt="Carlos Alves Consulting — carlosalves.uk"
+                  className="h-9 w-auto"
+                />
               </span>
             </a>
 
