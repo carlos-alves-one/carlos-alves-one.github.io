@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function HospitalityCateringPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main className="min-h-screen bg-[#0e3733] text-[#f2f7f2] sector-page">
       <HomeMovedStyle />
       <SiteHeader />
       <MovedTop />

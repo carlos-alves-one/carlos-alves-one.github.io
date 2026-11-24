@@ -106,10 +106,10 @@ export default function SiteHeader({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-[#2e6258] ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200'
-            : 'bg-white/85 backdrop-blur-sm'
+            ? 'bg-[#0e3733]/95 backdrop-blur-sm shadow-sm'
+            : 'bg-[#0e3733]/85 backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-7 sm:px-8 lg:px-10">
@@ -122,8 +122,8 @@ export default function SiteHeader({
               <span className="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-extrabold text-sm flex items-center justify-center group-hover:bg-accent-500 transition-colors">
                 CA
               </span>
-              <span className="text-base sm:text-lg font-bold text-navy-900 hidden xs:inline sm:inline">
-                Carlos Alves <span className="font-normal text-gray-500">Consulting</span>
+              <span className="text-base sm:text-lg font-bold text-white hidden xs:inline sm:inline">
+                Carlos Alves <span className="font-normal text-[#d7e8df]">Consulting</span>
               </span>
             </a>
 
@@ -142,7 +142,7 @@ export default function SiteHeader({
                     className={`px-3 py-2 text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
                       active
                         ? 'bg-navy-900 text-white'
-                        : 'text-navy-900 hover:bg-gray-100'
+                        : 'text-white hover:bg-white/10'
                     }`}
                   >
                     {a.label}
@@ -159,8 +159,8 @@ export default function SiteHeader({
                     onClick={() => scrollToSection(n.id)}
                     className={`text-sm font-medium transition-colors duration-200 py-1 whitespace-nowrap ${
                       activeSection === n.id
-                        ? 'text-navy-900 font-bold border-b-2 border-accent-500'
-                        : 'text-gray-600 hover:text-navy-900'
+                        ? 'text-white font-bold border-b-2 border-accent-400'
+                        : 'text-[#d7e8df] hover:text-white'
                     }`}
                   >
                     {n.label}
@@ -180,7 +180,7 @@ export default function SiteHeader({
 
             <button
               ref={menuButtonRef}
-              className="md:hidden text-gray-700 hover:text-navy-900 transition-colors z-50 p-1"
+              className="md:hidden text-white hover:text-accent-300 transition-colors z-50 p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
@@ -198,14 +198,14 @@ export default function SiteHeader({
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-white" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="absolute inset-0 bg-[#0e3733]" onClick={() => setIsMobileMenuOpen(false)} />
         <nav
           className={`relative h-full flex flex-col justify-center px-6 pt-20 pb-8 transform transition-all duration-300 ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
           }`}
         >
           <div className="space-y-2 max-w-sm mx-auto w-full">
-            <p className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-1 px-1">
+            <p className="text-xs font-mono uppercase tracking-wider text-[#d7e8df] mb-1 px-1">
               Audiences
             </p>
             {audiences.map((a, i) => {
@@ -220,7 +220,7 @@ export default function SiteHeader({
                   className={`w-full flex items-center justify-between rounded-xl border px-5 py-4 text-left font-bold text-lg ${
                     active
                       ? 'bg-navy-900 text-white border-navy-900 shadow'
-                      : 'bg-white text-navy-900 border-gray-200 shadow-sm hover:border-accent-300'
+                      : 'bg-[#15413c] text-white border-[#2e6258] shadow-sm hover:border-accent-300'
                   }`}
                 >
                   <span>{a.label}</span>
@@ -231,14 +231,14 @@ export default function SiteHeader({
 
             {onAudiencePage && (
               <>
-                <p className="text-xs font-mono uppercase tracking-wider text-gray-500 mt-5 mb-1 px-1">
+                <p className="text-xs font-mono uppercase tracking-wider text-[#d7e8df] mt-5 mb-1 px-1">
                   On this page
                 </p>
                 {navItems.map((n) => (
                   <button
                     key={n.id}
                     onClick={() => scrollToSection(n.id)}
-                    className="w-full flex items-center justify-between bg-white rounded-xl border border-gray-200 px-5 py-4 shadow-sm hover:shadow hover:border-accent-300 text-left font-bold text-lg text-navy-900"
+                    className="w-full flex items-center justify-between bg-[#15413c] rounded-xl border border-[#2e6258] px-5 py-4 shadow-sm hover:shadow hover:border-accent-300 text-left font-bold text-lg text-white"
                   >
                     <span>{n.label}</span>
                     <FaChevronRight className="text-accent-500 text-sm" />

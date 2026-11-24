@@ -1,10 +1,10 @@
 
 const style = `
-.home-moved{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#22332e;line-height:1.55;font-size:16px}
+.home-moved{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#f2f7f2;line-height:1.55;font-size:16px}
 .home-moved .panel,.home-moved .card,.home-moved .dash,.home-moved .cta,.home-moved .walkthrough-strip,.home-moved .social-card{color:var(--ink)}
-.home-moved .sec-head p{color:#374151}
+.home-moved .sec-head p{color:#d7e8df}
 .home-moved .panel h2,.home-moved .panel h3,.home-moved .card h2,.home-moved .card h3,.home-moved .dash h2,.home-moved .dash h3{color:var(--ink)}
-.home-moved section h2,.home-moved section h3{color:#071e1b}
+.home-moved section h2,.home-moved section h3{color:#f2f7f2}
 .home-moved .panel section h2,.home-moved .panel section h3{color:var(--ink)}
 .home-moved .case-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0}
 .home-moved .case-meta span{white-space:nowrap}
@@ -24,6 +24,7 @@ const style = `
 .home-moved .wrap{max-width:1120px;margin:0 auto;padding-left:clamp(24px,5vw,44px);padding-right:clamp(24px,5vw,44px)}
 @media (max-width:560px){.home-moved .wrap{padding-left:max(26px, env(safe-area-inset-left));padding-right:max(26px, env(safe-area-inset-right))}}
 .home-moved section{padding:28px 0}
+.home-moved [id]{scroll-margin-top:96px}
 .home-moved .panel,.home-moved .card,.home-moved .qa{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;margin:12px 0}
 .home-moved .card{padding:24px}
 .home-moved .two,.home-moved .compare,.home-moved .case-grid{display:grid;gap:14px}
@@ -54,14 +55,14 @@ const style = `
 .home-moved{
     /* Uniform deep-green theme from the approved homepage draft.
        Default green family; darker variant for dark-mode visitors. */
-    --bg:#0e3733; --surface:#15413c; --surface-2:#1d4f47; --ink:#f2f7f2; --muted:#bdd2c6; --line:#2e6258;
+    --bg:#0e3733; --surface:#15413c; --surface-2:#1d4f47; --ink:#f2f7f2; --muted:#d7e8df; --line:#2e6258;
     --brand:#e8a44c; --brand-ink:#241503; --accent:#f0b269; --accent-soft:#3d2c13; --good:#82dcab; --good-bg:#173f2c; --warn:#f0bc72; --warn-bg:#3d2c13;
     --radius:14px; --radius-s:10px;
   }
   @media (prefers-color-scheme: dark){
     .home-moved{
       --bg:#071e1b; --surface:#0d2c28; --surface-2:#133a34; --line:#215047;
-      --ink:#eef6f0; --muted:#aac6b6; --good-bg:#123527; --warn-bg:#2e2417;
+      --ink:#eef6f0; --muted:#c8ddd2; --good-bg:#123527; --warn-bg:#2e2417;
     }
   }
 .home-moved .dash{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 32px rgba(15,40,35,.10)}
@@ -215,7 +216,7 @@ export function MovedSocial() {
         </div>
         <div class="latest-body" id="socialBody" role="group" aria-label="Choose social platform"><p class="post-label">TikTok</p><div class="latest-body"><p class="latest-handle">TikTok · @mrcarlosalves</p><h3>Latest on TikTok — short videos on stopping the retyping</h3><p>Carlos's TikTok profile is live with 2 videos, built around the same idea as this site: helping UK operators stop retyping weekly reports and get costs, orders and sales into one view. Watch the newest video at the top of the profile.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener">Watch the latest TikTok →</a><span class="latest-note">Snapshot checked 24 Nov 2026 · 2 videos on the profile</span></div></div><p class="post-label">LinkedIn</p><div class="latest-body"><p class="latest-handle">LinkedIn · carlos-alves-one</p><h3>Latest on LinkedIn</h3><p>On LinkedIn Carlos writes for owners, operations leads and finance leads in hospitality and health & wellness — reporting automation, KPI dashboards and invoice reconciliation, in plain language and in the spreadsheets teams already use.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener">See the latest LinkedIn post →</a><span class="latest-note">Opens Carlos's LinkedIn profile — newest post first</span></div></div><p class="post-label">X</p><div class="latest-body"><p class="latest-handle">X · @Mr_CarlosAlves · 24 Nov 2026, 11:25</p><h3>Latest post on X</h3><p>Supplier prices creeping up a penny at a time hide in the weekly total until the margin's gone. Compare unit prices (line total ÷ quantity) by product code and pack size with last week and 4 weeks ago. Free 30-min Weekly-Report Walkthrough: carlosalves.uk/hospitality-ca… #Hospitality</p><div class="latest-actions"><a class="btn btn-primary" href="https://x.com/Mr_CarlosAlves/status/2125189104786649184" target="_blank" rel="noopener">View this post on X →</a><span class="latest-note">Verified post · 24 Nov 2026, 11:25 · @Mr_CarlosAlves</span></div></div><p class="post-label">Reddit</p><div class="latest-body"><p class="latest-handle">Reddit · u/carlosalvesuk</p><h3>Latest on Reddit</h3><p>On Reddit, u/carlosalvesuk joins the conversation with other operators and spreadsheet users — practical answers on weekly reporting, automation and getting one trusted view of the numbers.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.reddit.com/user/carlosalvesuk" target="_blank" rel="noopener">See the latest Reddit post →</a><span class="latest-note">Opens u/carlosalvesuk on Reddit — newest activity first</span></div></div></div>
       </div>
-      <p style="margin-top:12px;font-size:13.5px;color:#374151">This page is a fixed snapshot, so it can't pull a live feed — each button above opens that platform directly, where the newest post is always at the top. Snapshots checked 24 Nov 2026 — the X post shown is the verified post from @Mr_CarlosAlves at 11:25 that day.</p>
+      <p style="margin-top:12px;font-size:13.5px;color:#d7e8df">This page is a fixed snapshot, so it can't pull a live feed — each button above opens that platform directly, where the newest post is always at the top. Snapshots checked 24 Nov 2026 — the X post shown is the verified post from @Mr_CarlosAlves at 11:25 that day.</p>
     </div>
   </section>
 
