@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import { SampleSwitcher } from './SampleSwitcher'
 
 const style = `
 .home-moved{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#14201d;line-height:1.55;font-size:16px}
@@ -10,7 +8,7 @@ const style = `
 .home-moved a{color:#0f3d3a}
 .home-moved .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 .home-moved section{padding:28px 0}
-.home-moved .panel,.home-moved .card,.home-moved .qa,.home-moved .dash{background:#fff;border:1px solid #d8dfda;border-radius:14px;padding:18px;margin:12px 0}
+.home-moved .panel,.home-moved .card,.home-moved .qa{background:#fff;border:1px solid #d8dfda;border-radius:14px;padding:18px;margin:12px 0}
 .home-moved .two,.home-moved .compare,.home-moved .case-grid{display:grid;gap:14px}
 .home-moved .grid3,.home-moved .steps{display:grid;gap:14px}
 @media(min-width:900px){
@@ -25,19 +23,64 @@ const style = `
 .home-moved .walkthrough-strip h2,.home-moved .cta h2,.home-moved .walkthrough-strip p,.home-moved .cta p{color:#fff}
 .home-moved .walkthrough-strip .btn-primary,.home-moved .cta .btn-primary{background:#fff;color:#0f3d3a}
 .home-moved .kicker,.home-moved .door-label,.home-moved .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#b96a1f}
-.home-moved .big{font-size:40px;font-weight:700}
-.home-moved table{width:100%;border-collapse:collapse;font-size:14px}
-.home-moved th,.home-moved td{padding:8px;border-top:1px solid #d8dfda;text-align:left}
-.home-moved .dash-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.home-moved .tabs{display:flex;gap:6px;margin-left:auto}
-.home-moved .tab{border:1px solid #d8dfda;background:#fff;color:#14201d;font:inherit;font-size:13px;font-weight:700;padding:8px 12px;border-radius:999px;cursor:pointer}
-.home-moved .tab[aria-selected="true"]{background:#0f3d3a;color:#fff;border-color:transparent}
 .home-moved .post-label{font-weight:700;margin:18px 0 6px}
 .home-moved .social-grid{display:grid;gap:12px}
 @media(min-width:800px){.home-moved .social-grid{grid-template-columns:1fr 1fr}}
 .home-moved .social-card{display:block;padding:16px;border:1px solid #d8dfda;border-radius:14px;text-decoration:none}
-.home-moved .chips{display:flex;flex-wrap:wrap;gap:8px}
-.home-moved .chip{border:1px solid #d8dfda;border-radius:999px;padding:6px 10px;font-size:13px;font-weight:600}
+.home-moved{
+    --bg:#f6f7f5; --surface:#ffffff; --surface-2:#eef2ef; --ink:#14201d; --muted:#4b5a55; --line:#d8dfda;
+    --brand:#0f3d3a; --brand-ink:#ffffff; --accent:#b96a1f; --accent-soft:#fdf0e2; --good:#1a7a4a; --good-bg:#e6f4ec; --warn:#9a5b00; --warn-bg:#fdf0e2;
+    --radius:14px; --radius-s:10px;
+  }
+@media (prefers-color-scheme: dark){.home-moved{
+      --bg:#101614; --surface:#18201d; --surface-2:#1f2a26; --ink:#eef3f0; --muted:#a9bab3; --line:#2e3d37;
+      --brand:#7fd1c0; --brand-ink:#0b1a17; --accent:#e8a15c; --accent-soft:#2e2417; --good:#6fd598; --good-bg:#163526; --warn:#e8b06a; --warn-bg:#2e2417;
+    }}
+.home-moved .dash{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 32px rgba(15,40,35,.10)}
+.home-moved .dash-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.home-moved .file{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:600}
+.home-moved .pill{font-size:11px;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:999px;background:var(--good-bg);color:var(--good)}
+.home-moved .tabs{display:flex;gap:6px;margin-left:auto}
+.home-moved .tab{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:700;padding:8px 12px;border-radius:999px;cursor:pointer;min-height:36px}
+.home-moved .tab[aria-selected="true"]{background:var(--brand);color:var(--brand-ink);border-color:transparent}
+@media (prefers-color-scheme: light){.home-moved .tab[aria-selected="true"]{background:#0f3d3a;color:#fff}}
+.home-moved .dash-body{padding:18px}
+.home-moved .dash-title{font-size:13px;color:var(--muted);font-weight:600}
+.home-moved .big{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;font-size:42px;font-weight:700;line-height:1;margin:4px 0 2px}
+.home-moved .big-sub{font-size:14px;color:var(--good);font-weight:600}
+.home-moved .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.home-moved .kpi{border:1px solid var(--line);border-radius:var(--radius-s);padding:12px}
+.home-moved .kpi label{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.home-moved .kpi b{font-size:20px}
+.home-moved .kpi small{display:block;font-size:12.5px;color:var(--muted)}
+.home-moved .chart{margin-top:18px}
+.home-moved .chart h4{margin:0 0 8px;font-size:11.5px;letter-spacing:.07em;color:var(--muted)}
+.home-moved .bars{display:flex;align-items:flex-end;gap:6px;height:92px}
+.home-moved .bar{flex:1;background:var(--brand);border-radius:4px 4px 0 0;min-height:8px;opacity:.92}
+@media (prefers-color-scheme: light){.home-moved .bar{background:#0f3d3a}}
+.home-moved .bar.last{background:var(--accent)}
+.home-moved .barlabels{display:flex;gap:6px;margin-top:6px}
+.home-moved .barlabels span{flex:1;text-align:center;font-size:11px;color:var(--muted)}
+.home-moved table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px}
+.home-moved th, .home-moved td{padding:9px 8px;text-align:left;border-top:1px solid var(--line)}
+.home-moved th{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-top:none}
+.home-moved td.num, .home-moved th.num{text-align:right;font-variant-numeric:tabular-nums}
+.home-moved .status{font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--good-bg);color:var(--good);white-space:nowrap}
+.home-moved .status.review{background:var(--warn-bg);color:var(--warn)}
+.home-moved .dash-foot{padding:12px 18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.home-moved .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.home-moved .chip{font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px}
+.home-moved footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);font-size:13.5px}
+.home-moved footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+.home-moved footer a{font-weight:600}
+.home-moved footer .disclaimer{flex-basis:100%;line-height:1.6;max-width:72em}
+@media (max-width:900px){.home-moved .hero-grid, .home-moved .compare, .home-moved .two, .home-moved .grid3, .home-moved .steps{grid-template-columns:1fr}
+.home-moved .kpis{grid-template-columns:1fr 1fr 1fr}
+.home-moved .about{grid-template-columns:1fr}
+.home-moved .navlinks{margin-left:0}}
+@media (max-width:560px){.home-moved .kpis{grid-template-columns:1fr}
+.home-moved .proof{grid-template-columns:1fr}
+.home-moved .tabs{margin-left:0}}
 `
 
 function Block({ html }: { html: string }) {
@@ -232,7 +275,7 @@ export function MovedSocial() {
           <b>Latest post</b>
           <span class="pill">CHOOSE A PLATFORM</span>
         </div>
-        <div class="latest-body" id="socialBody" aria-label="Choose social platform"><p class="post-label">TikTok</p><div class="latest-body"><p class="latest-handle">TikTok · @mrcarlosalves</p><h3>Latest on TikTok — short videos on stopping the retyping</h3><p>Carlos's TikTok profile is live with 2 videos, built around the same idea as this site: helping UK operators stop retyping weekly reports and get costs, orders and sales into one view. Watch the newest video at the top of the profile.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener">Watch the latest TikTok →</a><span class="latest-note">Snapshot checked 24 Nov 2026 · 2 videos on the profile</span></div></div><p class="post-label">LinkedIn</p><div class="latest-body"><p class="latest-handle">LinkedIn · carlos-alves-one</p><h3>Latest on LinkedIn</h3><p>On LinkedIn Carlos writes for owners, operations leads and finance leads in hospitality and health & wellness — reporting automation, KPI dashboards and invoice reconciliation, in plain language and in the spreadsheets teams already use.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener">See the latest LinkedIn post →</a><span class="latest-note">Opens Carlos's LinkedIn profile — newest post first</span></div></div><p class="post-label">X</p><div class="latest-body"><p class="latest-handle">X · @Mr_CarlosAlves · 24 Nov 2026, 11:25</p><h3>Latest post on X</h3><p>Supplier prices creeping up a penny at a time hide in the weekly total until the margin's gone. Compare unit prices (line total ÷ quantity) by product code and pack size with last week and 4 weeks ago. Free 30-min Weekly-Report Walkthrough: carlosalves.uk/hospitality-ca… #Hospitality</p><div class="latest-actions"><a class="btn btn-primary" href="https://x.com/Mr_CarlosAlves/status/2125189104786649184" target="_blank" rel="noopener">View this post on X →</a><span class="latest-note">Verified post · 24 Nov 2026, 11:25 · @Mr_CarlosAlves</span></div></div><p class="post-label">Reddit</p><div class="latest-body"><p class="latest-handle">Reddit · u/carlosalvesuk</p><h3>Latest on Reddit</h3><p>On Reddit, u/carlosalvesuk joins the conversation with other operators and spreadsheet users — practical answers on weekly reporting, automation and getting one trusted view of the numbers.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.reddit.com/user/carlosalvesuk" target="_blank" rel="noopener">See the latest Reddit post →</a><span class="latest-note">Opens u/carlosalvesuk on Reddit — newest activity first</span></div></div></div>
+        <div class="latest-body" id="socialBody" role="group" aria-label="Choose social platform"><p class="post-label">TikTok</p><div class="latest-body"><p class="latest-handle">TikTok · @mrcarlosalves</p><h3>Latest on TikTok — short videos on stopping the retyping</h3><p>Carlos's TikTok profile is live with 2 videos, built around the same idea as this site: helping UK operators stop retyping weekly reports and get costs, orders and sales into one view. Watch the newest video at the top of the profile.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener">Watch the latest TikTok →</a><span class="latest-note">Snapshot checked 24 Nov 2026 · 2 videos on the profile</span></div></div><p class="post-label">LinkedIn</p><div class="latest-body"><p class="latest-handle">LinkedIn · carlos-alves-one</p><h3>Latest on LinkedIn</h3><p>On LinkedIn Carlos writes for owners, operations leads and finance leads in hospitality and health & wellness — reporting automation, KPI dashboards and invoice reconciliation, in plain language and in the spreadsheets teams already use.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener">See the latest LinkedIn post →</a><span class="latest-note">Opens Carlos's LinkedIn profile — newest post first</span></div></div><p class="post-label">X</p><div class="latest-body"><p class="latest-handle">X · @Mr_CarlosAlves · 24 Nov 2026, 11:25</p><h3>Latest post on X</h3><p>Supplier prices creeping up a penny at a time hide in the weekly total until the margin's gone. Compare unit prices (line total ÷ quantity) by product code and pack size with last week and 4 weeks ago. Free 30-min Weekly-Report Walkthrough: carlosalves.uk/hospitality-ca… #Hospitality</p><div class="latest-actions"><a class="btn btn-primary" href="https://x.com/Mr_CarlosAlves/status/2125189104786649184" target="_blank" rel="noopener">View this post on X →</a><span class="latest-note">Verified post · 24 Nov 2026, 11:25 · @Mr_CarlosAlves</span></div></div><p class="post-label">Reddit</p><div class="latest-body"><p class="latest-handle">Reddit · u/carlosalvesuk</p><h3>Latest on Reddit</h3><p>On Reddit, u/carlosalvesuk joins the conversation with other operators and spreadsheet users — practical answers on weekly reporting, automation and getting one trusted view of the numbers.</p><div class="latest-actions"><a class="btn btn-primary" href="https://www.reddit.com/user/carlosalvesuk" target="_blank" rel="noopener">See the latest Reddit post →</a><span class="latest-note">Opens u/carlosalvesuk on Reddit — newest activity first</span></div></div></div>
       </div>
       <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">This page is a fixed snapshot, so it can't pull a live feed — each button above opens that platform directly, where the newest post is always at the top. Snapshots checked 24 Nov 2026 — the X post shown is the verified post from @Mr_CarlosAlves at 11:25 that day.</p>
     </div>
@@ -308,23 +351,6 @@ export function MovedProblem({ sector }: { sector: "hosp" | "health" }) {
         </article><p style="margin-top:12px;font-size:13.5px;color:var(--muted)">Note on scope: for health &amp; wellness clients the work is about how numbers are gathered and shown — not clinical advice, treatment decisions or regulatory certification.</p>`
   return <div className="home-moved" id="who"><Block html={html} /></div>
 }
-const hospDash = `<div class="dash" aria-label="Sample weekly report"><div class="dash-top"><span class="file">weekly-kpi-w44.xlsx</span><span>Hospitality</span><span class="pill">AUTO-REFRESHED</span></div><div class="dash-body"><p class="dash-title">Weekly operations summary — Week 44</p><div class="big">£24,850</div><p class="big-sub">+11.2% vs budget · sales on track</p><div class="kpis"><div class="kpi"><label>Labour cost %</label><b>31.2%</b><small>Target ≤ 32.5% — on target</small></div><div class="kpi"><label>Bev. gross margin</label><b>68.4%</b><small>+1.6 pts week on week</small></div><div class="kpi"><label>Invoice exceptions</label><b>2 flagged</b><small>£420 to review this week</small></div></div><div class="chart"><h4>WEEKLY SALES TREND (LAST 8 WEEKS) — SAMPLE</h4><div class="bars"><div class="bar" style="height:52%"></div><div class="bar" style="height:58%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:64%"></div><div class="bar" style="height:70%"></div><div class="bar" style="height:68%"></div><div class="bar" style="height:78%"></div><div class="bar last" style="height:88%"></div></div><div class="barlabels"><span>W37</span><span>W38</span><span>W39</span><span>W40</span><span>W41</span><span>W42</span><span>W43</span><span>W44</span></div></div><table><thead><tr><th>Cost centre</th><th class="num">Sales</th><th class="num">Labour %</th><th>Status</th></tr></thead><tbody><tr><td>Kitchen &amp; Dining room</td><td class="num">£15,400</td><td class="num">31.5%</td><td><span class="status">On target</span></td></tr><tr><td>Rooftop Bar (6 bars total)</td><td class="num">£7,100</td><td class="num">28.9%</td><td><span class="status">On target</span></td></tr><tr><td>Private events space</td><td class="num">£2,350</td><td class="num">36.2%</td><td><span class="status review">Review roster</span></td></tr></tbody></table><p style="margin-top:12px;font-size:13px;color:var(--muted)">Refreshed in under one minute every Monday from till CSV + rota exports — zero copying. Delivered as a spreadsheet you own.</p></div><div class="dash-foot"><span>Till + rota + invoice exports → one spreadsheet</span><span>Sample illustration · dummy data · Excel / Google Sheets</span></div></div>`
-const healthDash = `<div class="dash" aria-label="Sample weekly report"><div class="dash-top"><span class="file">weekly-ops-summary.xlsx</span><span class="pill">AUTO-REFRESHED</span></div><div class="dash-body"><p class="dash-title">Weekly operations summary — appointments · staffing · revenue</p><div class="big">One view</div><p class="big-sub">Refreshed from your own exports — no retyping</p><div class="kpis"><div class="kpi"><label>Bookings filled</label><b>From diary</b><small>Appointment &amp; attendance figures from your diary export</small></div><div class="kpi"><label>Staff hours</label><b>From rota</b><small>Labour hours against the week's plan</small></div><div class="kpi"><label>Income &amp; costs</label><b>From finance</b><small>Income and cost lines side by side</small></div></div><div class="chart"><h4>WHAT THE SHEET PULLS TOGETHER</h4><div class="bars"><div class="bar" style="height:60%"></div><div class="bar" style="height:66%"></div><div class="bar" style="height:62%"></div><div class="bar" style="height:72%"></div><div class="bar" style="height:76%"></div><div class="bar" style="height:74%"></div><div class="bar" style="height:82%"></div><div class="bar last" style="height:90%"></div></div><div class="barlabels"><span>Diary</span><span>Rota</span><span>Billing</span><span>Invoices</span><span>Costs</span><span>Staffing</span><span>Revenue</span><span>One sheet</span></div></div><table><thead><tr><th>View</th><th>What you see</th></tr></thead><tbody><tr><td>By site or room</td><td>Appointments vs labour, side by side</td></tr><tr><td>By practitioner</td><td>Activity and utilisation per person</td></tr><tr><td>For the owner</td><td>A shareable one-page summary for managers &amp; finance</td></tr></tbody></table><p style="margin-top:12px;font-size:13px;color:var(--muted)">The aim: a single spreadsheet you own that refreshes from those exports — so costs, appointments, staffing and revenue sit in one place.</p></div><div class="dash-foot"><span>Booking + rota + finance exports → one spreadsheet</span><span>Sample illustration · dummy data · Excel / Google Sheets</span></div></div>`
-
-function SampleSwitcher({ sector }: { sector: "hosp" | "health" }) {
-  const [active, setActive] = useState<"hosp" | "health">(sector)
-  return (
-    <div className="sample-switch">
-      <div className="tabs" role="tablist" aria-label="Choose sector sample">
-        <button className="tab" role="tab" type="button" id="sample-tab-hosp" aria-selected={active === "hosp"} aria-controls="sample-panel-hosp" onClick={() => setActive("hosp")}>Hospitality</button>
-        <button className="tab" role="tab" type="button" id="sample-tab-health" aria-selected={active === "health"} aria-controls="sample-panel-health" onClick={() => setActive("health")}>Health & Wellness</button>
-      </div>
-      <div role="tabpanel" id="sample-panel-hosp" aria-labelledby="sample-tab-hosp" hidden={active !== "hosp"} dangerouslySetInnerHTML={{ __html: hospDash }} />
-      <div role="tabpanel" id="sample-panel-health" aria-labelledby="sample-tab-health" hidden={active !== "health"} dangerouslySetInnerHTML={{ __html: healthDash }} />
-    </div>
-  )
-}
-
 export function MovedExamples({ sector }: { sector: "hosp" | "health" }) {
   const html = sector === "hosp" ? `<div id="cases"><div class="sec-head">
         <h2 id="cases-h">Case studies — before &amp; after</h2>
