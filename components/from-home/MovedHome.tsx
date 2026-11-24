@@ -1,3 +1,4 @@
+import { homeFaqMarkup } from './homeFaqs'
 import { SampleSwitcher } from './SampleSwitcher'
 
 const style = `
@@ -78,6 +79,10 @@ const style = `
 @media (max-width:560px){.home-moved .kpis{grid-template-columns:1fr}
 .home-moved .proof{grid-template-columns:1fr}
 .home-moved .tabs{margin-left:0}}
+.home-moved .sample-wrap{padding-bottom:28px}
+@media (max-width:560px){
+  .home-moved .sample-wrap .dash{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px}
+}
 `
 
 function Block({ html }: { html: string }) {
@@ -214,11 +219,7 @@ export function MovedFaq() {
         <p>Honest answers upfront. If your question isn't here, ask it during the free walkthrough.</p>
       </div>
       <div class="faq">
-        <div class="qa"><h3>Do I need to buy new software?</h3><p>No. Everything is built in Excel or Google Sheets — the tools you already use. There is no new platform and no monthly subscription, and you own the finished spreadsheet outright, formulas unlocked.</p></div>
-        <div class="qa"><h3>What happens in the free walkthrough?</h3><p>You share one weekly report on screen for 30 minutes — a redacted copy is fine. I show you 2–3 quick wins on the call, and for health &amp; wellness clients you also get a short written summary by email within two working days. Nothing is recorded.</p></div>
-        <div class="qa"><h3>How much does it cost after the free call?</h3><p>Each next stage is a small, fixed fee agreed before you commit — the Reporting Review is a fixed-fee diagnostic with a refund guarantee, and any build is quoted at a fixed price upfront. There's no hourly meter running and no lock-in.</p></div>
-        <div class="qa"><h3>Is my data kept confidential?</h3><p>Yes. Demonstrations on this site use clearly labelled dummy data to protect client confidentiality, and you can share a redacted report for the walkthrough.</p></div>
-        <div class="qa"><h3>When can I book, and what if those times don't suit?</h3><p>Walkthroughs run on Mondays and Fridays, 3–6pm UK time. If you need another time, send me a message with a couple of options and I'll do my best to fit you in. I reply within one working day.</p></div>
+${homeFaqMarkup()}
       </div>
     </div>
   </section>

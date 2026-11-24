@@ -8,7 +8,7 @@ const healthBody = `<p class="dash-title">Weekly operations summary — appointm
 export function SampleSwitcher({ sector }: { sector: "hosp" | "health" }) {
   const [active, setActive] = useState<"hosp" | "health">(sector)
   return (
-    <div className="wrap">
+    <div className="wrap sample-wrap">
       <div className="dash" aria-label="Sample weekly report">
         <div className="dash-top">
           <span className="file" hidden={active !== "hosp"}>weekly-kpi-w44.xlsx</span>
