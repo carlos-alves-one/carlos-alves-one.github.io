@@ -50,14 +50,11 @@ const jsonLd = {
         addressCountry: 'GB',
       },
       email: 'carlos.alves.one@gmail.com',
-      // Reddit is listed as in the approved draft. NOTE: a public check on
-      // 24 Nov 2026 showed u/carlosalvesuk as banned, and the decision on
-      // that link is still open — see the PR description before merging.
+      // Reddit link removed 24 Nov 2026 at Carlos's request; the account shows as banned.
       sameAs: [
         'https://www.linkedin.com/in/carlos-alves-one',
         'https://x.com/Mr_CarlosAlves',
         'https://www.tiktok.com/@mrcarlosalves',
-        'https://www.reddit.com/user/carlosalvesuk',
       ],
       priceRange: 'Free walkthrough, then fixed fee quoted upfront',
       hasOfferCatalog: {
