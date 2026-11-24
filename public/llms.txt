@@ -6,7 +6,11 @@ Independent Data & AI Consultant helping UK catering and hospitality businesses 
 
 ## Pages
 
-- [Carlos Alves Consulting](https://carlosalves.uk/): Independent Data & AI consultancy. Choose Hospitality & Catering or Health & Wellness to see reporting automation built in your spreadsheets.
+- [Carlos Alves Consulting](https://carlosalves.uk/): Costs, orders and sales in one weekly report. No retyping. Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.
 - [Hospitality & Catering](https://carlosalves.uk/hospitality-catering/): Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.
 - [Health & Wellness](https://carlosalves.uk/health-wellness/): Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.
+- [How can a gym reconcile cash and bank-transfer payments with its gym software without marking each one by hand?](https://carlosalves.uk/gym-non-card-payments-reconcile/): Most gym software can already hold non-card payments: you record the payment as an offline method (cash or bank transfer) against the member, then confirm…
+- [What CRM should a wedding and events venue use to track leads, quotes, payments and revenue forecasts?](https://carlosalves.uk/wedding-venue-crm-payments-forecasting/): A venue whose list includes pipelines, quotes, e-signed contracts, payment chasing, a shared events calendar and a couple portal is usually describing…
+- [What restaurant payroll software can handle tips for both restaurants without eating Monday?](https://carlosalves.uk/restaurant-payroll-software-tips/): What restaurant payroll software can handle tips for both restaurants without eating Monday?
+- [Bar owners who moved off the spreadsheet: what did they go with?](https://carlosalves.uk/bar-owners-moved-off-spreadsheet/): Bar owners who moved off the spreadsheet: what did they go with?
 - [Free 30-min Weekly-Report Walkthrough](https://calendar.app.google/C1hnZvX1jpWYd2bv6): Book a free 30-minute Weekly-Report Walkthrough on my calendar.
