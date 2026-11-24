@@ -107,10 +107,18 @@
   }
 }
 
-/* Anchor landing: every anchored element clears the sticky/fixed header
-   (measured 67px homepage, ~68-69px sector pages) with breathing room. */
+/* Anchor landing: every anchored element clears the sticky/fixed header.
+   Header is ~100px tall with the larger logo (was 67px homepage,
+   ~68-69px sector pages), so desktop offset is 128px. On phones the
+   homepage header wraps to ~200-230px, so the mobile offset is 300px. */
 [id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 128px;
+}
+
+@media (max-width: 767px) {
+  [id] {
+    scroll-margin-top: 300px;
+  }
 }
 
 /* Sector pages: deep-green theme. White/pale surfaces and dark text on

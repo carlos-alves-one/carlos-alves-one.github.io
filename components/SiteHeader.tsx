@@ -59,7 +59,7 @@ export default function SiteHeader({
           const el = document.getElementById(id)
           if (!el) return null
           const r = el.getBoundingClientRect()
-          return { id, dist: Math.abs(r.top - 140) }
+          return { id, dist: Math.abs(r.top - 180) }
         })
         .filter(Boolean) as { id: string; dist: number }[]
       if (cur.length) {
@@ -119,11 +119,11 @@ export default function SiteHeader({
               className="flex items-center gap-2 group flex-shrink-0"
               aria-label="Carlos Alves Consulting — home"
             >
-              <span className="bg-white rounded-lg px-1.5 py-1 flex items-center justify-center">
+              <span className="bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center">
                 <img
                   src="/assets/logo-carlos-alves.jpg"
                   alt="Carlos Alves Consulting — carlosalves.uk"
-                  className="h-9 w-auto"
+                  className="h-16 w-auto"
                 />
               </span>
             </a>
@@ -201,7 +201,7 @@ export default function SiteHeader({
       >
         <div className="absolute inset-0 bg-[#0e3733]" onClick={() => setIsMobileMenuOpen(false)} />
         <nav
-          className={`relative h-full flex flex-col justify-center px-6 pt-20 pb-8 transform transition-all duration-300 ${
+          className={`relative h-full flex flex-col justify-center px-6 pt-32 pb-8 transform transition-all duration-300 ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
           }`}
         >
