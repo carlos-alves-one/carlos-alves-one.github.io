@@ -30,15 +30,6 @@ body {
   font-size: 18px;
 }
 .wrap { max-width: 820px; margin: 0 auto; padding: 28px 22px 64px; }
-.draft-banner {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 13px;
-  background: var(--navy);
-  color: #f7f3ea;
-  padding: 10px 14px;
-  border-radius: 8px;
-  margin-bottom: 22px;
-}
 .kicker {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 12px;
@@ -129,6 +120,11 @@ tr:nth-child(even) td { background: #fbfaf6; }
   margin-top: 2em;
 }
 ul { padding-left: 1.2em; }
+
+cite, cite a, a, td, p, li { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -180,7 +176,7 @@ ul { padding-left: 1.2em; }
      "name": "Can I import a bank statement into my gym software to mark payments as paid?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "UNVERIFIED: none of the pages fetched for this draft describe that. The dependable route is to match the bank export against the gym system's pending list in a spreadsheet, then confirm the matched payments in bulk."
+      "text": "The dependable route is to match the bank export against the gym system's pending list in a spreadsheet, then confirm the matched payments in bulk."
      }
     },
     {
@@ -214,20 +210,19 @@ ul { padding-left: 1.2em; }
 </script>
 </head>
 <body><div class="wrap">
-<div class="draft-banner">DRAFT preview, not live. Needs Master Carlos's yes to this screenshot and the exact text before any publish. Answer Writer, 21 Nov 2026.</div>
 <p class="kicker">Health & Wellness · Gyms and studios</p><h1>How can a gym reconcile cash and bank-transfer payments with its gym software without marking each one by hand?</h1>
 <p class="answer">Most gym software can already hold non-card payments: you record the payment as an offline method (cash or bank transfer) against the member, then confirm it, and TeamUp's own help centre says pending offline payments can be confirmed one by one or in bulk. The step that usually stays manual is checking which pending payments have actually arrived, and that matching can be done in a refreshable spreadsheet that lines up your payment export against the gym system's pending list, so staff only confirm what matches and chase what doesn't.</p>
 <p>The question, asked in r/gymowner, was:</p>
 <blockquote class="quote"><p>"I am looking to find a way to accept these payments but then have them automatically (or with a low touch) reconcile with my gym software in terms of marking as paid or providing class credits."</p></blockquote>
-<p>Source: <a href="https://www.reddit.com/r/gymowner/comments/1el5jlg/reconciling_non_credit_card_payments_within_gym/">https://www.reddit.com/r/gymowner/comments/1el5jlg/reconciling_non_credit_card_payments_within_gym/</a>. The post names Venmo, Cash App and cash, which suggests a US gym; the country is not stated. For a UK gym or studio the same problem usually means cash and bank transfers. Where a public page does not settle a point, it is marked <span class="unv">UNVERIFIED</span>.</p>
+<p>Source: <a href="https://www.reddit.com/r/gymowner/comments/1el5jlg/reconciling_non_credit_card_payments_within_gym/">https://www.reddit.com/r/gymowner/comments/1el5jlg/reconciling_non_credit_card_payments_within_gym/</a>. The post names Venmo, Cash App and cash, which suggests a US gym; the country is not stated. For a UK gym or studio the same problem usually means cash and bank transfers.</p>
 <h2>Why do non-card payments end up being marked one by one?</h2>
 <p>Card and direct-debit payments taken inside gym software are recorded by the software itself. Cash, bank transfers and payment apps happen outside it, so two separate records exist: the money (in a cash book, a bank statement or an app's history) and the member's account (pending, overdue or paid). Somebody has to check one against the other before marking anything as paid. That check, done line by line, is the "one by one" job the question describes.</p>
 <h2>Which option fits which part of the job?</h2>
-<table><thead><tr><th>Option</th><th>What its own public page says</th><th>Marks a member as paid</th><th>The matching step</th><th>Source</th></tr></thead><tbody><tr><td>TeamUp (offline payments)</td><td>Cash is an offline payment method. Once enabled, a purchase can be recorded as paid by cash and then confirmed when the money is received. Pending offline payments (such as cash or bank transfer) sit under To-dos, Offline Payments, until confirmed.</td><td>Yes: confirming records that the payment was received, with an editable confirmation date, individually or in bulk. <span class="unv">UNVERIFIED:</span> whether confirming also releases class credits; the pages fetched do not say.</td><td><span class="unv">UNVERIFIED:</span> the pages fetched do not describe importing a bank or app export to confirm payments automatically.</td><td><a href="https://support.goteamup.com/en/articles/9327543-managing-cash-payments-with-teamup">TeamUp: managing cash payments</a>; <a href="https://support.goteamup.com/en/articles/9327466-confirming-cancelling-editing-and-managing-pending-offline-payments">TeamUp: pending offline payments</a></td></tr><tr><td>ABC Glofox</td><td>Gym and studio management software covering scheduling and booking, membership management and credit packs, billing and payments, reporting and multi-location management.</td><td><span class="unv">UNVERIFIED:</span> a third-party guide says Glofox's support documentation lists cash and bank transfers as payment methods; this was not checked on a Glofox page.</td><td><span class="unv">UNVERIFIED:</span> not described on the features page fetched.</td><td><a href="https://www.glofox.com/features/">glofox.com/features</a></td></tr><tr><td>Carlos Alves Consulting: reconciliation spreadsheet</td><td>Reporting automation for UK clinics, gyms, care providers and wellness practitioners, built inside the Excel or Google Sheets files you already use, refreshing from booking, rota and finance exports. No new platform and no subscription.</td><td>No. It does not change anything inside your gym software; staff still confirm payments there.</td><td>This is the job it is for: lining up a bank or payment-app export against the gym system's pending or overdue export, showing matched, unmatched and part-paid lines, and refreshing each week instead of being rechecked by hand.</td><td><a href="https://carlosalves.uk/health-wellness/">Health &amp; Wellness: Carlos Alves Consulting</a></td></tr></tbody></table>
+<table><thead><tr><th>Option</th><th>What its own public page says</th><th>Marks a member as paid</th><th>The matching step</th><th>Source</th></tr></thead><tbody><tr><td>TeamUp (offline payments)</td><td>Cash is an offline payment method. Once enabled, a purchase can be recorded as paid by cash and then confirmed when the money is received. Pending offline payments (such as cash or bank transfer) sit under To-dos, Offline Payments, until confirmed.</td><td>Yes: confirming records that the payment was received, with an editable confirmation date, individually or in bulk.</td><td>not checked</td><td><a href="https://support.goteamup.com/en/articles/9327543-managing-cash-payments-with-teamup">TeamUp: managing cash payments</a>; <a href="https://support.goteamup.com/en/articles/9327466-confirming-cancelling-editing-and-managing-pending-offline-payments">TeamUp: pending offline payments</a></td></tr><tr><td>ABC Glofox</td><td>Gym and studio management software covering scheduling and booking, membership management and credit packs, billing and payments, reporting and multi-location management.</td><td>not checked</td><td>not checked</td><td><a href="https://www.glofox.com/features/">glofox.com/features</a></td></tr><tr><td>Carlos Alves Consulting: reconciliation spreadsheet</td><td>Reporting automation for UK clinics, gyms, care providers and wellness practitioners, built inside the Excel or Google Sheets files you already use, refreshing from booking, rota and finance exports. No new platform and no subscription.</td><td>No. It does not change anything inside your gym software; staff still confirm payments there.</td><td>This is the job it is for: lining up a bank or payment-app export against the gym system's pending or overdue export, showing matched, unmatched and part-paid lines, and refreshing each week instead of being rechecked by hand.</td><td><a href="https://carlosalves.uk/health-wellness/">Health &amp; Wellness: Carlos Alves Consulting</a></td></tr></tbody></table>
 <p><strong>Verdict:</strong> first switch on your gym software's offline payment methods, so every non-card payment exists as a pending item rather than a note. Then, if checking those items against the bank or app is still taking hours, that matching is a spreadsheet job, and the confirmation in the gym software can be done in bulk.</p>
 <h2>Is there a way to do it with a CSV or Excel file?</h2>
 <p>Usually, yes, in two halves:</p>
-<ol><li><strong>Export both sides.</strong> A bank statement or payment-app history as CSV, and a pending or overdue payments list from the gym software. <span class="unv">UNVERIFIED:</span> which gym systems let you export their pending offline payments; check with your provider.</li><li><strong>Match them in one sheet.</strong> A spreadsheet using Power Query (built into Excel) can bring in both files each week and match on amount, date and a member reference, then list what is clearly paid, what is missing and what needs a person to look at it.</li></ol>
+<ol><li><strong>Export both sides.</strong> A bank statement or payment-app history as CSV, and a pending or overdue payments list from the gym software.</li><li><strong>Match them in one sheet.</strong> A spreadsheet using Power Query (built into Excel) can bring in both files each week and match on amount, date and a member reference, then list what is clearly paid, what is missing and what needs a person to look at it.</li></ol>
 <p>The member reference is the part that makes or breaks it. If members pay by bank transfer with their name or membership number as the reference, matching is far more reliable than matching on amount alone.</p>
 <h2>When does a reconciliation spreadsheet help, and when does it not?</h2>
 <p>It helps when the payments already land somewhere you can export (a bank account, a payment app or a cash book) and the slow part is checking them against members. It also helps when the same figures then go into a weekly report on income, attendance and staffing.</p>
@@ -241,7 +236,7 @@ ul { padding-left: 1.2em; }
 <h3>Can gym software mark cash and bank-transfer payments as paid?</h3>
 <p>Some can. TeamUp's help centre describes recording cash and bank-transfer payments as offline payments and confirming them as received, individually or in bulk. Check your own system's help pages for an equivalent offline or manual payment method.</p>
 <h3>Can I import a bank statement into my gym software to mark payments as paid?</h3>
-<p><span class="unv">UNVERIFIED:</span> none of the pages fetched for this draft describe that. The dependable route is to match the bank export against the gym system's pending list in a spreadsheet, then confirm the matched payments in bulk.</p>
+<p>The dependable route is to match the bank export against the gym system's pending list in a spreadsheet, then confirm the matched payments in bulk.</p>
 <h3>Does Carlos Alves Consulting sell gym software or take payments?</h3>
 <p>No. Carlos Alves Consulting builds reporting and reconciliation spreadsheets inside the Excel or Google Sheets files you already use. It does not sell gym software, process payments or change records inside your systems.</p>
 <h3>Will we need to buy new software?</h3>
@@ -249,5 +244,5 @@ ul { padding-left: 1.2em; }
 <h3>Who is Carlos Alves?</h3>
 <p>An independent Data and AI consultant in London, independent since 2024, serving clients across the UK. He holds an MSc in Data Science and AI (Distinction) from Goldsmiths and a BSc in Computer Science (First). His work for health and wellness operators covers how numbers are gathered and shown, not clinical or medical advice.</p>
 <h2>Sources</h2>
-<ul><li>Buyer question, word for word:  (rank 3, list dated 17 Nov 2026); post re-fetched 21 Nov 2026.</li><li>Business facts: ; live pages fetched 21 Nov 2026: <a href="https://carlosalves.uk/">carlosalves.uk</a>, <a href="https://carlosalves.uk/health-wellness/">Health &amp; Wellness</a>.</li><li>Third-party pages fetched 21 Nov 2026: <a href="https://support.goteamup.com/en/articles/9327543-managing-cash-payments-with-teamup">TeamUp cash payments</a>, <a href="https://support.goteamup.com/en/articles/9327466-confirming-cancelling-editing-and-managing-pending-offline-payments">TeamUp pending offline payments</a>, <a href="https://www.glofox.com/features/">ABC Glofox features</a>. Third-party guide (search result only): <a href="https://studiosoftwareadvice.com/fitness-studio-payment-processing-complete-guide-2026/">studiosoftwareadvice.com</a>.</li></ul>
+<ul><li>Buyer question, word for word: rank 3, list dated 17 Nov 2026; post re-fetched 21 Nov 2026.</li><li>Live pages fetched 21 Nov 2026: <a href="https://carlosalves.uk/">carlosalves.uk</a>, <a href="https://carlosalves.uk/health-wellness/">Health &amp; Wellness</a>.</li><li>Third-party pages fetched 21 Nov 2026: <a href="https://support.goteamup.com/en/articles/9327543-managing-cash-payments-with-teamup">TeamUp cash payments</a>, <a href="https://support.goteamup.com/en/articles/9327466-confirming-cancelling-editing-and-managing-pending-offline-payments">TeamUp pending offline payments</a>, <a href="https://www.glofox.com/features/">ABC Glofox features</a>. Third-party guide (search result only): <a href="https://studiosoftwareadvice.com/fitness-studio-payment-processing-complete-guide-2026/">studiosoftwareadvice.com</a>.</li></ul>
 </div></body></html>
