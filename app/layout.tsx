@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       'Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.',
   },
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/assets/logo-carlos-alves.jpg' },
 }
 
 const jsonLd = {
