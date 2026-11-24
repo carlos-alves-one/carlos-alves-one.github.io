@@ -91,16 +91,6 @@ export default function Footer() {
               >
                 <FaCalendarAlt size={16} />
               </a>
-              <a
-                href="https://www.reddit.com/user/carlosalvesuk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[#15413c] border border-[#2e6258] flex items-center justify-center text-white hover:border-white transition-colors"
-                aria-label="Reddit"
-              >
-                <span className="font-black text-base leading-none">r/</span>
-              </a>
-
             </div>
             <p className="text-sm text-[#d7e8df]">London, UK · video-first, on-site when useful</p>
             <p className="text-[13px] text-[#c8ddd2] mt-1">Replies within one working day</p>
