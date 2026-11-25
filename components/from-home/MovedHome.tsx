@@ -22,6 +22,7 @@ const style = `
 .home-moved p{margin:0 0 .6rem}
 .home-moved a{color:var(--accent)}
 .home-moved .wrap{max-width:1120px;margin:0 auto;padding-left:clamp(24px,5vw,44px);padding-right:clamp(24px,5vw,44px)}
+.home-moved .moved-top{padding-top:128px}
 @media (max-width:560px){.home-moved .wrap{padding-left:max(26px, env(safe-area-inset-left));padding-right:max(26px, env(safe-area-inset-right))}}
 .home-moved section{padding:28px 0}
 .home-moved [id]{scroll-margin-top:136px}
@@ -123,14 +124,14 @@ export function HomeMovedStyle() {
 }
 
 export function MovedTop() {
-  return <div className="home-moved"><Block html={`<nav class="navlinks" aria-label="Main"><a href="#cases">Case studies</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#social">Social</a><a href="#faq">FAQ</a></nav>      <div class="walkthrough-strip">
+  return <div className="home-moved"><Block html={`<div class="wrap moved-top"><nav class="navlinks" aria-label="Main"><a href="#cases">Case studies</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#social">Social</a><a href="#faq">FAQ</a></nav>      <div class="walkthrough-strip">
         <div>
           <h2>Start with a free 30-minute walkthrough</h2>
           <p>Show me one weekly report — a redacted copy is fine — and I'll show you 2–3 quick wins on the call. No cost, no obligation, nothing recorded.</p>
           <p style="margin-top:6px;font-size:13.5px">Mondays &amp; Fridays, 3–6pm UK time — another time? Just ask. I reply within one working day.</p>
         </div>
         <a class="btn btn-primary" href="https://calendar.app.google/C1hnZvX1jpWYd2bv6" target="_blank" rel="noopener">Book the free walkthrough →</a>
-      </div>`} /></div>
+      </div></div>`} /></div>
 }
 export function MovedHow({ sector }: { sector: "hosp" | "health" }) {
   const copy =
