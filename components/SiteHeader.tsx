@@ -113,7 +113,7 @@ export default function SiteHeader({
         }`}
       >
         <div className="max-w-7xl mx-auto px-7 sm:px-8 lg:px-10">
-          <div className="flex justify-between items-center py-3 gap-3">
+          <div className="flex flex-wrap justify-between items-center py-3 gap-3">
             <a
               href="/"
               className="flex items-center gap-2 group flex-shrink-0"
