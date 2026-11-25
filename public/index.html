@@ -598,12 +598,18 @@
       </div>
       <div class="panel">
         <h3>Send a message</h3>
-        <p style="color:var(--muted);font-size:14.5px;margin-bottom:16px">This form doesn’t send anything on its own — copy your message and send it by email or LinkedIn, or book straight from the calendar.</p>
-        <form class="form-grid" id="enquiry-form">
-          <div><label for="eq-name">Your name</label><input id="eq-name" name="name" type="text" autocomplete="name"></div>
-          <div><label for="eq-email">Email address</label><input id="eq-email" name="email" type="email" autocomplete="email"></div>
-          <div><label for="eq-message">What weekly report or problem would you like help with?</label><textarea id="eq-message" name="message" placeholder="e.g. Our weekly sales vs labour report is typed by hand from till exports every Monday..."></textarea></div>
+        <p style="color:var(--muted);font-size:14.5px;margin-bottom:16px">Your message is sent directly from this page — no email app needed. You can also copy it and send it by email or LinkedIn, or book straight from the calendar.</p>
+        <form class="form-grid" id="enquiry-form" action="https://formsubmit.co/carlos.alves.one@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from carlosalves.uk">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <div><label for="eq-name">Your name</label><input id="eq-name" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="eq-email">Email address</label><input id="eq-email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="eq-message">What weekly report or problem would you like help with?</label><textarea id="eq-message" name="message" placeholder="e.g. Our weekly sales vs labour report is typed by hand from till exports every Monday..." required></textarea></div>
+          <div style="grid-column:1 / -1"><button class="btn btn-primary" type="submit" id="send-enquiry">Send message</button></div>
         </form>
+        <p id="enquiry-status" style="margin-top:14px;font-size:14px;padding:10px 12px;border-radius:10px" hidden></p>
         <div class="cta-row">
           <button class="btn btn-primary" type="button" id="copy-enquiry">Copy message text</button>
           <a class="btn btn-ghost" href="mailto:carlos.alves.one@gmail.com">Email carlos.alves.one@gmail.com</a>
@@ -668,6 +674,42 @@
       var done = function(){ var n = document.getElementById('copy-note'); if (n) n.removeAttribute('hidden'); };
       if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, done); }
       else { done(); }
+    });
+  }
+  /* Enquiry form: send on-site via FormSubmit (no account, no backend).
+     With JavaScript on, submit with fetch and show an inline result.
+     With JavaScript off, the form posts normally to the same endpoint. */
+  var enquiryForm = document.getElementById('enquiry-form');
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var status = document.getElementById('enquiry-status');
+      var btn = document.getElementById('send-enquiry');
+      var honey = enquiryForm.querySelector('[name="_honey"]');
+      if (honey && honey.value) return; /* bot */
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      var data = {
+        name: document.getElementById('eq-name').value,
+        email: document.getElementById('eq-email').value,
+        message: document.getElementById('eq-message').value,
+        _subject: 'New enquiry from carlosalves.uk',
+        _template: 'table',
+        _captcha: 'false',
+        _honey: ''
+      };
+      fetch('https://formsubmit.co/ajax/carlos.alves.one@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function(res){ return res.json().then(function(d){ return { ok: res.ok, d: d }; }); }).then(function(r){
+        if (!r.ok || !r.d || (r.d.success !== 'true' && r.d.success !== true)) throw new Error('submit failed');
+        if (status) { status.hidden = false; status.style.background = 'var(--good-bg)'; status.style.color = 'var(--good)'; status.textContent = 'Message sent — thank you. I reply within one working day.'; }
+        enquiryForm.reset();
+      }).catch(function(){
+        if (status) { status.hidden = false; status.style.background = '#450a0a'; status.style.color = '#fca5a5'; status.textContent = 'Sorry — your message didn’t send. Please try again, or email carlos.alves.one@gmail.com directly.'; }
+      }).then(function(){
+        if (btn) { btn.disabled = false; btn.textContent = 'Send message'; }
+      });
     });
   }
 })();

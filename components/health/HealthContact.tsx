@@ -5,23 +5,50 @@ import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaClock, FaCalendarAlt, FaCheck
 
 const BOOKING_URL = 'https://calendar.app.google/C1hnZvX1jpWYd2bv6'
 
+// No-backend form endpoint (FormSubmit): submissions are emailed to the
+// enquiry inbox. First submission triggers a one-time activation email to
+// that inbox — nothing is delivered until the link in it is clicked.
+const FORM_ACTION = 'https://formsubmit.co/carlos.alves.one@gmail.com'
+const FORM_AJAX = 'https://formsubmit.co/ajax/carlos.alves.one@gmail.com'
+
 export default function HealthContact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [copied, setCopied] = useState(false)
 
-  const mailtoBody = () => `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  const messageText = () => `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Consulting enquiry from ${formData.name || 'website visitor'}`)
-    const body = encodeURIComponent(mailtoBody())
-    window.location.href = `mailto:carlos.alves.one@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    if (status === 'sending') return
+    setStatus('sending')
+    try {
+      const res = await fetch(FORM_AJAX, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: 'New enquiry from carlosalves.uk',
+          _template: 'table',
+          _captcha: 'false',
+          _honey: '',
+        }),
+      })
+      const data = await res.json().catch(() => null)
+      if (!res.ok || !data || (data.success !== 'true' && data.success !== true)) {
+        throw new Error('FormSubmit did not confirm the submission')
+      }
+      setStatus('sent')
+      setFormData({ name: '', email: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   const handleCopy = () => {
-    navigator.clipboard?.writeText(mailtoBody())
+    navigator.clipboard?.writeText(messageText())
     setCopied(true)
     setTimeout(() => setCopied(false), 2500)
   }
@@ -64,9 +91,13 @@ export default function HealthContact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-gray-50 p-7 rounded-2xl border border-gray-200">
             <h3 className="text-base font-bold text-navy-900 mb-0.5">Send a message</h3>
-            <p className="text-xs text-gray-500 mb-5">Submitting opens your email app with the message pre-filled.</p>
+            <p className="text-xs text-gray-500 mb-5">Your message is sent directly from this page — no email app needed.</p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} action={FORM_ACTION} method="POST" className="space-y-4">
+              <input type="hidden" name="_subject" value="New enquiry from carlosalves.uk" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
               <div>
                 <label htmlFor="health-name" className="block text-xs font-semibold text-navy-900 mb-1">
                   Your name *
@@ -114,8 +145,12 @@ export default function HealthContact() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
-                <button type="submit" className="btn-primary text-xs sm:text-sm flex items-center justify-center gap-1.5 flex-1 py-2.5">
-                  <FaPaperPlane className="text-xs" /> Send via email app
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-primary text-xs sm:text-sm flex items-center justify-center gap-1.5 flex-1 py-2.5 disabled:opacity-60"
+                >
+                  <FaPaperPlane className="text-xs" /> {status === 'sending' ? 'Sending…' : 'Send message'}
                 </button>
                 <button
                   type="button"
@@ -126,10 +161,17 @@ export default function HealthContact() {
                 </button>
               </div>
 
-              {submitted && (
+              {status === 'sent' && (
                 <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
-                  <p className="font-bold">Email app opened with your message.</p>
-                  <p className="mt-0.5">If it didn’t appear, send directly to carlos.alves.one@gmail.com.</p>
+                  <p className="font-bold">Message sent — thank you.</p>
+                  <p className="mt-0.5">I reply within one working day. If you don’t hear back, email carlos.alves.one@gmail.com directly.</p>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-900">
+                  <p className="font-bold">Sorry — your message didn’t send.</p>
+                  <p className="mt-0.5">Please try again, or email carlos.alves.one@gmail.com directly.</p>
                 </div>
               )}
             </form>
