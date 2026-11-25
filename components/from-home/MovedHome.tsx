@@ -16,6 +16,9 @@ const style = `
 .home-moved .result .after-val{font-weight:700;color:var(--good)}
 .home-moved .result small{flex-basis:100%;color:var(--muted)}
 .home-moved .case-card{margin-bottom:8px}
+.home-moved .case-photo{margin:0 0 12px}
+.home-moved .case-photo img{display:block;width:100%;height:auto;border-radius:10px}
+.home-moved .case-photo figcaption{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.5}
 
 .home-moved h2,.home-moved h3{font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;line-height:1.15;margin:0 0 .4rem}
 .home-moved h2{font-size:clamp(26px,3vw,36px)}
@@ -23,9 +26,11 @@ const style = `
 .home-moved a{color:var(--accent)}
 .home-moved .wrap{max-width:1120px;margin:0 auto;padding-left:clamp(24px,5vw,44px);padding-right:clamp(24px,5vw,44px)}
 .home-moved .moved-top{padding-top:128px}
+@media (min-width:1280px){.home-moved .moved-top{padding-top:184px}}
 @media (max-width:560px){.home-moved .wrap{padding-left:max(26px, env(safe-area-inset-left));padding-right:max(26px, env(safe-area-inset-right))}}
 .home-moved section{padding:28px 0}
 .home-moved [id]{scroll-margin-top:136px}
+@media (min-width:1280px){.home-moved [id]{scroll-margin-top:176px}}
 @media (max-width:767px){.home-moved [id]{scroll-margin-top:300px}}
 .home-moved .panel,.home-moved .card,.home-moved .qa{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;margin:12px 0}
 .home-moved .card{padding:24px}
@@ -230,6 +235,7 @@ export function MovedExamples({ sector }: { sector: "hosp" | "health" }) {
     "One worked example in the format I build for clients. It is a fictitious sample case study for illustration \u2014 the business, figures and timeline are invented, so no real client data is shown."
   const caseHtml = isHosp
     ? `<article class="panel case-card">
+          <figure class="case-photo"><img src="/assets/harbour-hero.jpg" alt="Busy neighbourhood restaurant dining room in the evening, guests at wooden tables under large pendant lamps" width="2000" height="1331" loading="lazy"><figcaption>Illustrative photo — Harbour &amp; Vine is a simulated client. Photos do not depict the simulated client.</figcaption></figure>
           <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Hospitality \u00b7 London \u00b7 8 weeks</p>
           <h3>Harbour &amp; Vine \u2014 3 restaurants</h3>
           <p style="font-size:15px">The owner was spending Monday mornings retyping till exports, rota files and PDF invoices. Food cost was only known weeks later, invoice errors were missed, and one site lost money for three weeks before anyone spotted it.</p>
@@ -241,8 +247,10 @@ export function MovedExamples({ sector }: { sector: "hosp" | "health" }) {
             <div class="result"><label>Invoices to check</label><span class="ba-label">Before</span><span class="before">~120 by hand</span><span class="ba-label">After</span><span class="after-val">~5 flagged</span><small>96% matched automatically</small></div>
           </div>
           <p style="font-size:14.5px">After: invoices matched to orders and deliveries, a \u00a3412 duplicate charge caught in week 2, and ordering suggested from bookings, last year and the weather \u2014 all in a spreadsheet the owner owns.</p>
+          <figure class="case-photo"><img src="/assets/harbour-manager.webp" alt="A restaurant manager at the kitchen pass holding a tablet showing charts, staff and diners behind" width="1536" height="1024" loading="lazy"><figcaption>Built around service, not software — no change to the till system or suppliers, and no extra data entry for floor or kitchen teams.</figcaption></figure>
         </article>`
     : `<article class="panel case-card">
+          <figure class="case-photo"><img src="/assets/fernwell-hero.webp" alt="Instructor leading a reformer Pilates class in a bright mirrored studio, participants on reformers" width="2303" height="1536" loading="lazy"><figcaption>Illustrative photo — Fernwell Wellness is a simulated client. Photos do not depict the simulated client.</figcaption></figure>
           <p class="door-label" style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)">Health &amp; Wellness \u00b7 North \u00b7 10 weeks</p>
           <h3>Fernwell Wellness \u2014 4 locations</h3>
           <p style="font-size:15px">A physiotherapy, massage and reformer Pilates group across Manchester, Leeds and Sheffield. Diaries, rotas and finance lived in separate exports, so utilisation and no-shows were hard to see until long after the week had passed.</p>
@@ -254,6 +262,7 @@ export function MovedExamples({ sector }: { sector: "hosp" | "health" }) {
             <div class="result"><label>Invoices to check</label><span class="ba-label">Before</span><span class="before">~165 by hand</span><span class="ba-label">After</span><span class="after-val">~8 flagged</span><small>Exceptions list only</small></div>
           </div>
           <p style="font-size:14.5px">After: appointments, staffing and costs in one weekly report \u2014 diary, rota and finance exports refreshed together, with demand and staffing forecasts the team can audit.</p>
+          <figure class="case-photo"><img src="/assets/fernwell-massage.jpg" alt="A woman lying face-down on a treatment table while a therapist works on her upper back and neck" width="1000" height="667" loading="lazy"><figcaption>Built around appointments, not software — booking and billing data only, no clinical notes in the dashboard, and no extra data entry for practitioners or reception.</figcaption></figure>
         </article>`
   return (
     <div className="home-moved">
