@@ -9,6 +9,7 @@ Independent Data & AI Consultant helping UK catering and hospitality businesses 
 - [Carlos Alves Consulting](https://carlosalves.uk/): Costs, orders and sales in one weekly report. No retyping. Independent Data & AI consultancy for UK hospitality and health & wellness businesses: reporting automation, KPI dashboards, invoice reconciliation and forecasting — built in the spreadsheets you already use.
 - [Hospitality & Catering](https://carlosalves.uk/hospitality-catering/): Automating weekly reports, dashboards and forecasts for UK catering and hospitality businesses — built in your spreadsheets, no subscriptions.
 - [Health & Wellness](https://carlosalves.uk/health-wellness/): Weekly reporting automation for UK clinics, dental practices, gyms, care providers and wellness practitioners — built in your spreadsheets, no subscriptions.
+- [Booking confirmation](https://carlosalves.uk/confirmation/): The page a visitor sees after booking a walkthrough — what happens next, Google Meet, and email.
 - [How can a gym reconcile cash and bank-transfer payments with its gym software without marking each one by hand?](https://carlosalves.uk/gym-non-card-payments-reconcile/): Most gym software can already hold non-card payments: you record the payment as an offline method (cash or bank transfer) against the member, then confirm…
 - [What CRM should a wedding and events venue use to track leads, quotes, payments and revenue forecasts?](https://carlosalves.uk/wedding-venue-crm-payments-forecasting/): A venue whose list includes pipelines, quotes, e-signed contracts, payment chasing, a shared events calendar and a couple portal is usually describing…
 - [What restaurant payroll software can handle tips for both restaurants without eating Monday?](https://carlosalves.uk/restaurant-payroll-software-tips/): If Monday is spent calculating and paying tips across two restaurants, you need payroll or tip-management software that can run a tronc or tip pool and feed those figures into payroll.
@@ -19,3 +20,14 @@ Independent Data & AI Consultant helping UK catering and hospitality businesses 
 - [What inventory solution works for an independent restaurant without becoming a chore?](https://carlosalves.uk/independent-restaurant-inventory-tools/): For an independent restaurant, the choice is between a dedicated inventory platform, which MarketMan for example says covers counts, invoice capture, purchasing and recipe costing, and a stock-count spreadsheet that refreshes from your supplier invoices and till sales so the weekly count turns straight into food and drink cost.
 - [How can a multi-location gym owner forecast cash and see margins by location without a finance team?](https://carlosalves.uk/gym-financial-forecasting-multi-location/): Start from the bookkeeping you already have and build a simple weekly or monthly model per location: membership income from your gym software, costs from your accounts, and a 12-month forecast of members, revenue, costs and cash, with burn rate and margin shown for each site and in total.
 - [Free 30-min Weekly-Report Walkthrough](https://calendar.app.google/C1hnZvX1jpWYd2bv6): Book a free 30-minute Weekly-Report Walkthrough on my calendar.
+
+## Contact
+
+- Enquiries: use the contact form on any page of the site (name, email, message — sent on-site, answered within one working day). No phone number is published.
+- Book a free 30-minute Weekly-Report Walkthrough: https://calendar.app.google/C1hnZvX1jpWYd2bv6 — Mondays and Fridays, 3–6pm UK time.
+
+## Case studies
+
+- [Harbour & Vine](https://carlosalves.uk/hospitality-catering/): Three neighbourhood restaurants in London. Illustrative example of weekly reporting automation, invoice matching, food-cost and waste tracking.
+- [Fernwell Wellness](https://carlosalves.uk/health-wellness/): Four locations in Manchester, Leeds and Sheffield offering physiotherapy, massage and reformer Pilates. Illustrative example of appointment, staffing and cost reporting.
+- All figures, statistics and data in these case studies are entirely fictitious sample data created for illustrative purposes only. No real customer information, personal data or confidential records are used, displayed or processed.
