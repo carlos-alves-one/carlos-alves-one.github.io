@@ -108,11 +108,12 @@
 }
 
 /* Anchor landing: every anchored element clears the sticky/fixed header.
-   Header is ~100px tall with the larger logo (was 67px homepage,
-   ~68-69px sector pages), so desktop offset is 128px. On phones the
-   homepage header wraps to ~200-230px, so the mobile offset is 300px. */
+   Header is ~108px tall on desktop with the taller two-line logo
+   (72px logo; ~100px on phones, where the logo stays 64px), so the
+   desktop offset is 136px. On phones the homepage header wraps to
+   ~200-230px, so the mobile offset stays 300px. */
 [id] {
-  scroll-margin-top: 128px;
+  scroll-margin-top: 136px;
 }
 
 @media (max-width: 767px) {

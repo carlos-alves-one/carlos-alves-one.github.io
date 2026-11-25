@@ -24,7 +24,7 @@ const style = `
 .home-moved .wrap{max-width:1120px;margin:0 auto;padding-left:clamp(24px,5vw,44px);padding-right:clamp(24px,5vw,44px)}
 @media (max-width:560px){.home-moved .wrap{padding-left:max(26px, env(safe-area-inset-left));padding-right:max(26px, env(safe-area-inset-right))}}
 .home-moved section{padding:28px 0}
-.home-moved [id]{scroll-margin-top:128px}
+.home-moved [id]{scroll-margin-top:136px}
 @media (max-width:767px){.home-moved [id]{scroll-margin-top:300px}}
 .home-moved .panel,.home-moved .card,.home-moved .qa{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;margin:12px 0}
 .home-moved .card{padding:24px}

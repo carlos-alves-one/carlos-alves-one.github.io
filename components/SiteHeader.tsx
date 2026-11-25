@@ -123,7 +123,7 @@ export default function SiteHeader({
                 <img
                   src="/assets/logo-carlos-alves.jpg"
                   alt="Carlos Alves Consulting — carlosalves.uk"
-                  className="h-16 w-auto"
+                  className="h-16 w-auto sm:h-[72px]"
                 />
               </span>
             </a>
