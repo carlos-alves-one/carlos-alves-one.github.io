@@ -55,6 +55,7 @@ const jsonLd = {
         'https://www.linkedin.com/in/carlos-alves-one',
         'https://x.com/Mr_CarlosAlves',
         'https://www.tiktok.com/@mrcarlosalves',
+        'https://www.instagram.com/carlosalves.uk',
       ],
       priceRange: 'Free walkthrough, then fixed fee quoted upfront',
       hasOfferCatalog: {
