@@ -213,6 +213,7 @@ export function MovedSocial() {
         <a class="social-card" href="https://www.linkedin.com/in/carlos-alves-one" target="_blank" rel="noopener"><span class="social-icon" aria-hidden="true">in</span><b>LinkedIn</b><span>linkedin.com/in/carlos-alves-one</span><em>Connect on LinkedIn →</em></a>
         <a class="social-card" href="https://x.com/Mr_CarlosAlves" target="_blank" rel="noopener"><span class="social-icon" aria-hidden="true">X</span><b>X</b><span>x.com/Mr_CarlosAlves</span><em>Follow @Mr_CarlosAlves →</em></a>
         <a class="social-card" href="https://www.tiktok.com/@mrcarlosalves" target="_blank" rel="noopener"><span class="social-icon" aria-hidden="true">♪</span><b>TikTok</b><span>tiktok.com/@mrcarlosalves</span><em>Watch on TikTok →</em></a>
+        <a class="social-card" href="https://www.instagram.com/carlosalves.uk" target="_blank" rel="noopener"><span class="social-icon" aria-hidden="true">IG</span><b>Instagram</b><span>instagram.com/carlosalves.uk</span><em>Follow @carlosalves.uk →</em></a>
       </div>
 
       <div class="latest" aria-label="Latest post by platform">

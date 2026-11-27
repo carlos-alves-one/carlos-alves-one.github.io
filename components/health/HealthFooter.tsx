@@ -1,4 +1,4 @@
-import { FaLinkedin, FaEnvelope, FaCalendarAlt } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaEnvelope, FaCalendarAlt } from 'react-icons/fa'
 
 const BOOKING_URL = 'https://calendar.app.google/C1hnZvX1jpWYd2bv6'
 
@@ -70,6 +70,15 @@ export default function HealthFooter() {
                 aria-label="TikTok"
               >
                 <span className="font-black text-base leading-none">♪</span>
+              </a>
+              <a
+                href="https://www.instagram.com/carlosalves.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-[#15413c] border border-[#2e6258] flex items-center justify-center text-white hover:border-white transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={18} />
               </a>
               <a
                 href="mailto:carlos.alves.one@gmail.com"
